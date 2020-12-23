@@ -6,8 +6,7 @@ def init_db():
     cur = conn.cursor()
 
     cur.execute("DROP TABLE IF EXISTS oeuvres")
-    cur.execute("CREATE TABLE IF NOT EXISTS oeuvres(id_oeuvre INT, identifiant TEXT," +
-        "nom TEXT, artiste TEXT, type TEXT, salle TEXT)")
+    cur.execute("CREATE TABLE IF NOT EXISTS oeuvres(id_oeuvre INT, nom TEXT, artiste TEXT, type TEXT, salle TEXT)")
 
     conn.commit()
     cur.close()
@@ -22,8 +21,8 @@ def recuperer_les_oeuvres():
         dico = json.loads(data)
         for i in dico.values():
             for j in i:
-                id, type, artiste, titre, salle = j.values()
-                tuple = (id, type, artiste, titre, salle)
+                type, artiste, titre, salle = j.values()
+                tuple = (type, artiste, titre, salle)
                 liste_oeuvres.append(tuple)
     f.close()
     return liste_oeuvres
@@ -34,10 +33,9 @@ def remplir_table_oeuvre():
     conn = sqlite3.connect('db/database.db')
     cur = conn.cursor()
     for i in range (len(liste_oeuvres)):
-        id, type, artiste, titre, salle = liste_oeuvres[i]
-        values = (i, id, titre, artiste, type, salle)
-        cur.execute("INSERT INTO oeuvres(id_oeuvre, identifiant, nom, artiste, "
-            +"type, salle) VALUES (?, ?, ?, ?, ?, ?)", values)
+        type, artiste, titre, salle = liste_oeuvres[i]
+        values = (i, titre, artiste, type, salle)
+        cur.execute("INSERT INTO oeuvres(id_oeuvre, nom, artiste, type, salle) VALUES (?, ?, ?, ?, ?)", values)
         conn.commit()
     print("Table 'oeuvres' remplie !")
     cur.close()

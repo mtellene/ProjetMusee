@@ -1,707 +1,606 @@
 {
    "Objets": [
       {
-         "Identifiant": "OEUVRE_HOMER_1",
          "Type": "Ecrits",
          "Artiste": "Homère",
          "Titre": "L'Iliade",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_HOMER_2",
          "Type": "Ecrits",
          "Artiste": "Homère",
          "Titre": "L'Odyssée",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_OVID_1",
          "Type": "Ecrits",
          "Artiste": "Ovide",
          "Titre": "Les Métamorphoses",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_OVID_2",
          "Type": "Ecrits",
          "Artiste": "Ovide",
          "Titre": "Héroïdes",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_SUN_TZU",
          "Type": "Ecrits",
          "Artiste": "Sun Tzu",
          "Titre": "L'Art de la guerre",
          "Salle": "Antiquites_Asiatiques"
       },
       {
-         "Identifiant": "OEUVRE_CHAUCER_1",
          "Type": "Ecrits",
          "Artiste": "Geoffrey Chaucer",
          "Titre": "Les Contes de Canterbury",
          "Salle": "Art_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_CHAUCER_2",
          "Type": "Ecrits",
          "Artiste": "Geoffrey Chaucer",
          "Titre": "Troïlus et Criseyde",
          "Salle": "Art_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_CERVANTES_1",
          "Type": "Ecrits",
          "Artiste": "Miguel de Cervantes",
          "Titre": "Don Quichotte",
          "Salle": "Litterature_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_CERVANTES_2",
          "Type": "Ecrits",
          "Artiste": "Miguel de Cervantes",
          "Titre": "Les Nouvelles exemplaires",
          "Salle": "Litterature_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_SHAKESPEARE_1",
          "Type": "Ecrits",
          "Artiste": "William Shakespeare",
          "Titre": "Roméo et Juliette",
          "Salle": "Litterature_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_SHAKESPEARE_2",
          "Type": "Ecrits",
          "Artiste": "William Shakespeare",
          "Titre": "Hamlet",
          "Salle": "Litterature_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_D_AULNOY_1",
          "Type": "Ecrits",
          "Artiste": "Marie-Catherine d'Aulnoy",
          "Titre": "La Belle aux cheveux d'or",
          "Salle": "Litterature_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_PUSHKIN_1",
          "Type": "Ecrits",
          "Artiste": "Alexandre Pouchkine",
          "Titre": "Eugène Onéguine",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_PUSHKIN_2",
          "Type": "Ecrits",
          "Artiste": "Alexandre Pouchkine",
          "Titre": "Boris Godounov",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_POE_1",
          "Type": "Ecrits",
          "Artiste": "Edgar Allan Poe",
          "Titre": "Le Cœur révélateur",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_POE_2",
          "Type": "Ecrits",
          "Artiste": "Edgar Allan Poe",
          "Titre": "Le Corbeau",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_AUSTEN_1",
          "Type": "Ecrits",
          "Artiste": "Jane Austen",
          "Titre": "Orgueil et Préjugés",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_AUSTEN_2",
          "Type": "Ecrits",
          "Artiste": "Jane Austen",
          "Titre": "Raison et Sentiments",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_SHELLEY_1",
          "Type": "Ecrits",
          "Artiste": "Mary Shelley",
          "Titre": "Frankenstein ou le Prométhée moderne",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_SHELLEY_2",
          "Type": "Ecrits",
          "Artiste": "Mary Shelley",
          "Titre": "Le Dernier homme",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_TOLSTOY_1",
          "Type": "Ecrits",
          "Artiste": "Léon Tolstoï",
          "Titre": "Guerre et Paix",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_TOLSTOY_2",
          "Type": "Ecrits",
          "Artiste": "Léon Tolstoï",
          "Titre": "Anna Karénine",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_TWAIN_1",
          "Type": "Ecrits",
          "Artiste": "Mark Twain",
          "Titre": "Les Aventures de Huckleberry Finn",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_TWAIN_2",
          "Type": "Ecrits",
          "Artiste": "Mark Twain",
          "Titre": "Les Aventures de Tom Sawyer",
          "Salle": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_WELLS_1",
          "Type": "Ecrits",
          "Artiste": "H.G. Wells",
          "Titre": "La Guerre des mondes",
          "Salle": "Litterature_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_WELLS_2",
          "Type": "Ecrits",
          "Artiste": "H.G. Wells",
          "Titre": "La Machine à explorer le temps",
          "Salle": "Litterature_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_CHRISTIE_1",
          "Type": "Ecrits",
          "Artiste": "Agatha Christie",
          "Titre": "Le crime de l'Orient-Express",
          "Salle": "Litterature_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_SAINT-EXUPERY_1",
          "Type": "Ecrits",
          "Artiste": "Antoine de Saint-Exupéry",
          "Titre": "Le Petit Prince",
          "Salle": "Litterature_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_ECO_1",
          "Type": "Ecrits",
          "Artiste": "Umberto Eco",
          "Titre": "Le nom de la Rose",
          "Salle": "Litterature_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_DONATELLO_1",
          "Type": "Sculpture",
          "Artiste": "Donatello",
          "Titre": "Saint Marc",
          "Salle": "Sculpture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_DONATELLO_2",
          "Type": "Sculpture",
          "Artiste": "Donatello",
          "Titre": "Monument équestre à Gattamelata",
          "Salle": "Sculpture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_DONATELLO_3",
          "Type": "Sculpture",
          "Artiste": "Donatello",
          "Titre": "Judith et Holopherne",
          "Salle": "Sculpture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_MICHELANGELO_1",
          "Type": "Sculpture",
          "Artiste": "Michel-Ange",
          "Titre": "David",
          "Salle": "Sculpture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_MICHELANGELO_2",
          "Type": "Sculpture",
          "Artiste": "Michel-Ange",
          "Titre": "La Pietà",
          "Salle": "Sculpture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_CIMABUE_1",
          "Type": "Peinture",
          "Artiste": "Cimabue",
          "Titre": "La Maestà",
          "Salle": "Art_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_CHRISTUS_1",
          "Type": "Peinture",
          "Artiste": "Petrus Christus",
          "Titre": "Portrait d'une jeune fille",
          "Salle": "Art_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_CHRISTUS_2",
          "Type": "Peinture",
          "Artiste": "Petrus Christus",
          "Titre": "Portrait d'un chartreux",
          "Salle": "Art_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_YING_1",
          "Type": "Peinture",
          "Artiste": "Qiu Ying",
          "Titre": "Matin de printemps au Palais Han",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_YING_2",
          "Type": "Peinture",
          "Artiste": "Qiu Ying",
          "Titre": "Ermite-pêcheur dans la vallée des Lotus",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_YING_3",
          "Type": "Peinture",
          "Artiste": "Qiu Ying",
          "Titre": "Falaise rouge",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_TITIAN_1",
          "Type": "Peinture",
          "Artiste": "Titien",
          "Titre": "Portrait équestre de Charles Quint à Mühlberg",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_GRECO_1",
          "Type": "Peinture",
          "Artiste": "El Greco",
          "Titre": "Vue de Tolède",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_REMBRANDT_1",
          "Type": "Peinture",
          "Artiste": "Rembrandt",
          "Titre": "Andries de Graeff",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_REMBRANDT_2",
          "Type": "Peinture",
          "Artiste": "Rembrandt",
          "Titre": "Agatha Bas",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_ANGUISSOLA_1",
          "Type": "Peinture",
          "Artiste": "Sofonisba Anguissola",
          "Titre": "La partie d'échecs",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_ANGUISSOLA_2",
          "Type": "Peinture",
          "Artiste": "Sofonisba Anguissola",
          "Titre": "Le roi Philippe II d'Espagne",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_ANGUISSOLA_3",
          "Type": "Peinture",
          "Artiste": "Sofonisba Anguissola",
          "Titre": "Portrait de moine",
          "Salle": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_KAUFFMAN_1",
          "Type": "Peinture",
          "Artiste": "Angelica Kauffmann",
          "Titre": "Anna Maria Jenkins et Thomas Jenkins",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_KAUFFMAN_2",
          "Type": "Peinture",
          "Artiste": "Angelica Kauffmann",
          "Titre": "Portrait de Winckelmann",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_KAUFFMAN_3",
          "Type": "Peinture",
          "Artiste": "Angelica Kauffmann",
          "Titre": "Sarah Harrop en tant que Muse",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_HOKUSAI_1",
          "Type": "Peinture",
          "Artiste": "Katsushika Hokusai",
          "Titre": "La Grande Vague de Kanagawa",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_HOKUSAI_2",
          "Type": "Peinture",
          "Artiste": "Katsushika Hokusai",
          "Titre": "Le lac Suwa dans la province de Shinano",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_HOKUSAI_3",
          "Type": "Peinture",
          "Artiste": "Katsushika Hokusai",
          "Titre": "Le Fuji par temps clair",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_EOP_1",
          "Type": "Peinture",
          "Artiste": "Jang Seung-eop",
          "Titre": "Samin munnyeondo",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_EOP_2",
          "Type": "Peinture",
          "Artiste": "Jang Seung-eop",
          "Titre": "Coq",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_EOP_3",
          "Type": "Peinture",
          "Artiste": "Jang Seung-eop",
          "Titre": "Ssangma inmuldo",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_GOGH_1",
          "Type": "Peinture",
          "Artiste": "Vincent van Gogh",
          "Titre": "La Nuit étoilée",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_GOGH_2",
          "Type": "Peinture",
          "Artiste": "Vincent van Gogh",
          "Titre": "Terrasse du café le soir",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_GOGH_3",
          "Type": "Peinture",
          "Artiste": "Vincent van Gogh",
          "Titre": "Le Café de nuit",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_MONET_1",
          "Type": "Peinture",
          "Artiste": "Claude Monet",
          "Titre": "Les Nymphéas",
          "Salle": "Peinture_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_MONET_2",
          "Type": "Peinture",
          "Artiste": "Claude Monet",
          "Titre": "Impression, soleil levant",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_MONET_3",
          "Type": "Peinture",
          "Artiste": "Claude Monet",
          "Titre": "Les Meules",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_ORLOVSKY_1",
          "Type": "Sculpture",
          "Artiste": "Boris Orlovski",
          "Titre": "Mikhaïl Koutouzov",
          "Salle": "Sculpture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_ORLOVSKY_2",
          "Type": "Sculpture",
          "Artiste": "Boris Orlovski",
          "Titre": "Colonne d'Alexandre",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_KLIMT_1",
          "Type": "Peinture",
          "Artiste": "Gustav Klimt",
          "Titre": "Le Baiser",
          "Salle": "Peinture_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_KLIMT_2",
          "Type": "Peinture",
          "Artiste": "Gustav Klimt",
          "Titre": "Allée dans le parc du Château Kammer",
          "Salle": "Peinture_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_KLIMT_3",
          "Type": "Peinture",
          "Artiste": "Gustav Klimt",
          "Titre": "Le Tournesol",
          "Salle": "Peinture_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_GIL_1",
          "Type": "Peinture",
          "Artiste": "Amrita Sher-Gil",
          "Titre": "Groupe de trois femmes",
          "Salle": "Peinture_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_GIL_2",
          "Type": "Peinture",
          "Artiste": "Amrita Sher-Gil",
          "Titre": "Toilette de mariée",
          "Salle": "Peinture_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_GIL_3",
          "Type": "Peinture",
          "Artiste": "Amrita Sher-Gil",
          "Titre": "Autoportrait",
          "Salle": "Peinture_du_20e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_CASSATT_1",
          "Type": "Peinture",
          "Artiste": "Mary Cassatt",
          "Titre": "Au Théâtre",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_CASSATT_2",
          "Type": "Peinture",
          "Artiste": "Mary Cassatt",
          "Titre": "La Toilette de l'enfant",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_CASSATT_3",
          "Type": "Peinture",
          "Artiste": "Mary Cassatt",
          "Titre": "La Tasse de thé",
          "Salle": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_1",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Tablette de pierre",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_2",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Javelot",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_3",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Parchemin",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_4",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Masque",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_5",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Amphore",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_6",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Mosaïque",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_7",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Hache",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_8",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Aspis",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_9",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Bracelet",
          "Salle": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_24",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Statue de Bouddha",
          "Salle": "Antiquites_Asiatiques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_25",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Collier en jade",
          "Salle": "Antiquites_Asiatiques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_26",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Statue en terre cuite",
          "Salle": "Antiquites_Asiatiques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_27",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Vase en porcelaine",
          "Salle": "Antiquites_Asiatiques"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_10",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Calice",
          "Salle": "Objets_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_11",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Pièce d'argent",
          "Salle": "Objets_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_12",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Épée à deux mains",
          "Salle": "Objets_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_13",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Armure de plates",
          "Salle": "Objets_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_14",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Chevalière",
          "Salle": "Objets_du_Moyen-Age"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_15",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Astrolabe",
          "Salle": "Objets_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_16",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Doublon",
          "Salle": "Objets_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_17",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Hallebarde",
          "Salle": "Objets_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_18",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Fresque",
          "Salle": "Objets_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_19",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Boucle d'oreille",
          "Salle": "Objets_de_la_Renaissance"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_20",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Pendule",
          "Salle": "Objets_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_21",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Journal grand format",
          "Salle": "Objets_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_22",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Pistolet à silex",
          "Salle": "Objets_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_23",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Cartes",
          "Salle": "Objets_du_18-19e_siecle"
       },
       {
-         "Identifiant": "OEUVRE_ARTIFACT_24",
          "Type": "Artefact",
          "Artiste": "Inconnu",
          "Titre": "Lunettes",

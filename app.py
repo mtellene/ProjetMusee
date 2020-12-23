@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 from init import init_db, remplir_table_oeuvre
 
@@ -8,4 +8,4 @@ app = Flask(__name__)
 def hello():
     init_db()
     remplir_table_oeuvre()
-    return "Hello World !"
+    return render_template("index.html")
