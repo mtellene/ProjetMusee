@@ -14,6 +14,7 @@ def init_db():
     conn.close()
 
 
+# retourne une liste de listes où les sous-listes sont les oeuvres du musée
 def recuperer_les_oeuvres():
     liste_oeuvres = []
     filename = 'db/oeuvres.json'
@@ -28,6 +29,7 @@ def recuperer_les_oeuvres():
     f.close()
     return liste_oeuvres
 
+# remplit la table oeuvre de la base de données
 def remplir_table_oeuvre():
     liste_oeuvres = recuperer_les_oeuvres()
 
