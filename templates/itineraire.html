@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+		    <meta charset="utf-8">
+        <link rel="stylesheet" href="static/style.css" media="all" type="text/css"/>
+		    <title>Mon petit musée</title>
+	  </head>
+    <body id="body">
+
+		    <header id="header">
+		        <h1>Mon petit musée</h1>
+        </header>
+
+		    <main id="main">
+
+			    <nav id="menu">
+			        <ul id="list_menu">
+                  <li><a href="/">Accueil</a></li>
+					        <li><a href="itineraire">Itinéraire</a></li>
+                  <li><a href="plan">Plan</a></li>
+				      </ul>
+			    </nav>
+
+			    <section id="container">
+            {% for oeuvre in oeuvres_liste %}
+              <div class="item">
+                <p> {{oeuvre[2]}} - {{oeuvre[1]}} </p>
+                {% if oeuvre[4] |length != 0 %}
+                  <img class="miniature" src="{{oeuvre[4]}}"/>
+                {% endif %}
+              </div>
+            {% endfor %}
+			     </section>
+		    </main>
+     </body>
+</html>

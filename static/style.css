@@ -77,3 +77,7 @@ cite {
   margin-left: 5%;
   margin-right: 5%;
 }
+
+.miniature {
+  max-width: 5%;
+}
