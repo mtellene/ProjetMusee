@@ -28,8 +28,13 @@
 			<section class="oeuvres-container">
         {% for ecrit in ecrits %}
           <div class="item">
-            <p> {{ecrit[2]}} </p>
-            <p> {{ecrit[1]}} </p>
+            <div class="selection item-without-picture">
+              <input class="check" type="checkbox" name="check" id="{{oeuvre}}" value="{{oeuvre}}">
+            </div>
+            <div class="text item-without-picture">
+              <p> {{ecrit[2]}} </p>
+              <p> {{ecrit[1]}} </p>
+            </div>
           </div>
         {% endfor %}
       </section>
@@ -37,17 +42,15 @@
       <h2> Peintures </h2>
 			<section class="oeuvres-container">
         {% for peinture in peintures %}
-          <div class="item item-picture">
-            <div class="selection item-content">
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-ok-circle"></span>
-              </button>
+          <div class="item">
+            <div class="selection item-picture">
+              <input class="check" type="checkbox" name="check" id="{{oeuvre}}" value="{{oeuvre}}">
             </div>
-            <div class="text item-content">
+            <div class="text item-picture">
               <p> {{peinture[2]}} </p>
               <p> {{peinture[1]}} </p>
             </div>
-            <div class="photo item-content">
+            <div class="photo item-picture">
               <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{peinture[4]}}','_blank')">
                 <span class="glyphicon glyphicon-camera"></span> Aperçu
               </button>
@@ -60,8 +63,18 @@
  			<section class="oeuvres-container">
         {% for sculpture in sculptures %}
           <div class="item">
-            <p> {{sculpture[2]}} </p>
-            <p> {{sculpture[1]}} </p>
+            <div class="selection item-picture">
+              <input class="check" type="checkbox" name="check" id="{{oeuvre}}" value="{{oeuvre}}">
+            </div>
+            <div class="text item-picture">
+              <p> {{sculpture[2]}} </p>
+              <p> {{sculpture[1]}} </p>
+            </div>
+            <div class="photo item-picture">
+              <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{sculpture[4]}}','_blank')">
+                <span class="glyphicon glyphicon-camera"></span> Aperçu
+              </button>
+            </div>
           </div>
         {% endfor %}
  		   </section>
@@ -70,8 +83,18 @@
  			 <section class="oeuvres-container">
         {% for artefact in artefacts %}
           <div class="item">
-            <p> {{artefact[2]}} </p>
-            <p> {{artefact[1]}} </p>
+            <div class="selection item-picture">
+              <input class="check" type="checkbox" name="check" id="{{oeuvre}}" value="{{oeuvre}}">
+            </div>
+            <div class="text item-picture">
+              <p> {{artefact[2]}} </p>
+              <p> {{artefact[1]}} </p>
+            </div>
+            <div class="photo item-picture">
+              <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{artefact[4]}}','_blank')">
+                <span class="glyphicon glyphicon-camera"></span> Aperçu
+              </button>
+            </div>
           </div>
         {% endfor %}
  	     </section>

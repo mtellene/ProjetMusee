@@ -66,14 +66,15 @@ a:visited, a:link {
   border-top: white;
   border-bottom: white;
   width: 33%;
-}
-
-.item-picture {
   display: flex;
 }
 
-.item-content {
+.item-picture, .item-without-picture {
   width: 33%;
+}
+
+.item-without-picture {
+  margin-left: 7%;
 }
 
 .selection, .photo {
