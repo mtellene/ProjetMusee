@@ -207,28 +207,28 @@
          "Type": "Sculpture",
          "Artiste": "Donatello",
          "Titre": "Saint Marc",
-         "Salle": "Sculpture_de_la_Renaissance",
+         "Salle": "Sculpture",
          "Representation": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Stmark.jpg"
       },
       {
          "Type": "Sculpture",
          "Artiste": "Donatello",
          "Titre": "Monument équestre à Gattamelata",
-         "Salle": "Sculpture_de_la_Renaissance",
+         "Salle": "Sculpture",
          "Representation": "https://upload.wikimedia.org/wikipedia/commons/3/37/Gattamelata.jpg"
       },
       {
          "Type": "Sculpture",
          "Artiste": "Donatello",
          "Titre": "Judith et Holopherne",
-         "Salle": "Sculpture_de_la_Renaissance",
+         "Salle": "Sculpture",
          "Representation": "https://img.over-blog-kiwi.com/0/95/66/59/20140413/ob_afb00c_dscf8375.JPG"
       },
       {
          "Type": "Sculpture",
          "Artiste": "Michel-Ange",
          "Titre": "La Pietà",
-         "Salle": "Sculpture_de_la_Renaissance",
+         "Salle": "Sculpture",
          "Representation": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Michelangelo%27s_Piet%C3%A0%2C_St_Peter%27s_Basilica_%281498%E2%80%9399%29.jpg"
       },
       {
@@ -438,14 +438,14 @@
          "Type": "Sculpture",
          "Artiste": "Boris Orlovski",
          "Titre": "Mikhaïl Koutouzov",
-         "Salle": "Sculpture_du_18-19e_siecle",
+         "Salle": "Sculpture",
          "Representation": "https://upload.wikimedia.org/wikipedia/commons/1/13/%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_022.jpg"
       },
       {
          "Type": "Sculpture",
          "Artiste": "Boris Orlovski",
          "Titre": "Colonne d'Alexandre",
-         "Salle": "Peinture_du_18-19e_siecle",
+         "Salle": "Sculpture",
          "Representation": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Angel_on_Alexander_Column.jpg"
       },
       {

@@ -21,13 +21,13 @@
 				</ul>
       </nav>
 
-      <form action="/result" method="post">
+      <form action="/resultat" method="post">
         <h2> Ecrits </h2>
   			<section class="oeuvres-container">
           {% for ecrit in ecrits %}
             <div class="item">
               <div class="selection item-without-picture">
-                <input class="check" type="checkbox" name="check" id="{{oeuvre}}" value="{{oeuvre}}">
+                <input type="checkbox" name="check" id="{{ecrit[2]}}" value="{{ecrit[2]}}">
               </div>
               <div class="text item-without-picture">
                 <p> {{ecrit[2]}} </p>
@@ -42,7 +42,7 @@
           {% for peinture in peintures %}
             <div class="item">
               <div class="selection item-picture">
-                <input class="check" type="checkbox" name="check" id="{{oeuvre}}" value="{{oeuvre}}">
+                <input type="checkbox" name="check" id="{{peinture[2]}}" value="{{peinture[2]}}">
               </div>
               <div class="text item-picture">
                 <p> {{peinture[2]}} </p>
@@ -62,7 +62,7 @@
           {% for sculpture in sculptures %}
             <div class="item">
               <div class="selection item-picture">
-                <input class="check" type="checkbox" name="check" id="{{oeuvre}}" value="{{oeuvre}}">
+                <input type="checkbox" name="check" id="{{sculpture[2]}}" value="{{sculpture[2]}}">
               </div>
               <div class="text item-picture">
                 <p> {{sculpture[2]}} </p>
@@ -82,7 +82,7 @@
           {% for artefact in artefacts %}
             <div class="item">
               <div class="selection item-picture">
-                <input class="check" type="checkbox" name="check" id="{{oeuvre}}" value="{{oeuvre}}">
+                <input type="checkbox" name="check" id="{{artefact[2]}}" value="{{artefact[2]}}">
               </div>
               <div class="text item-picture">
                 <p> {{artefact[2]}} </p>
