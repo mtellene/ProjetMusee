@@ -1,37 +1,82 @@
 <!doctype html>
 <html lang="fr">
-    <head>
-		    <meta charset="utf-8">
-        <link rel="stylesheet" href="static/style.css" media="all" type="text/css"/>
-		    <title>Mon petit musée</title>
-	  </head>
-    <body id="body">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/style.css" media="all" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Mon petit musée</title>
+  </head>
+  <body id="body">
 
-		    <header id="header">
-		        <h1>Mon petit musée</h1>
-        </header>
+    <header id="header">
+      <h1>Mon petit musée</h1>
+    </header>
 
-		    <main id="main">
+    <main id="main">
 
-			    <nav id="menu">
-			        <ul id="list_menu">
-                  <li><a href="/">Accueil</a></li>
-					        <li><a href="itineraire">Itinéraire</a></li>
-                  <li><a href="plan">Plan</a></li>
-				      </ul>
-			    </nav>
+      <nav id="menu">
+        <ul id="list_menu">
+          <li><a href="/">Accueil</a></li>
+			    <li><a href="itineraire">Itinéraire</a></li>
+          <li><a href="plan">Plan</a></li>
+				</ul>
+      </nav>
 
-			    <section class="oeuvres-container">
-            {% for peinture in peintures %}
-              <div class="item">
-                {% if peinture[4] |length != 0 %}
-                  <img class="miniature" src="{{peinture[4]}}"/>
-                {% endif %}
-                <p> {{peinture[2]}} </p>
-                <p> {{peinture[1]}} </p>
-              </div>
-            {% endfor %}
-			     </section>
-		    </main>
-     </body>
+      <h2> Ecrits </h2>
+			<section class="oeuvres-container">
+        {% for ecrit in ecrits %}
+          <div class="item">
+            <p> {{ecrit[2]}} </p>
+            <p> {{ecrit[1]}} </p>
+          </div>
+        {% endfor %}
+      </section>
+
+      <h2> Peintures </h2>
+			<section class="oeuvres-container">
+        {% for peinture in peintures %}
+          <div class="item item-picture">
+            <div class="selection item-content">
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-ok-circle"></span>
+              </button>
+            </div>
+            <div class="text item-content">
+              <p> {{peinture[2]}} </p>
+              <p> {{peinture[1]}} </p>
+            </div>
+            <div class="photo item-content">
+              <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{peinture[4]}}','_blank')">
+                <span class="glyphicon glyphicon-camera"></span> Aperçu
+              </button>
+            </div>
+          </div>
+        {% endfor %}
+      </section>
+
+      <h2> Sculpture </h2>
+ 			<section class="oeuvres-container">
+        {% for sculpture in sculptures %}
+          <div class="item">
+            <p> {{sculpture[2]}} </p>
+            <p> {{sculpture[1]}} </p>
+          </div>
+        {% endfor %}
+ 		   </section>
+
+       <h2> Artefacts </h2>
+ 			 <section class="oeuvres-container">
+        {% for artefact in artefacts %}
+          <div class="item">
+            <p> {{artefact[2]}} </p>
+            <p> {{artefact[1]}} </p>
+          </div>
+        {% endfor %}
+ 	     </section>
+
+     </main>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'img.js') }}"></script>
+  </body>
 </html>

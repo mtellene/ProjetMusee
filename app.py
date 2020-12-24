@@ -19,4 +19,4 @@ def plan():
 @app.route('/itineraire')
 def itineraire():
     ecrits, peintures, sculptures, artefacts = separation_par_types()
-    return render_template("itineraire.html", peintures = peintures)
+    return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures, artefacts=artefacts)
