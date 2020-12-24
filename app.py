@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 
-from init import init_db, remplir_table_oeuvre, recuperer_les_oeuvres
+from init import init_db, remplir_table_oeuvre
+from fonctions import separation_par_types
 
 app = Flask(__name__)
 
@@ -17,5 +18,5 @@ def plan():
 
 @app.route('/itineraire')
 def itineraire():
-    oeuvres_liste = recuperer_les_oeuvres()
-    return render_template("itineraire.html", oeuvres_liste = oeuvres_liste)
+    ecrits, peintures, sculptures, artefacts = separation_par_types()
+    return render_template("itineraire.html", peintures = peintures)

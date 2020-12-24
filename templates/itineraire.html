@@ -21,13 +21,14 @@
 				      </ul>
 			    </nav>
 
-			    <section id="container">
-            {% for oeuvre in oeuvres_liste %}
+			    <section class="oeuvres-container">
+            {% for peinture in peintures %}
               <div class="item">
-                <p> {{oeuvre[2]}} - {{oeuvre[1]}} </p>
-                {% if oeuvre[4] |length != 0 %}
-                  <img class="miniature" src="{{oeuvre[4]}}"/>
+                {% if peinture[4] |length != 0 %}
+                  <img class="miniature" src="{{peinture[4]}}"/>
                 {% endif %}
+                <p> {{peinture[2]}} </p>
+                <p> {{peinture[1]}} </p>
               </div>
             {% endfor %}
 			     </section>

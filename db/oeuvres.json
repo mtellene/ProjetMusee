@@ -268,6 +268,13 @@
       },
       {
          "Type": "Peinture",
+         "Artiste": "Raphaël",
+         "Titre": "Ecole d'Athènes",
+         "Salle": "Peinture_de_la_Renaissance",
+         "Representation": "https://www.artblr.com/upload/userfiles/images/School%20of%20Athens.jpg"
+      },
+      {
+         "Type": "Peinture",
          "Artiste": "Titien",
          "Titre": "Portrait équestre de Charles Quint à Mühlberg",
          "Salle": "Peinture_de_la_Renaissance",
@@ -421,6 +428,13 @@
          "Representation": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Claude_Monet_-_Tulip_fields_in_Holland_%28Mus%C3%A9e_d%27Orsay%29.jpg"
       },
       {
+         "Type": "Peinture",
+         "Artiste": "Claude Monet",
+         "Titre": "Les Nymphéas",
+         "Salle": "Peinture_du_18-19e_siecle",
+         "Representation": "https://www.artblr.com/upload/userfiles/images/lilies.jpg"
+      },
+      {
          "Type": "Sculpture",
          "Artiste": "Boris Orlovski",
          "Titre": "Mikhaïl Koutouzov",
@@ -475,6 +489,20 @@
          "Titre": "Autoportrait",
          "Salle": "Peinture_du_20e_siecle",
          "Representation": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Amrita_Sher-Gil_Self-portrait.jpg"
+      },
+      {
+         "Type": "Peinture",
+         "Artiste": "Paul Cézanne",
+         "Titre": "Mont Sainte-Victoire",
+         "Salle": "Peinture_du_20e_siecle",
+         "Representation": "https://www.artblr.com/upload/userfiles/images/mont_saint_victoire.jpg"
+      },
+      {
+         "Type": "Peinture",
+         "Artiste": "Salvador Dali",
+         "Titre": "La persistance de la mémoire",
+         "Salle": "Peinture_du_20e_siecle",
+         "Representation": "https://www.artblr.com/upload/userfiles/images/Persistence%20of%20Memory.jpg"
       },
       {
          "Type": "Peinture",
