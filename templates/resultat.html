@@ -22,17 +22,19 @@
       </nav>
 
       <section id="flex-container-border">
+
         <div>
           {% for oeuvre in liste_oeuvres %}
             <p> {{oeuvre}} </p>
           {% endfor %}
         </div>
 
-        <div>
-          {% for salle in liste_salles %}
-            <p> {{salle}} </p>
+        <div id="result">
+          {% for res in resultat %}
+            <p> {{res}} </p>
           {% endfor %}
         </div>
+
       </section>
      </main>
   </body>

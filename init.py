@@ -63,14 +63,29 @@ def recuperer_les_salles():
 # remplit la table "salles" de la base de données
 def remplir_table_salle():
     liste_salles = recuperer_les_salles()
-
     conn = sqlite3.connect('db/database.db')
     cur = conn.cursor()
     for i in range (len(liste_salles)):
-        print(liste_salles[i])
         values = (i, liste_salles[i])
         cur.execute("INSERT INTO salles(id_salle, nom) VALUES (?, ?)", values)
         conn.commit()
     print("Table 'salles' remplie !")
     cur.close()
     conn.close()
+
+# def remplir_successeur_global():
+#     f = open('db/matrice.txt', 'r')
+#     ligne = f.readline()
+#     for i in range(len(ligne)//2):
+#         successeur_global.append([])
+#     cptL = 0
+#     while ligne != "":
+#         ligne = ligne.replace(' ', '')
+#         cptC = 0
+#         for c in ligne:
+#             if c == '1':
+#                 successeur_global[cptL].append(cptC)
+#             cptC = cptC + 1
+#         cptL = cptL + 1
+#         ligne = f.readline()
+#     print(mon_graph)

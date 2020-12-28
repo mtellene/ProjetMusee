@@ -108,3 +108,7 @@ cite {
 h2 {
   text-align: center;
 }
+
+#result {
+  padding-left: 20%;
+}
