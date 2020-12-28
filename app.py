@@ -1,14 +1,13 @@
 from flask import Flask, render_template, request
 
 from init import init_db, remplir_table_oeuvre, remplir_table_salle
-from fonctions import separation_par_types, avoir_salles, avoir_id_salles, plus_court_chemin
+from fonctions import separation_par_types, avoir_id_salles, plus_court_chemin
 
 app = Flask(__name__)
 
 init_db()
 remplir_table_oeuvre()
 remplir_table_salle()
-#remplir_successeur_global()
 
 @app.route('/')
 def index():
@@ -26,7 +25,6 @@ def itineraire():
 @app.route('/resultat', methods=['POST'])
 def resultat():
     liste_oeuvres = request.form.getlist('check')
-    liste_salles = avoir_salles(liste_oeuvres)
-    liste_id_salles = avoir_id_salles(liste_salles)
+    liste_id_salles = avoir_id_salles(liste_oeuvres)
     resultat = plus_court_chemin(liste_id_salles)
     return render_template("resultat.html", liste_oeuvres=liste_oeuvres, resultat=resultat)

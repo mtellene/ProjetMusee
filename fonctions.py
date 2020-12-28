@@ -2,6 +2,8 @@ import sqlite3
 
 from init import recuperer_les_oeuvres
 
+# representation du graphe de circulation du musee sous forme de dictionnaire
+# de la forme 'salle actuelle' : ['destination possible 1', 'destination possible 2', ...]
 mon_graph = {
     '0': ['1', '3'],
     '1': ['2'],
@@ -20,6 +22,8 @@ mon_graph = {
     '14': []
 }
 
+# separe la liste d'oeuvres par type (ecrits, peintures, sculptures, artefacts)
+# cette fonction sert pour l'affichage dans itineraire
 def separation_par_types():
     liste_oeuvres = recuperer_les_oeuvres()
     type_ecrit = []
@@ -37,27 +41,12 @@ def separation_par_types():
             type_artefact.append(oeuvre)
     return type_ecrit, type_peinture, type_sculpture, type_artefact
 
-def avoir_salles(liste_oeuvres):
-    liste_salles = []
+def avoir_id_salles(liste_oeuvres):
+    liste_id_salles = []
     conn = sqlite3.connect('db/database.db')
     for oeuvre in liste_oeuvres:
         cur = conn.cursor()
-        cur.execute("""SELECT salle FROM oeuvres WHERE nom=?""", (oeuvre,))
-        records = cur.fetchall()
-        for r in records:
-            salle = r[0].replace('_', ' ')
-            if salle not in liste_salles:
-                liste_salles.append(salle)
-        cur.close()
-    conn.close()
-    return liste_salles
-
-def avoir_id_salles(liste_salles):
-    liste_id_salles = []
-    conn = sqlite3.connect('db/database.db')
-    for salle in liste_salles:
-        cur = conn.cursor()
-        cur.execute("""SELECT id_salle FROM salles WHERE nom=?""", (salle,))
+        cur.execute("""SELECT id_salle FROM salles INNER JOIN oeuvres ON salles.nom=oeuvres.salle WHERE oeuvres.nom=?""", (oeuvre,))
         records = cur.fetchall()
         for r in records:
             if r[0] not in liste_id_salles:
