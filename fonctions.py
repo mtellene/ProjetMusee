@@ -78,7 +78,7 @@ def tous_les_chemins(graph, depart, path=[]):
                 paths.append(newpath)
     return paths
 
-def garder_chemins_e_s(liste_chemins):
+def garder_chemins_entree_sortie(liste_chemins):
     chemins = []
     for chem in liste_chemins:
         if chem[-1] == '14':
@@ -101,7 +101,7 @@ def garder_plus_court_chemin(liste_chemins):
 
 def plus_court_chemin(liste_id_salles):
     chemin = tous_les_chemins(mon_graph, '0')
-    chemin = garder_chemins_e_s(chemin)
+    chemin = garder_chemins_entree_sortie(chemin)
     for salle in liste_id_salles:
         chemin = garder_chemin_oeuvres(chemin, str(salle))
     chemin = garder_plus_court_chemin(chemin)
