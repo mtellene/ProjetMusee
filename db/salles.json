@@ -1,78 +1,48 @@
 {
    "Objets": [
       {
-         "Identifiant": "s0",
-         "Num": "0",
          "Nom": "Entrée"
       },
       {
-         "Identifiant": "s1",
-         "Num": "1",
          "Nom": "Antiquites_Grecques"
       },
       {
-         "Identifiant": "s2",
-         "Num": "2",
          "Nom": "Antiquites_Asiatiques"
       },
       {
-         "Identifiant": "s3",
-         "Num": "3",
          "Nom": "Art_du_Moyen-Age"
       },
       {
-         "Identifiant": "s4",
-         "Num": "4",
          "Nom": "Objets_du_Moyen-Age"
       },
       {
-         "Identifiant": "s5",
-         "Num": "5",
          "Nom": "Objets_de_la_Renaissance"
       },
       {
-         "Identifiant": "s6",
-         "Num": "6",
          "Nom": "Litterature_de_la_Renaissance"
       },
       {
-         "Identifiant": "s7",
-         "Num": "7",
          "Nom": "Peinture_de_la_Renaissance"
       },
       {
-         "Identifiant": "s8",
-         "Num": "8",
          "Nom": "Sculpture"
       },
       {
-         "Identifiant": "s9",
-         "Num": "9",
          "Nom": "Litterature_du_18-19e_siecle"
       },
       {
-         "Identifiant": "s10",
-         "Num": "10",
          "Nom": "Objets_du_18-19e_siecle"
       },
       {
-         "Identifiant": "s11",
-         "Num": "11",
          "Nom": "Peinture_du_18-19e_siecle"
       },
       {
-         "Identifiant": "s12",
-         "Num": "12",
          "Nom": "Litterature_du_20e_siecle"
       },
       {
-         "Identifiant": "s13",
-         "Num": "13",
          "Nom": "Peinture_du_20e_siecle"
       },
       {
-         "Identifiant": "s14",
-         "Num": "14",
          "Nom": "Sortie"
       }
    ]

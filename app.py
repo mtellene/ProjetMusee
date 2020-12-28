@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request
 
-from init import init_db, remplir_table_oeuvre
+from init import init_db, remplir_table_oeuvre, remplir_table_salle
 from fonctions import separation_par_types, avoir_salles
 
 app = Flask(__name__)
 
 init_db()
 remplir_table_oeuvre()
+remplir_table_salle()
 
 @app.route('/')
 def index():
