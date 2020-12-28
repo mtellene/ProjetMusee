@@ -41,6 +41,7 @@ def separation_par_types():
             type_artefact.append(oeuvre)
     return type_ecrit, type_peinture, type_sculpture, type_artefact
 
+# retourne une liste avec les identifants des salles où sont les oeuvres de la liste liste_oeuvres
 def avoir_id_salles(liste_oeuvres):
     liste_id_salles = []
     conn = sqlite3.connect('db/database.db')
@@ -55,6 +56,7 @@ def avoir_id_salles(liste_oeuvres):
     conn.close()
     return liste_id_salles
 
+# retourne une liste qui contient tous les chemins possibles du graph
 def tous_les_chemins(graph, depart, path=[]):
     path = path + [depart]
     if not depart in graph:
@@ -67,6 +69,7 @@ def tous_les_chemins(graph, depart, path=[]):
                 paths.append(newpath)
     return paths
 
+# retourne une liste qui ne contient seulement les chemins qui vont de l'entree jusqu'a la sortie du graphe
 def garder_chemins_entree_sortie(liste_chemins):
     chemins = []
     for chem in liste_chemins:
@@ -74,6 +77,7 @@ def garder_chemins_entree_sortie(liste_chemins):
             chemins.append(chem)
     return chemins
 
+# retourne une liste qui ne contient seulement les chemins qui passent par toutes les salles demandees
 def garder_chemin_oeuvres(liste_chemins, salle):
     chemin = []
     for i in range(len(liste_chemins)):
@@ -81,6 +85,7 @@ def garder_chemin_oeuvres(liste_chemins, salle):
             chemin.append(liste_chemins[i])
     return chemin
 
+# retourne le chemin le plus court parmis les chemins de la liste retournee par la fonction precedente 
 def garder_plus_court_chemin(liste_chemins):
     min = liste_chemins[0]
     for i in range(len(liste_chemins)):
@@ -88,6 +93,7 @@ def garder_plus_court_chemin(liste_chemins):
             min = liste_chemins[i]
     return min
 
+# retourne le chemin le plus court (en terme de nombre de salles traversees) pour voir toutes les oeuvres voulues
 def plus_court_chemin(liste_id_salles):
     chemin = tous_les_chemins(mon_graph, '0')
     chemin = garder_chemins_entree_sortie(chemin)
