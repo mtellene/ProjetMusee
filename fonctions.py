@@ -82,6 +82,7 @@ def plus_court_chemin(liste_id_salles):
     chemin = garder_plus_court_chemin(chemin)
     return chemin
 
+# change la liste d'id des salles en liste de noms des salles correspondantes
 def transformation(liste_id_salles):
     liste_salles = []
     conn = sqlite3.connect('db/database.db')
@@ -95,3 +96,9 @@ def transformation(liste_id_salles):
         cur.close()
     conn.close()
     return liste_salles
+
+def charger_resultat(liste_oeuvres):
+    liste_id_salles = avoir_id_salles(liste_oeuvres)
+    id_plus_court_chemin = plus_court_chemin(liste_id_salles)
+    resultat = transformation(id_plus_court_chemin)
+    return resultat
