@@ -53,7 +53,7 @@ def tous_les_chemins(graph, depart, path=[]):
 def garder_chemins_entree_sortie(liste_chemins):
     chemins = []
     for chem in liste_chemins:
-        if chem[-1] == '14':
+        if chem[-1] == list(mon_graph.keys())[-1]:  # list(mon_graph.keys())[-1] = recup de la derniere key du dict mon_graph
             chemins.append(chem)
     return chemins
 
