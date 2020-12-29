@@ -105,7 +105,7 @@ def charger_resultat(liste_oeuvres):
     resultat = from_id_to_nom(id_plus_court_chemin)
     return resultat
 
-def avoir_nom_salles(liste_oeuvres):
+def avoir_nom_salles_oeuvres(liste_oeuvres):
     liste_salles = []
     conn = sqlite3.connect('db/database.db')
     for oeuvre in liste_oeuvres:
@@ -117,5 +117,4 @@ def avoir_nom_salles(liste_oeuvres):
                 liste_salles.append(r[0])
         cur.close()
     conn.close()
-    print(liste_salles)
     return liste_salles

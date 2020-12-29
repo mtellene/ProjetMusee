@@ -23,20 +23,25 @@
 
       <section id="flex-container-border">
 
-        <div>
-          {% for oeuvre in liste_oeuvres %}
-            <p> {{oeuvre}} </p>
-          {% endfor %}
+        <div id="container">
+          <h5> Votre selection: </h5>
+          <ul class="liste">
+            {% for oeuvre in liste_oeuvres %}
+              <li> {{oeuvre}} </li>
+            {% endfor %}
+          </ul>
         </div>
 
         <div id="result">
-          {% for res in resultat %}
-            {% if res in liste_salles %}
-              <p id="salle_interessante"> {{res}} </p>
-            {% else %}
-              <p> {{res}} </p>
-            {% endif %}
-          {% endfor %}
+          <ul class="liste">
+            {% for res in resultat %}
+              {% if res in liste_salles %}
+                <li id="salle_interessante"> {{res}} </li>
+              {% else %}
+                <li> {{res}} </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
         </div>
 
       </section>
