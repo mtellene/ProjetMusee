@@ -5,15 +5,15 @@
     <link rel="stylesheet" href="static/style.css" media="all" type="text/css"/>
     <title>Mon petit musée</title>
   </head>
-  <body id="body">
+  <body class="body">
 
-    <header id="header">
+    <header class="header">
       <h1>Mon petit musée</h1>
     </header>
 
     <main id="main">
 
-      <nav id="menu">
+      <nav class="menu">
         <ul id="list_menu">
           <li><a href="/">Accueil</a></li>
 			    <li><a href="itineraire">Itinéraire</a></li>
@@ -21,9 +21,9 @@
 				</ul>
       </nav>
 
-      <section id="flex-container-border">
+      <section class="flex-container">
 
-        <div id="container">
+        <div class="container">
           <h5> Votre selection: </h5>
           <ul class="liste">
             {% for oeuvre in liste_oeuvres %}
@@ -36,7 +36,7 @@
           <ul class="liste">
             {% for res in resultat %}
               {% if res in liste_salles %}
-                <li id="salle_interessante"> {{res}} </li>
+                <li class="salle_interessante"> {{res}} </li>
               {% else %}
                 <li> {{res}} </li>
               {% endif %}
