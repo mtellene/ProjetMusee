@@ -22,16 +22,16 @@ def plan():
 # onglet itineraire
 @app.route('/itineraire')
 def itineraire():
-    ecrits, peintures, sculptures, artefacts = separation_par_types()
+    ecrits, peintures, sculptures, artefacts = separation_par_types()   # permet de separer les oeuvres en categories
     return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures, artefacts=artefacts)
 
 # page quand on a choisit les oeuvres a voir
 @app.route('/resultat', methods=['POST'])
 def resultat():
     liste_oeuvres = request.form.getlist('check')
-    if len(liste_oeuvres) > 0:
-        resultat = charger_resultat(liste_oeuvres)
+    if len(liste_oeuvres) > 0:  # si au moins une oeuvre a ete selectionnee
+        resultat = charger_resultat(liste_oeuvres)  # charge le plus court chemin
         return render_template("resultat.html", liste_oeuvres=liste_oeuvres, resultat=resultat)
-    else:
+    else:   # si aucunes oeuvres selectionnees
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
         return redirect(url_for('itineraire'))
