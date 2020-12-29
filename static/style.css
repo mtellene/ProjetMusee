@@ -119,3 +119,8 @@ h2 {
   margin-top: -19px;
   font-size: 1.2em;
 }
+
+#salle_interessante {
+  text-decoration: underline;
+  font-weight: bold;
+}

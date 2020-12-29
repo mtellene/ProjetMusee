@@ -104,3 +104,18 @@ def charger_resultat(liste_oeuvres):
     id_plus_court_chemin = plus_court_chemin(liste_id_salles)
     resultat = from_id_to_nom(id_plus_court_chemin)
     return resultat
+
+def avoir_nom_salles(liste_oeuvres):
+    liste_salles = []
+    conn = sqlite3.connect('db/database.db')
+    for oeuvre in liste_oeuvres:
+        cur = conn.cursor()
+        cur.execute("""SELECT salle FROM oeuvres WHERE nom=?""", (oeuvre,))
+        records = cur.fetchall()
+        for r in records:
+            if r[0] not in liste_salles:
+                liste_salles.append(r[0])
+        cur.close()
+    conn.close()
+    print(liste_salles)
+    return liste_salles

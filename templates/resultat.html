@@ -31,7 +31,11 @@
 
         <div id="result">
           {% for res in resultat %}
-            <p> {{res}} </p>
+            {% if res in liste_salles %}
+              <p id="salle_interessante"> {{res}} </p>
+            {% else %}
+              <p> {{res}} </p>
+            {% endif %}
           {% endfor %}
         </div>
 
