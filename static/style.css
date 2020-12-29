@@ -135,7 +135,17 @@
 /* mise en forme de la div qui contient le plus court chemin */
 /* utilise dans resultat.html */
 #result {
-  padding-left: 20%;
+  padding-left: 5%;
+}
+/* mise en forme de la liste d'oeuvres selectionnees */
+/* utilise dans resultat.html */
+#container-liste-oeuvre {
+  border: 1px solid black;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  max-width: 25%;
 }
 /* ################################################################ */
 /* modifications apportees aux balises */
