@@ -1,5 +1,7 @@
 import sqlite3, json
 
+mon_graph = {}
+
 # supprime l'ancienne base de données et en re-créer une autre vide
 def init_db():
     conn = sqlite3.connect('db/database.db')
@@ -72,3 +74,20 @@ def remplir_table_salle():
     print("Table 'salles' remplie !")
     cur.close()
     conn.close()
+
+# creer une representation du graphe sous forme de dictionnaire
+def creer_dict():
+    cptL = 0
+    f = open('db/matrice.txt', 'r')
+    ligne = f.readline()
+    while ligne != '':
+        ligne = ligne.replace(' ', '')
+        liste = []
+        cptC = 0
+        for c in ligne:
+            if c == '1':
+                liste.append(str(cptC))
+            cptC = cptC + 1
+        mon_graph[str(cptL)] = liste
+        cptL = cptL + 1
+        ligne = f.readline()

@@ -1,26 +1,6 @@
 import sqlite3
 
-from init import recuperer_les_oeuvres
-
-# representation du graphe de circulation du musee sous forme de dictionnaire
-# de la forme 'salle actuelle' : ['destination possible 1', 'destination possible 2', ...]
-mon_graph = {
-    '0': ['1', '3'],
-    '1': ['2'],
-    '2': ['3', '5', '11'],
-    '3': ['4'],
-    '4': ['5', '11'],
-    '5': ['6', '11'],
-    '6': ['7', '8', '9'],
-    '7': ['8', '10'],
-    '8': ['9'],
-    '9': ['10'],
-    '10': ['11'],
-    '11': ['12'],
-    '12': ['13'],
-    '13': ['14'],
-    '14': []
-}
+from init import recuperer_les_oeuvres, mon_graph
 
 # separe la liste d'oeuvres par type (ecrits, peintures, sculptures, artefacts)
 # cette fonction sert pour l'affichage dans itineraire
@@ -85,7 +65,7 @@ def garder_chemin_oeuvres(liste_chemins, salle):
             chemin.append(liste_chemins[i])
     return chemin
 
-# retourne le chemin le plus court parmis les chemins de la liste retournee par la fonction precedente 
+# retourne le chemin le plus court parmis les chemins de la liste retournee par la fonction precedente
 def garder_plus_court_chemin(liste_chemins):
     min = liste_chemins[0]
     for i in range(len(liste_chemins)):

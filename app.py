@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-from init import init_db, remplir_table_oeuvre, remplir_table_salle
+from init import init_db, remplir_table_oeuvre, remplir_table_salle, creer_dict
 from fonctions import separation_par_types, avoir_id_salles, plus_court_chemin
 
 app = Flask(__name__)
@@ -8,6 +8,7 @@ app = Flask(__name__)
 init_db()
 remplir_table_oeuvre()
 remplir_table_salle()
+creer_dict()
 
 @app.route('/')
 def index():
