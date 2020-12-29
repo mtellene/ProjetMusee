@@ -81,3 +81,17 @@ def plus_court_chemin(liste_id_salles):
         chemin = garder_chemin_oeuvres(chemin, str(salle))
     chemin = garder_plus_court_chemin(chemin)
     return chemin
+
+def transformation(liste_id_salles):
+    liste_salles = []
+    conn = sqlite3.connect('db/database.db')
+    for id_salle in liste_id_salles:
+        cur = conn.cursor()
+        cur.execute("""SELECT nom FROM salles WHERE id_salle=?""", (id_salle,))
+        records = cur.fetchall()
+        for r in records:
+            if r[0] not in liste_salles:
+                liste_salles.append(r[0])
+        cur.close()
+    conn.close()
+    return liste_salles
