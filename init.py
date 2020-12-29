@@ -91,3 +91,9 @@ def creer_dict():
         mon_graph[str(cptL)] = liste
         cptL = cptL + 1
         ligne = f.readline()
+
+def initialisation():
+    init_db()
+    remplir_table_oeuvre()
+    remplir_table_salle()
+    creer_dict()

@@ -112,3 +112,10 @@ h2 {
 #result {
   padding-left: 20%;
 }
+
+.flashes {
+  background-color: red;
+  text-align: center;
+  margin-top: -19px;
+  font-size: 1.2em;
+}
