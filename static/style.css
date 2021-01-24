@@ -68,7 +68,7 @@
 .item {
   text-align: center;
   margin-top: 1%;
-  width: 33%;
+  width: 33.15%;
   display: flex;
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -101,8 +101,8 @@
 /* mise en forme des images plans */
 /* utilise dans plan.html */
 .picture {
-  width: 90%;
-  margin-left: 5%;
+  width: 95%;
+  /*margin-left: 5%;*/
   margin-right: 5%;
 }
 /* mise en forme des messages d'erreurs */

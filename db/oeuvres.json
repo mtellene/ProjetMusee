@@ -549,6 +549,27 @@
       {
          "Type": "Artefact",
          "Artiste": "Inconnu",
+         "Titre": "Alexandre à la lance",
+         "Salle": "Antiquites Grecques",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-alexandre.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Aphrodite, dite 'Vénus de Milo'",
+         "Salle": "Antiquites Grecques",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-aphrodite-dite-venus-milo_0.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Artémis à la biche",
+         "Salle": "Antiquites Grecques",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-artemis-deesse-de-la-chasse-dite-%C2%A0diane-de-versailles%C2%A0.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
          "Titre": "Hache",
          "Salle": "Antiquites Grecques",
          "Representation": "https://upload.wikimedia.org/wikipedia/commons/c/c0/AMI_-_Goldene_Doppelaxt.jpg"
@@ -559,6 +580,97 @@
          "Titre": "Statue de Bouddha",
          "Salle": "Antiquites Asiatiques",
          "Representation": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Buddha_statue.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Akhénaton et Néfertiti",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-akhenaton-nefertiti.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Allée de sphinx",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-six-des-sphinx-qui.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Amulette en forme de papyrus de Paser",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-amulettes-nom-vizir-paser.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Bague d'Horemheb",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-bague-sceau-nom-roi.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Base et pieds d'un colosse au nom d'Aménophis III",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-pieds-d039un-colosse-royal.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Cartonnage doré de la dame Tachéretpaânkh",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-quotcartonnagequot-qui-enveloppait-momie.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Collier aux poissons",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-collier-chaine-simple-chevron.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Pierre de Rosette",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rosetta_Stone.JPG/512px-Rosetta_Stone.JPG"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Statue colossale de Ramsès II",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-roi-ramses.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Fragment livre des Morts sur papyrus: Djedhor au travail dans les champs de l'au-delà",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-djedhor-travail-dans-les.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Grand sphinx de Tanis",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-grand-sphinx.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Hypocéphale d'Irethorrou",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-hypocephale-d039irethorrou.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "La Reine Cléopâtre fait une offrande à la déesse Isis",
+         "Salle": "Antiquites Egyptiennes",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-reine-cleopatre-vii-avant.jpg"
       },
       {
          "Type": "Artefact",
@@ -657,6 +769,62 @@
          "Titre": "Lunettes",
          "Salle": "Objets du 18-19e siecle",
          "Representation": "https://www.guide-vue.fr/sites/default/files/lunettes-en-corne-et-en-cuir_0.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Aquamanile au griffon",
+         "Salle": "Objets d'art",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-aquamanile-griffon.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Barbier Muriel",
+         "Titre": "Athénienne",
+         "Salle": "Objets d'art",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-athenienne-napoleon-ier_0.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Athénienne",
+         "Salle": "Objets d'art",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-athenienne-napoleon-ier_0.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Casque du roi Charles IX",
+         "Salle": "Objets d'art",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-morion-roi-charles.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Inconnu",
+         "Titre": "Couronne-reliquaire dite 'Couronne de Liège'",
+         "Salle": "Objets d'art",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-couronne-reliquaire.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Évrard Bapst",
+         "Titre": "Insigne de l'ordre de l'Éléphant",
+         "Salle": "Objets d'art",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-insigne-l039ordre-l039elephant-danemark.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Manufacture de Vincennes",
+         "Titre": "Naïade",
+         "Salle": "Objets d'art",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-naiade.jpg"
+      },
+      {
+         "Type": "Artefact",
+         "Artiste": "Bernard Perrot",
+         "Titre": "Portrait de Louis XIV ",
+         "Salle": "Objets d'art",
+         "Representation": "https://www.louvre.fr/sites/default/files/medias/medias_images/images/louvre-portrait-louis-xiv_19.jpg"
       }
    ]
 }

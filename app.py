@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 
 from init import initialisation
-from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres
+from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres#, test
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -32,7 +32,8 @@ def resultat():
     if len(liste_oeuvres) > 0:  # si au moins une oeuvre a ete selectionnee
         liste_salles = avoir_nom_salles_oeuvres(liste_oeuvres)
         resultat = charger_resultat(liste_oeuvres)  # charge le plus court chemin
-        return render_template("resultat.html", liste_oeuvres=liste_oeuvres, resultat=resultat, liste_salles=liste_salles)
+        #test(salle, oeuvre)
+        return render_template("resultat.html", liste_oeuvres=liste_oeuvres, resultat=resultat, liste_salles=liste_salles)#, test=test)
     else:   # si aucunes oeuvres selectionnees
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
         return redirect(url_for('itineraire'))
