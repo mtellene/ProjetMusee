@@ -24,10 +24,10 @@
       <section class="flex-container">
 
         <div id="container-liste-oeuvre">
-          <h5> Votre selection: </h5>
+          <h5>Votre selection:</h5>
           <ul class="liste">
             {% for oeuvre in liste_oeuvres %}
-              <li> {{oeuvre}} </li>
+              <li>{{oeuvre}}</li>
             {% endfor %}
           </ul>
         </div>
@@ -36,9 +36,9 @@
           <ul class="liste">
             {% for res in resultat %}
               {% if res in liste_salles %}
-                  <li class="salle_interessante"> {{res}} </li>
+                  <li class="salle_interessante">{{res}}</li>
               {% else %}
-                <li> {{res}} </li>
+                <li>{{res}}</li>
               {% endif %}
             {% endfor %}
           </ul>

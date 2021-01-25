@@ -6,7 +6,7 @@ from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_o
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
-# fonction(s) qui se lance(ent) dès le début du programme
+# se lance au début du programme
 initialisation()
 
 # accueil du site
