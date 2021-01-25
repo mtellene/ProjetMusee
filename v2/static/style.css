@@ -121,7 +121,6 @@
 /* mise en forme pour mettre en valeur les salles ou il y a des oeuvres demandees */
 /* utilise dans resultat.html */
 .salle_interessante {
-  text-decoration: underline;
   font-weight: bold;
 }
 /* ################################################################ */

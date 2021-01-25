@@ -8,6 +8,11 @@ liste_des_salles = [
                 "Peintures du 20e siecle", "Sortie"
                 ]
 
+couleurs_salles = [
+                "#000000", "#92a8d1", "#ff0000", "#8c562f", "#ac6895", "#a33222", "#dd431e", "#fffb00", "#00ff00", "#ff00ff", "#00ffff",
+                "#606060", "#f8a090", "#004c00", "#bbc17e", "#c8b0d0", "#000000"
+                ]
+
 # supprime l'ancienne bdd et en re-créer une autre vide
 def init_db():
     conn = sqlite3.connect('db/database.db')

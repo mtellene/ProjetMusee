@@ -26,20 +26,21 @@
         <div id="container-liste-oeuvre">
           <h5>Votre selection:</h5>
           <ul class="liste">
-            {% for oeuvre in liste_oeuvres %}
-              <li>{{oeuvre}}</li>
+
+            {% for i in range(coloree_oeuvres| length) %}
+              <li style="color: {{coloree_oeuvres[i][1]}};">{{coloree_oeuvres[i][0]}}</li>
             {% endfor %}
           </ul>
         </div>
 
         <div id="result">
           <ul class="liste">
-            {% for res in resultat %}
-              {% if res in liste_salles %}
-                  <li class="salle_interessante">{{res}}</li>
-              {% else %}
-                <li>{{res}}</li>
-              {% endif %}
+            {% for i in range(coloree_salles| length) %}
+                {% if coloree_salles[i][0] in liste_salles %}
+                    <li class="salle_interessante" style="color: {{coloree_salles[i][1]}};">{{coloree_salles[i][0]}}</li>
+                {% else %}
+                  <li>{{coloree_salles[i][0]}}</li>
+                {% endif %}
             {% endfor %}
           </ul>
         </div>

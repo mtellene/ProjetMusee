@@ -1,6 +1,6 @@
 import sqlite3
 
-from init import recuperer_les_oeuvres, mon_graph, liste_des_salles
+from init import recuperer_les_oeuvres, mon_graph, liste_des_salles, couleurs_salles
 
 # separe la liste d'oeuvres par type (ecrits, peintures, sculptures, artefacts)
 # cette fonction sert pour l'affichage dans itineraire
@@ -113,3 +113,16 @@ def avoir_nom_salles_oeuvres(liste_oeuvres):
         cur.close()
     conn.close()
     return liste_salles
+
+def coloration(chemin, liste_oeuvres):
+    colore_salle = []
+    colore_oeuvre = []
+    for c in chemin:
+        i = liste_des_salles.index(c)
+        colore_salle.append(tuple([c, couleurs_salles[i]]))
+
+    for oeuvre in liste_oeuvres:
+        nom_salle = avoir_nom_salles_oeuvres([oeuvre])[0]
+        couleur = couleurs_salles[liste_des_salles.index(nom_salle)]
+        colore_oeuvre.append(tuple([oeuvre, couleur]))
+    return colore_salle, colore_oeuvre
