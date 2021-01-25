@@ -113,6 +113,3 @@ def avoir_nom_salles_oeuvres(liste_oeuvres):
         cur.close()
     conn.close()
     return liste_salles
-
-#def test(salle, oeuvre):
-#    return True
