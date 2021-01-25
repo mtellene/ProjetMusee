@@ -34,8 +34,7 @@ def resultat():
         liste_salles = avoir_nom_salles_oeuvres(liste_oeuvres)
         resultat = charger_resultat(liste_oeuvres)  # charge le plus court chemin
         coloree_salles, coloree_oeuvres = coloration(resultat, liste_oeuvres)
-        return render_template("resultat.html", coloree_oeuvres=coloree_oeuvres, liste_salles=liste_salles,
-                                                coloree_salles=coloree_salles, liste_des_salles=liste_des_salles)
+        return render_template("resultat.html", coloree_oeuvres=coloree_oeuvres, liste_salles=liste_salles, coloree_salles=coloree_salles)
     else:   # si aucunes oeuvres selectionnees
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
         return redirect(url_for('itineraire'))
