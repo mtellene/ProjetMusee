@@ -9,8 +9,8 @@ liste_des_salles = [
                 ]
 
 couleurs_salles = [
-                "#000000", "#92a8d1", "#ff0000", "#8c562f", "#ac6895", "#a33222", "#dd431e", "#fffb00", "#00ff00", "#ff00ff", "#00ffff",
-                "#606060", "#f8a090", "#004c00", "#bbc17e", "#c8b0d0", "#000000"
+                "#000000", "#729fcf", "#ff0000", "#8b4513", "#da70d6", "#8b0000", "#d2691e", "#ffff00", "#7fff00", "#c71585", "#7fffd4",
+                "#808080", "#f08080", "#008000", "#bdb76b", "#bc8f8f", "#000000"
                 ]
 
 # supprime l'ancienne bdd et en re-créer une autre vide
