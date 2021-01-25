@@ -1,0 +1,173 @@
+/* ################################################################ */
+/* les classes */
+/* mise en forme du menu */
+/* utilise dans toutes les pages */
+.menu {
+  background-color: #000;
+  display: flex;
+}
+
+/* mise en forme de la liste du menu */
+/* utilise dans toutes les pages */
+.menu ul {
+  display: flex;
+}
+
+/* mise en forme des elements de la liste */
+/* utilise dans toutes les pages */
+.menu ul li {
+  padding-right: 40px;
+  padding-left: 10px;
+  list-style-type: none;
+  border-left: 1px solid #434343;
+}
+
+/* mise en forme du header */
+/* utilise dans toutes les pages */
+.header {
+  text-align: center;
+}
+
+/* mise en forme du body */
+/* utilise dans toutes les pages */
+.body {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+/* mise en forme du container (contient le contenu principal de la page)*/
+/* utilise dans toutes les pages */
+.container {
+  border: 1px solid black;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
+/* meme mise en forme que pour un container mais avec un display flex en plus */
+/* utilise dans resultat.html et plan.html */
+.flex-container {
+  border: 1px solid black;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  display: flex;
+}
+
+/* mise en forme des container d'oeuvres par categories */
+/* utilise dans itineraire.html */
+.oeuvres-container {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid black;
+}
+
+/* mise en forme de la balise contenant les oeuvres */
+/* utilise dans itineraire.html */
+.item {
+  text-align: center;
+  margin-top: 1%;
+  width: 33.15%;
+  display: flex;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+/* item-part-container mise en forme des differentes parties d'une item */
+/* utilise dans itineraire.html */
+.item-part-container {
+  width: 33%;
+}
+
+/* mise en forme des parties des items qui n'ont pas de representations */
+/* utilise dans itineraire.html */
+.item-without-picture {
+  margin-left: 7%;
+}
+
+/* selection -> mise en forme de la partie contenant la case a cocher */
+/* photo -> mise en forme de la partie contenant la representation de l'oeuvre */
+/* utilise dans itineraire.html */
+.selection, .photo {
+  margin-top: 8%;
+}
+/* mise en forme des container des plans */
+/* utilise dans plan.html */
+.container-plan {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+/* mise en forme des images plans */
+/* utilise dans plan.html */
+.picture {
+  width: 95%;
+  /*margin-left: 5%;*/
+  margin-right: 5%;
+}
+/* mise en forme des messages d'erreurs */
+/* utilise dans itineraire.html */
+.message_erreur {
+  background-color: red;
+  text-align: center;
+  margin-top: -19px;
+  font-size: 1.2em;
+}
+/* mise en forme des elemens de la liste des oeuvres choisies et des salles du plus court chemin */
+/* utilise dans resultat.html */
+.liste li {
+  margin-top: 5%;
+}
+/* mise en forme pour mettre en valeur les salles ou il y a des oeuvres demandees */
+/* utilise dans resultat.html */
+.salle_interessante {
+  text-decoration: underline;
+  font-weight: bold;
+}
+/* ################################################################ */
+/* les identifants */
+/* mise en forme du bouton pour valider les choix des oeuvres */
+/* utilise dans itineraire.html */
+#valider {
+  width: 100%;
+  margin-top: 2%;
+}
+/* mise en forme de la div qui contient le plus court chemin */
+/* utilise dans resultat.html */
+#result {
+  padding-left: 5%;
+}
+/* mise en forme de la liste d'oeuvres selectionnees */
+/* utilise dans resultat.html */
+#container-liste-oeuvre {
+  border: 1px solid black;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  max-width: 25%;
+}
+/* ################################################################ */
+/* modifications apportees aux balises */
+/* modification apportee a la balise <cite> ... </cite> */
+cite {
+  text-decoration: underline;
+}
+
+/* modification apportee a la balise <h2> ... </h2> */
+h2 {
+  text-align: center;
+}
+
+/* modification apportee a la balise <a> ... </a> */
+a:hover {
+  text-decoration: none;
+}
+
+/* modification apportee a la balise <a> ... </a> */
+/* a:visited -> couleur d'un lien visite */
+/* a:link -> couleur du lien */
+a:visited, a:link {
+  color: #fff;
+}
+/* ################################################################ */
