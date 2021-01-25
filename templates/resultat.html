@@ -36,9 +36,7 @@
           <ul class="liste">
             {% for res in resultat %}
               {% if res in liste_salles %}
-                {% for oeuvre in liste_oeuvres %}
                   <li class="salle_interessante"> {{res}} </li>
-                {% endfor %}
               {% else %}
                 <li> {{res}} </li>
               {% endif %}
