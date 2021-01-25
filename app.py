@@ -33,7 +33,6 @@ def resultat():
         liste_salles = avoir_nom_salles_oeuvres(liste_oeuvres)
         resultat = charger_resultat(liste_oeuvres)  # charge le plus court chemin
         #test(salle, oeuvre)
-        print(resultat)
         return render_template("resultat.html", liste_oeuvres=liste_oeuvres, resultat=resultat, liste_salles=liste_salles)#, test=test)
     else:   # si aucunes oeuvres selectionnees
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
