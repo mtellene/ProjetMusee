@@ -1,6 +1,6 @@
 import sqlite3
 
-from init import recuperer_les_oeuvres, mon_graph
+from init import recuperer_les_oeuvres, mon_graph, liste_des_salles
 
 # separe la liste d'oeuvres par type (ecrits, peintures, sculptures, artefacts)
 # cette fonction sert pour l'affichage dans itineraire
@@ -27,11 +27,12 @@ def from_nom_salles_to_id(liste_oeuvres):
     conn = sqlite3.connect('db/database.db')
     for oeuvre in liste_oeuvres:
         cur = conn.cursor()
-        cur.execute("""SELECT id_salle FROM salles INNER JOIN oeuvres ON salles.nom=oeuvres.salle WHERE oeuvres.nom=?""", (oeuvre,))
+        cur.execute("""SELECT salle FROM oeuvres WHERE nom=?""", (oeuvre,))
         records = cur.fetchall()
-        for r in records:
-            if r[0] not in liste_id_salles:
-                liste_id_salles.append(r[0])
+        if records[0][0] in liste_des_salles:
+            id = liste_des_salles.index(records[0][0])
+            if id not in liste_id_salles:
+                liste_id_salles.append(id)
         cur.close()
     conn.close()
     return liste_id_salles
@@ -85,16 +86,10 @@ def plus_court_chemin(liste_id_salles):
 # change la liste d'id des salles en liste de noms des salles correspondantes
 def from_id_to_nom(liste_id_salles):
     liste_salles = []
-    conn = sqlite3.connect('db/database.db')
     for id_salle in liste_id_salles:
-        cur = conn.cursor()
-        cur.execute("""SELECT nom FROM salles WHERE id_salle=?""", (id_salle,))
-        records = cur.fetchall()
-        for r in records:
-            if r[0] not in liste_salles:
-                liste_salles.append(r[0])
-        cur.close()
-    conn.close()
+        salle = liste_des_salles[int(id_salle)]
+        if salle not in liste_salles:
+            liste_salles.append(salle)
     return liste_salles
 
 # fonction qui prend en argument une liste d oeuvre et retourne une liste de salle

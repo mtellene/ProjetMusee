@@ -1,6 +1,12 @@
 import sqlite3, json
 
 mon_graph = {}
+liste_des_salles = [
+                "Entrée", "Antiquites Grecques", "Antiquites Asiatiques", "Antiquites Egyptiennes", "Objets d'art", "Art du Moyen-Age",
+                "Objets du Moyen-Age", "Objets de la Renaissance", "Litterature de la Renaissance", "Peintures de la Renaissance", "Sculptures",
+                "Litterature du 18-19e siecle", "Objets du 18-19e siecle", "Peintures du 18-19e siecle", "Litterature du 20e siecle",
+                "Peintures du 20e siecle", "Sortie"
+                ]
 
 # supprime l'ancienne base de données et en re-créer une autre vide
 def init_db():
@@ -12,7 +18,7 @@ def init_db():
 
     cur.execute("CREATE TABLE IF NOT EXISTS oeuvres(id_oeuvre INT, nom TEXT, artiste TEXT, type TEXT, " +
         "img TEXT, salle TEXT)")
-    cur.execute("CREATE TABLE IF NOT EXISTS salles(id_salle INT, nom TEXT)")
+    #cur.execute("CREATE TABLE IF NOT EXISTS salles(id_salle INT, nom TEXT)")
 
     conn.commit()
     cur.close()
@@ -50,30 +56,30 @@ def remplir_table_oeuvre():
     conn.close()
 
 # retourne la liste des salles du musée
-def recuperer_les_salles():
-    liste_salles = []
-    filename = 'db/salles.json'
-    with open(filename, 'r') as f:
-        data = f.read()
-        dico = json.loads(data)
-        for i in dico.values():
-            for j in i:
-                liste_salles.append(j.get('Nom').replace('_', ' '))
-    f.close()
-    return liste_salles
+# def recuperer_les_salles():
+#     liste_salles = []
+#     filename = 'db/salles.json'
+#     with open(filename, 'r') as f:
+#         data = f.read()
+#         dico = json.loads(data)
+#         for i in dico.values():
+#             for j in i:
+#                 liste_salles.append(j.get('Nom').replace('_', ' '))
+#     f.close()
+#     return liste_salles
 
 # remplit la table "salles" de la base de données
-def remplir_table_salle():
-    liste_salles = recuperer_les_salles()
-    conn = sqlite3.connect('db/database.db')
-    cur = conn.cursor()
-    for i in range (len(liste_salles)):
-        values = (i, liste_salles[i])
-        cur.execute("INSERT INTO salles(id_salle, nom) VALUES (?, ?)", values)
-        conn.commit()
-    print("Table 'salles' remplie !")
-    cur.close()
-    conn.close()
+# def remplir_table_salle():
+#     liste_salles = recuperer_les_salles()
+#     conn = sqlite3.connect('db/database.db')
+#     cur = conn.cursor()
+#     for i in range (len(liste_salles)):
+#         values = (i, liste_salles[i])
+#         cur.execute("INSERT INTO salles(id_salle, nom) VALUES (?, ?)", values)
+#         conn.commit()
+#     print("Table 'salles' remplie !")
+#     cur.close()
+#     conn.close()
 
 # creer une representation du graphe sous forme de dictionnaire
 def creer_dict():
@@ -95,5 +101,5 @@ def creer_dict():
 def initialisation():
     init_db()
     remplir_table_oeuvre()
-    remplir_table_salle()
+    #remplir_table_salle()
     creer_dict()
