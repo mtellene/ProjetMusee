@@ -1,39 +1,70 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 
 from init import initialisation
+
+# pour la version eleve l'import ne sera pas tel quel
 from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres, coloration
 
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'    # sert pour return redirect(url_for('itineraire'))
 
 # se lance au début du programme
 initialisation()
 
-# accueil du site
 @app.route('/')
 def index():
+    """
+    charge la page index.html, accueil du site
+    """
     return render_template("index.html")
 
-# onglet plan
 @app.route('/plan')
 def plan():
+    """
+    charge la page plan.html, page où il y a les plans du musée
+    """
     return render_template("plan.html")
 
-# onglet itineraire
 @app.route('/itineraire')
 def itineraire():
-    ecrits, peintures, sculptures, artefacts = separation_par_types()   # permet de separer les oeuvres en categories
+    """
+    charge la page itineraire.html, page où on doit faire notre sélection d'oeuvres
+    appel de la separation_par_types() pour le visuel de la page
+    """
+    ecrits, peintures, sculptures, artefacts = separation_par_types()
     return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures, artefacts=artefacts)
 
-# page quand on a choisit les oeuvres a voir
+# todo
 @app.route('/resultat', methods=['POST'])
 def resultat():
+    """
+    charge la page resultat.html, page où il est affiché le plus court chemin pour voir toutes les oeuvres choisies
+        -> récupérer les oeuvres selectionnées (check) (pensez à vérifier que des oeuvres ont été selectionné)
+        -> récupérer les noms des salles des oeuvres sélectionnées
+        -> appel fonction du plus court chemin
+        -> coloration des oeuvres et des salles (pour le visuel)
+        -> gérer le cas si aucune oeuvre sélectionnée
+    """
     liste_oeuvres = request.form.getlist('check')
-    if len(liste_oeuvres) > 0:  # si au moins une oeuvre a ete selectionnee
+    if len(liste_oeuvres) > 0:
         liste_salles = avoir_nom_salles_oeuvres(liste_oeuvres)
-        resultat = charger_resultat(liste_oeuvres)  # charge le plus court chemin
-        coloree_salles, coloree_oeuvres = coloration(resultat, liste_oeuvres)   # pour colorer la liste de salles et d'oeuvres
+        resultat = charger_resultat(liste_oeuvres)
+        coloree_salles, coloree_oeuvres = coloration(resultat, liste_oeuvres)
         return render_template("resultat.html", coloree_oeuvres=coloree_oeuvres, liste_salles=liste_salles, coloree_salles=coloree_salles)
-    else:   # si aucunes oeuvres selectionnees
+    else:
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
         return redirect(url_for('itineraire'))
+
+
+# version eleve
+# @app.route('/resultat', methods=['POST'])
+# def resultat():
+#     """
+#     charge la page resultat.html, page où il est affiché le plus court chemin pour voir toutes les oeuvres choisies
+#         -> récupérer les oeuvres selectionnées (check) (pensez à vérifier que des oeuvres ont été selectionné)
+#         -> récupérer les noms des salles des oeuvres sélectionnées
+#         -> appel fonction du plus court chemin
+#         -> coloration des oeuvres et des salles (pour le visuel)
+#         -> gérer le cas si aucunes oeuvres sélectionnées
+#     """
+#     liste_oeuvres = request.form.getlist('check')
