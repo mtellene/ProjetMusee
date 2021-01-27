@@ -13,8 +13,11 @@ couleurs_salles = [
                 "#808080", "#f08080", "#008000", "#bdb76b", "#bc8f8f", "#000000"
                 ]
 
-# supprime l'ancienne bdd et en re-créer une autre vide
 def init_db():
+    """
+    fonction qui supprime l'ancienne base de donnée et en crée une vide
+    l'appel de cette fonction peut être optionnel
+    """
     conn = sqlite3.connect('db/database.db')
     cur = conn.cursor()
 
@@ -27,8 +30,11 @@ def init_db():
     conn.close()
 
 
-# retourne une liste de listes où les sous-listes sont les oeuvres du musée
 def recuperer_les_oeuvres():
+    """
+    fonction qui retourne une liste avec toutes les oeuvres sous formes de tuple
+    tuple = (type de l'oeuvre, artiste associé, titre de l'oeuvre, salle d'exposition, representation)
+    """
     liste_oeuvres = []
     filename = 'db/oeuvres.json'
     with open(filename, 'r') as f:
@@ -42,8 +48,12 @@ def recuperer_les_oeuvres():
     f.close()
     return liste_oeuvres
 
-# remplit la table "oeuvres" de la base de données
 def remplir_table_oeuvre():
+    """
+    fonction qui permet de remplir la table oeuvres de la base de donnée
+    cette fonction appel la fonction recuperer_les_oeuvres()
+    si la fonction init_db() n'est pas appelé, inutile d'appeler cette fonction
+    """
     liste_oeuvres = recuperer_les_oeuvres()
 
     conn = sqlite3.connect('db/database.db')
@@ -57,8 +67,17 @@ def remplir_table_oeuvre():
     cur.close()
     conn.close()
 
-# creer une representation du graphe sous forme de dictionnaire
+# todo
 def creer_dict():
+    """
+    fonction qui représente le graphe sous forme de dictionnaire de la forme [cle] : [valeurs]
+    où cle est le sommet et valeurs correspond au(x) noeud(s) successeur(s)
+    déroulement:
+        -> lire et récupérer les lignes d'un fichier (matrice)
+        -> définir un compteur de ligne et un compteur de colonne
+        -> quand on a un '1' ajouter le compteur de colonne dans une liste (attention vous avez des chiffres)
+        -> à la fin d'un ligne ajouter dans le dictionnaire [compteur ligne] : [liste]
+    """
     cptL = 0
     f = open('db/matrice.txt', 'r')
     ligne = f.readline()
@@ -73,6 +92,18 @@ def creer_dict():
         mon_graph[str(cptL)] = liste
         cptL = cptL + 1
         ligne = f.readline()
+
+# version eleve
+# def creer_dict():
+#     """
+#     fonction qui représente le graphe sous forme de dictionnaire de la forme [cle] : [valeurs]
+#     où cle est le sommet et valeurs correspond au(x) noeud(s) successeur(s)
+#     déroulement:
+#       -> lire et récupérer les lignes d'un fichier (matrice)
+#       -> définir un compteur de ligne et un compteur de colonne
+#       -> quand on a un '1' ajouter le compteur de colonne dans une liste (attention vous avez des chiffres)
+#       -> à la fin d'un ligne ajouter dans le dictionnaire [compteur ligne] : [liste]
+#     """
 
 def initialisation():
     init_db()
