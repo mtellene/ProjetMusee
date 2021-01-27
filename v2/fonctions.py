@@ -21,7 +21,7 @@ def separation_par_types():
             type_artefact.append(oeuvre)
     return type_ecrit, type_peinture, type_sculpture, type_artefact
 
-# retourne une liste avec les identifants des salles où sont les oeuvres de la liste liste_oeuvres
+# retourne une liste avec les identifants des salles où sont les oeuvres de liste_oeuvres
 def from_nom_salles_to_id(liste_oeuvres):
     liste_id_salles = []
     conn = sqlite3.connect('db/database.db')
@@ -37,18 +37,33 @@ def from_nom_salles_to_id(liste_oeuvres):
     conn.close()
     return liste_id_salles
 
+# retourne une liste avec le nom des salles des oeuvres de la liste passées en argument
+def avoir_nom_salles_oeuvres(liste_oeuvres):
+    liste_salles = []
+    conn = sqlite3.connect('db/database.db')
+    for oeuvre in liste_oeuvres:
+        cur = conn.cursor()
+        cur.execute("""SELECT salle FROM oeuvres WHERE nom=?""", (oeuvre,))
+        records = cur.fetchall()
+        for r in records:
+            if r[0] not in liste_salles:
+                liste_salles.append(r[0])
+        cur.close()
+    conn.close()
+    return liste_salles
+
 # retourne une liste qui contient tous les chemins possibles du graph
 def lister_tous_les_chemins(graph, depart, path=[]):
-    path = path + [depart]
-    if not depart in graph:
-        return [path]
-    paths = [path]
-    for noeud in graph[depart]:
-        if noeud not in path:
-            newpaths = lister_tous_les_chemins(graph, noeud, path)
-            for newpath in newpaths:
-                paths.append(newpath)
-    return paths
+    path = path + [depart]  # on ajoute le noeud de depart dans la liste path
+    if not depart in graph: # si le noeud de depart n'est pas dans le graphe
+        return [path]   # alors on return la liste
+    paths = [path]  # sinon, on ajoute la liste path a la liste qui contiendra tous les chemins
+    for noeud in graph[depart]: # on parcourt les successeurs du noeud depart
+        if noeud not in path:   # si le noeud n'est pas dans le chemin
+            newpaths = lister_tous_les_chemins(graph, noeud, path)  # on lance la fonction récursivement en prenant comme depart noeud
+            for newpath in newpaths:    # on parcourt la liste retournée par l'appel récursif
+                paths.append(newpath)   # on ajoute les éléments de newpaths dans la liste paths
+    return paths    # on retourne la liste paths (qui contient tous les chemins)
 
 # retourne une liste qui ne contient seulement les chemins qui vont de l'entree jusqu'a la sortie du graphe
 def garder_chemins_entree_sortie(liste_chemins):
@@ -100,20 +115,7 @@ def charger_resultat(liste_oeuvres):
     resultat = from_id_to_nom(id_plus_court_chemin)
     return resultat
 
-def avoir_nom_salles_oeuvres(liste_oeuvres):
-    liste_salles = []
-    conn = sqlite3.connect('db/database.db')
-    for oeuvre in liste_oeuvres:
-        cur = conn.cursor()
-        cur.execute("""SELECT salle FROM oeuvres WHERE nom=?""", (oeuvre,))
-        records = cur.fetchall()
-        for r in records:
-            if r[0] not in liste_salles:
-                liste_salles.append(r[0])
-        cur.close()
-    conn.close()
-    return liste_salles
-
+# fonction qui sert pour la coloration du résultat
 def coloration(chemin, liste_oeuvres):
     colore_salle = []
     colore_oeuvre = []

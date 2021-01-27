@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
-from time import sleep
 
 from init import initialisation
 from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres, coloration
