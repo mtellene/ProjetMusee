@@ -15,6 +15,8 @@ couleurs_salles = [
 
 def init_db():
     """
+    Input: /
+    Output: /
     fonction qui supprime l'ancienne base de donnée et en crée une vide
     l'appel de cette fonction peut être optionnel
     """
@@ -32,7 +34,8 @@ def init_db():
 
 def recuperer_les_oeuvres():
     """
-    fonction qui retourne une liste avec toutes les oeuvres sous formes de tuple
+    Input: /
+    Output: liste de toutes les oeuvres sous formes de tuple
     tuple = (type de l'oeuvre, artiste associé, titre de l'oeuvre, salle d'exposition, representation)
     """
     liste_oeuvres = []
@@ -50,6 +53,8 @@ def recuperer_les_oeuvres():
 
 def remplir_table_oeuvre():
     """
+    Input: /
+    Output: /
     fonction qui permet de remplir la table oeuvres de la base de donnée
     cette fonction appel la fonction recuperer_les_oeuvres()
     si la fonction init_db() n'est pas appelé, inutile d'appeler cette fonction
@@ -70,6 +75,8 @@ def remplir_table_oeuvre():
 # todo
 def creer_dict():
     """
+    Input: /
+    Output: /
     fonction qui représente le graphe sous forme de dictionnaire de la forme [cle] : [valeurs]
     où cle est le sommet et valeurs correspond au(x) noeud(s) successeur(s)
     déroulement:
@@ -96,6 +103,8 @@ def creer_dict():
 # version eleve
 # def creer_dict():
 #     """
+#     Input: /
+#     Output: /
 #     fonction qui représente le graphe sous forme de dictionnaire de la forme [cle] : [valeurs]
 #     où cle est le sommet et valeurs correspond au(x) noeud(s) successeur(s)
 #     déroulement:
