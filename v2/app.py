@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 
 from init import initialisation
-
-# pour la version eleve l'import ne sera pas tel quel
 from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres, coloration
 
 app = Flask(__name__)
