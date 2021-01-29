@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+		    <meta charset="utf-8">
+        <link rel="stylesheet" href="static/style.css" media="all" type="text/css"/>
+		    <title>Le petit musée</title>
+	  </head>
+    <body class="body">
+
+		    <header class="header">
+		        <h1>Le petit musée</h1>
+        </header>
+
+		    <main id="main">
+
+			    <nav class="menu">
+			        <ul id="list_menu">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="itineraire">Itinéraire</a></li>
+                <li><a href="plan">Plan</a></li>
+				      </ul>
+			    </nav>
+
+          <section class="flex-container">
+            <section class="container-plan">
+              <img class="picture" src="{{url_for('static', filename='etage-1.png')}}"/>
+            </section>
+            <section class="container-plan">
+              <img class="picture" src="{{url_for('static', filename='etage0.png')}}"/>
+            </section>
+            <section class="container-plan">
+              <img class="picture" src="{{url_for('static', filename='etage1.png')}}"/>
+				     </section>
+          </section>
+
+		    </main>
+     </body>
+</html>

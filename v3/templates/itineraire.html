@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/style.css" media="all" type="text/css"/>
+    <title>Le petit musée</title>
+  </head>
+  <body class="body">
+
+    <header class="header">
+      <h1>Le petit musée</h1>
+    </header>
+
+    <main id="main">
+
+      <nav class="menu">
+        <ul id="list_menu">
+          <li><a href="/">Accueil</a></li>
+			    <li><a href="itineraire">Itinéraire</a></li>
+          <li><a href="plan">Plan</a></li>
+				</ul>
+      </nav>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="message_erreur">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <form action="/resultat" method="post">
+        <h2> Ecrits </h2>
+  			<section class="oeuvres-container">
+          {% for ecrit in ecrits %}
+            <div class="item">
+              <div class="selection item-part-container item-without-picture">
+                <input type="checkbox" name="check" id="{{ecrit[2]}}" value="{{ecrit[2]}}">
+              </div>
+              <div class="text item-part-container item-without-picture">
+                <p> {{ecrit[2]}} </p>
+                <p> {{ecrit[1]}} </p>
+              </div>
+            </div>
+          {% endfor %}
+        </section>
+
+        <h2> Peintures </h2>
+  			<section class="oeuvres-container">
+          {% for peinture in peintures %}
+            <div class="item">
+              <div class="selection item-part-container">
+                <input type="checkbox" name="check" id="{{peinture[2]}}" value="{{peinture[2]}}">
+              </div>
+              <div class="text item-part-container">
+                <p> {{peinture[2]}} </p>
+                <p> {{peinture[1]}} </p>
+              </div>
+              <div class="photo item-part-container">
+                <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{peinture[4]}}','_blank')">
+                  Aperçu
+                </button>
+              </div>
+            </div>
+          {% endfor %}
+        </section>
+
+        <h2> Sculptures </h2>
+   			<section class="oeuvres-container">
+          {% for sculpture in sculptures %}
+            <div class="item">
+              <div class="selection item-part-container">
+                <input type="checkbox" name="check" id="{{sculpture[2]}}" value="{{sculpture[2]}}">
+              </div>
+              <div class="text item-part-container">
+                <p> {{sculpture[2]}} </p>
+                <p> {{sculpture[1]}} </p>
+              </div>
+              <div class="photo item-part-container">
+                <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{sculpture[4]}}','_blank')">
+                  <span class="glyphicon glyphicon-camera"></span> Aperçu
+                </button>
+              </div>
+            </div>
+          {% endfor %}
+   		   </section>
+
+         <h2> Artefacts </h2>
+   			 <section class="oeuvres-container">
+          {% for artefact in artefacts %}
+            <div class="item">
+              <div class="selection item-part-container">
+                <input type="checkbox" name="check" id="{{artefact[2]}}" value="{{artefact[2]}}">
+              </div>
+              <div class="text item-part-container">
+                <p> {{artefact[2]}} </p>
+                <p> {{artefact[1]}} </p>
+              </div>
+              <div class="photo item-part-container">
+                <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{artefact[4]}}','_blank')">
+                  <span class="glyphicon glyphicon-camera"></span> Aperçu
+                </button>
+              </div>
+            </div>
+          {% endfor %}
+   	     </section>
+
+         <button type="submit" id="valider"> Valider </button>
+       </form>
+     </main>
+  </body>
+</html>

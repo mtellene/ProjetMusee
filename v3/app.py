@@ -32,7 +32,7 @@ def itineraire():
     ecrits, peintures, sculptures, artefacts = separation_par_types()
     return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures, artefacts=artefacts)
 
-# eleve
+# todo
 @app.route('/resultat', methods=['POST'])
 def resultat():
     """
@@ -43,7 +43,7 @@ def resultat():
         -> coloration des oeuvres et des salles (pour le visuel)
         -> gérer le cas si aucune oeuvre sélectionnée
     """
-    liste_oeuvres = request.form.getlist('check')   # donné
+    liste_oeuvres = request.form.getlist('check')
     if len(liste_oeuvres) > 0:
         liste_salles = avoir_nom_salles_oeuvres(liste_oeuvres)
         resultat = charger_resultat(liste_oeuvres)
@@ -52,3 +52,17 @@ def resultat():
     else:
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
         return redirect(url_for('itineraire'))
+
+
+# version eleve
+# @app.route('/resultat', methods=['POST'])
+# def resultat():
+#     """
+#     charge la page resultat.html, page où il est affiché le plus court chemin pour voir toutes les oeuvres choisies
+#         -> récupérer les oeuvres selectionnées (check) (pensez à vérifier que des oeuvres ont été selectionné)
+#         -> récupérer les noms des salles des oeuvres sélectionnées
+#         -> appel fonction du plus court chemin
+#         -> coloration des oeuvres et des salles (pour le visuel)
+#         -> gérer le cas si aucunes oeuvres sélectionnées
+#     """
+#     liste_oeuvres = request.form.getlist('check')

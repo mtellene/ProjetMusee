@@ -48,7 +48,6 @@ def avoir_nom_salles_oeuvres(liste_oeuvres):
     return liste_salles
 
 
-# eleve
 def from_nom_salles_to_id(liste_oeuvres):
     """
     Input: une liste où chaque élément est une oeuvre
@@ -66,12 +65,22 @@ def from_nom_salles_to_id(liste_oeuvres):
     return liste_id_salles
 
 
-# eleve
+# version eleve
+# def from_nom_salles_to_id(liste_oeuvres):
+#     """
+#     Input: une liste où chaque élément est une oeuvre
+#     Output: une liste contenant les id des salles correspondantes aux oeuvres
+#     on récupère le nom des salles de chaque oeuvre avec la fonction avoir_nom_salles_oeuvres() dans la liste_salles
+#     itére sur les éléments de liste_salles et on récupère l'indice de l'élément dans liste_des_salles
+#     si cet indice n'est pas dans la liste résultat alors on ajoute l'indice dans la liste
+#     """
+
+
 def lister_tous_les_chemins(graph, depart, path=[]):
     """
     Input: un dictionnaire, un noeud de départ
     Output: une liste avec tous les chemins possibles partant du noeud de départ
-    doc a faire
+
     """
     path = path + [depart]  # on ajoute le noeud de depart dans la liste path
     if not depart in graph: # si le noeud de depart n'est pas dans le graphe
@@ -85,7 +94,6 @@ def lister_tous_les_chemins(graph, depart, path=[]):
     return paths    # on retourne la liste paths (qui contient tous les chemins)
 
 
-# eleve
 def garder_chemins_entree_sortie(liste_chemins):
     """
     Input: une liste contenant tous les chemins possibles (partant du noeud de 0) dans le graphe
@@ -99,7 +107,15 @@ def garder_chemins_entree_sortie(liste_chemins):
     return chemins
 
 
-# eleve
+# version eleve
+# def garder_chemins_entree_sortie(liste_chemins):
+#     """
+#     Input: liste contenant tous les chemins possibles (partant du noeud de 0) dans le graphe
+#     Output: une liste UNIQUEMENT les chemins entrée-sortie
+#     astuce: sortie = dernière cle dans le dictionnaire mon graphe
+#     """
+
+
 def garder_chemin_oeuvres(liste_chemins_ES, id_salle):
     """
     Input: une liste contenant tous les chemins entrée-sortie, un id d'une salle parmi celles à visiter
@@ -111,8 +127,14 @@ def garder_chemin_oeuvres(liste_chemins_ES, id_salle):
             chemins.append(liste_chemins_ES[i])
     return chemins
 
+# version eleve
+# def garder_chemin_oeuvres(liste_chemins_ES, id_salle):
+#     """
+#     Input: une liste contenant tous les chemins entrée-sortie, un id d'une salle parmi celles à visiter
+#     Output: une liste contenant tous les chemins qui passent par la salle à visiter
+#     """
 
-# eleve
+
 def garder_plus_court_chemin(liste_chemins):
     """
     Input: une liste qui contient tous les chemins entrée-sortie qui passent par toutes les salles à visiter
@@ -125,7 +147,14 @@ def garder_plus_court_chemin(liste_chemins):
     return min
 
 
-# eleve
+# version eleve
+# def garder_plus_court_chemin(liste_chemins):
+#     """
+#     Input: une liste qui contient tous les chemins entrée-sortie qui passent par toutes les salles à visiter
+#     Output: le plus court chemin parmi tous les chemins dans la liste
+#     """
+
+
 def plus_court_chemin(liste_id_salles):
     """
     Input: une liste avec les id des salles à voir
@@ -143,7 +172,18 @@ def plus_court_chemin(liste_id_salles):
     return chemin
 
 
-# eleve
+# version eleve
+# def plus_court_chemin(liste_id_salles):
+#     """
+#     Input: une liste avec les id des salles à voir
+#     Output: le plus court chemin pour passer dans toutes les salles
+#         -> lister tous les chemins
+#         -> lister les chemins entrée-sortie
+#         -> enlever les chemins qui ne passent pas dans les salles désirées
+#         -> trouver le plus des chemins possibles
+#     """
+
+
 def from_id_to_nom(liste_id_salles):
     """
     Input: une liste où chaque élément est l'id d'une salle
@@ -159,7 +199,16 @@ def from_id_to_nom(liste_id_salles):
     return liste_salles
 
 
-# eleve
+# version eleve
+# def from_id_to_nom(liste_id_salles):
+#     """
+#     Input: une liste où chaque élément est l'id d'une salle
+#     Output: une liste où chaque élément est le nom d'une salle
+#     avec les id des salle de la liste en input on recupère les noms correspondants
+#     attention, vérifier que la salle n'est pas déjà dans la liste résultat
+#     """
+
+
 def charger_resultat(liste_oeuvres):
     """
     Input: une liste des oeuvres à voir
@@ -174,7 +223,16 @@ def charger_resultat(liste_oeuvres):
     return liste_salles_a_voir
 
 
-# eleve
+# version eleve
+# def charger_resultat(liste_oeuvres):
+#     """
+#     Input: une liste des oeuvres à voir
+#     Output: une liste où chaque élément est une salle où il faut passer
+#         -> récupérer les id des salles
+#         -> récupérer le plus court chemin
+#         -> convertir la liste d'id en liste de nom de salle
+#     """
+
 def coloration(chemin, liste_oeuvres):
     """
     Input: une liste contenant le plus court chemin, une liste contenant les oeuvres selectionnées
@@ -202,3 +260,22 @@ def coloration(chemin, liste_oeuvres):
         couleur = couleurs_salles[liste_des_salles.index(nom_salle)]
         colore_oeuvre.append(tuple([oeuvre, couleur]))
     return colore_salle, colore_oeuvre
+
+
+# version eleve
+# def coloration(chemin, liste_oeuvres):
+#     """
+#     Input: une liste contenant le plus court chemin, une liste contenant les oeuvres selectionnées
+#     Output: deux listes où chaque élément est un tuple
+#     une première liste où les tuples seront de la forme (salle, couleur associée)
+#     une seconde liste où les tuples seront de la forme (oeuvre, couleur de la salle)
+#     Première liste:
+#         -> itérer sur les éléments de la liste
+#         -> récupérer l'index de l'élément dans liste_des_salles
+#         -> crée le tuple et l'ajouter à la liste résultat
+#     Seconde liste:
+#         -> itérer sur les éléments de la liste
+#         -> récupérer la salle de l'élément
+#         -> récupérer la couleur de la salle
+#         -> créer le tuple et l'ajouter à la liste résultat
+#     """

@@ -99,7 +99,20 @@ def creer_dict():
         mon_graph[str(cptL)] = liste
         cptL = cptL + 1
         ligne = f.readline()
-        
+
+# version eleve
+# def creer_dict():
+#     """
+#     Input: /
+#     Output: /
+#     fonction qui représente le graphe sous forme de dictionnaire de la forme [cle] : [valeurs]
+#     où cle est le sommet et valeurs correspond au(x) noeud(s) successeur(s)
+#     déroulement:
+#       -> lire et récupérer les lignes d'un fichier (matrice)
+#       -> définir un compteur de ligne et un compteur de colonne
+#       -> quand on a un '1' ajouter le compteur de colonne dans une liste (attention vous avez des chiffres)
+#       -> à la fin d'un ligne ajouter dans le dictionnaire [compteur ligne] : [liste]
+#     """
 
 def initialisation():
     init_db()
