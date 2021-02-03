@@ -23,7 +23,7 @@
 
       <section class="flex-container">
 
-        <div id="container-liste-oeuvre">
+        <div id="container-liste-oeuvre" class="flex-result">
           <h5>Votre selection:</h5>
           <ul class="liste">
 
@@ -33,7 +33,7 @@
           </ul>
         </div>
 
-        <div id="result">
+        <div id="result" class="flex-result">
           <ul class="liste">
             {% for i in range(coloree_salles| length) %}
                 {% if coloree_salles[i][0] in liste_salles %}
@@ -43,6 +43,12 @@
                 {% endif %}
             {% endfor %}
           </ul>
+        </div>
+
+        <div class="flex-result">
+          <img class="miniature" src="{{url_for('static', filename='etage-1.png')}}"/>
+          <img class="miniature" src="{{url_for('static', filename='etage0.png')}}"/>
+          <img class="miniature" src="{{url_for('static', filename='etage1.png')}}"/>
         </div>
 
       </section>

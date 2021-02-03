@@ -107,13 +107,13 @@
 /* mise en forme des images plans */
 /* utilise dans resultat.html */
 .miniature {
-  width: 90%;
+  width: 80%;
   margin-left: 25%;
 }
 /* mise en forme des div resultats */
 /* utilise dans resultat.html */
 .flex-result {
-  max-width: 33.3%;
+  max-width: 40%;
 }
 /* mise en forme des messages d'erreurs */
 /* utilise dans itineraire.html */
