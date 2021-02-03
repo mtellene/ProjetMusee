@@ -1,3 +1,14 @@
+# ! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+    fonctions.py
+    fonctions de traitement
+"""
+__author__ = "Maxime Tellene"
+__copyright__ = "Univ Lyon1, 2020"
+__license__ = "Public Domain"
+__version__ = "3.0"
+
 import sqlite3
 
 from init import recuperer_les_oeuvres, mon_graph, liste_des_salles, couleurs_salles

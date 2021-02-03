@@ -1,3 +1,14 @@
+# ! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+    init.py
+    initialise la base de données et le dictionnaire
+"""
+__author__ = "Maxime Tellene"
+__copyright__ = "Univ Lyon1, 2020"
+__license__ = "Public Domain"
+__version__ = "3.0"
+
 import sqlite3, json
 
 mon_graph = {}

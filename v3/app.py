@@ -1,3 +1,14 @@
+# ! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+    app.py
+    traite les requêtes HTTP
+"""
+__author__ = "Maxime Tellene"
+__copyright__ = "Univ Lyon1, 2020"
+__license__ = "Public Domain"
+__version__ = "3.0"
+
 from flask import Flask, render_template, request, flash, redirect, url_for
 
 from init import initialisation
@@ -52,17 +63,3 @@ def resultat():
     else:
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
         return redirect(url_for('itineraire'))
-
-
-# version eleve
-# @app.route('/resultat', methods=['POST'])
-# def resultat():
-#     """
-#     charge la page resultat.html, page où il est affiché le plus court chemin pour voir toutes les oeuvres choisies
-#         -> récupérer les oeuvres selectionnées (check) (pensez à vérifier que des oeuvres ont été selectionné)
-#         -> récupérer les noms des salles des oeuvres sélectionnées
-#         -> appel fonction du plus court chemin
-#         -> coloration des oeuvres et des salles (pour le visuel)
-#         -> gérer le cas si aucunes oeuvres sélectionnées
-#     """
-#     liste_oeuvres = request.form.getlist('check')
