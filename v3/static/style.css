@@ -68,7 +68,7 @@
 .item {
   text-align: center;
   margin-top: 1%;
-  width: 33.15%;
+  width: calc(99%/3);
   display: flex;
   border-right: 1px solid black;
   border-left: 1px solid black;
@@ -77,7 +77,7 @@
 /* item-part-container mise en forme des differentes parties d'une item */
 /* utilise dans itineraire.html */
 .item-part-container {
-  width: 33%;
+  width: calc(100%/3)
 }
 
 /* mise en forme des parties des items qui n'ont pas de representations */
@@ -102,8 +102,18 @@
 /* utilise dans plan.html */
 .picture {
   width: 95%;
-  /*margin-left: 5%;*/
   margin-right: 5%;
+}
+/* mise en forme des images plans */
+/* utilise dans resultat.html */
+.miniature {
+  width: 90%;
+  margin-left: 25%;
+}
+/* mise en forme des div resultats */
+/* utilise dans resultat.html */
+.flex-result {
+  max-width: 33.3%;
 }
 /* mise en forme des messages d'erreurs */
 /* utilise dans itineraire.html */
