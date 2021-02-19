@@ -4,7 +4,7 @@
 
 * Régler le problème des images:
     * nombre des œuvres des arts visuels utilisées est limité à 20 œuvres par travail pédagogique :white_check_mark:
-    * définition limitée à 400 x 400 pixels 
+    * définition limitée à 400 x 400 pixels :x:
     * une résolution limitée à 72 DPI (point par pouce)
 
 #### Utiles 
