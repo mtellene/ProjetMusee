@@ -3,7 +3,7 @@
 #### Todo
 
 * Régler le problème des images:
-    * nombre des œuvres des arts visuels utilisées est limité à 20 œuvres par travail pédagogique :check:
+    * nombre des œuvres des arts visuels utilisées est limité à 20 œuvres par travail pédagogique :white_check_mark:
     * définition limitée à 400 x 400 pixels 
     * une résolution limitée à 72 DPI (point par pouce)
 
