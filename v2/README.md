@@ -7,7 +7,7 @@
 
 ### Structure code
 #### init.py
-* ```mon_graph```: dictionnaire qui représente le graphe du musée, est de la forme {salle (str) : successeur(s) de salle (liste de str)}
+* ```mon_graphe```: dictionnaire qui représente le graphe du musée, est de la forme {salle (str) : successeur(s) de salle (liste de str)}
 * ```liste_des_salles```: liste qui contient toutes les salles du musée (str)
 * ```couleurs_salles```: liste qui contient des couleurs au format hexadécimal (str)
 
@@ -17,11 +17,31 @@
 * ```remplir_table_oeuvre()```: appelle la fonction précédente pour remplir la base de données
 * ```creation_db()```: appelle ```init_db()``` et ```remplir_table_oeuvre()``` pour initialiser une base de données vide et la remplir
 * ```creer_dict()```: remplit un dictionnaire représentant le graphe du musée en lisant la matrice d'adjacence ```todo pour les élèves```
+* ```initialisation()```: fonction qui appelle ```creation_db()``` (cet appel peut être optionnel) et ```creer_dict()``` pour remplir le dictionnaire ```mon_graphe```
+
+#### fonctions.py
+* ```separation_par_types()```: créer 4 listes (une pour chaque type d'oeuvres), pour l'affichage dans ```itineraire.html```
+* ```avoir_nom_salles_oeuvres(liste_oeuvres)```: prend en entrée une liste d'oeuvres et retourne une liste avec les salles associées à chaque oeuvres
+* ```from_nom_salles_to_id(liste_oeuvres)```: prend en entrée une liste d'oeuvres et retourne une liste avec les id des salles correspondantes, cette fonction appelle ```avoir_nom_salles_oeuvres(liste_oeuvres)``` pour récupérer les salles de chaque oeuvres  
+
+
+* ```lister_tous_les_chemins(graph, depart, path=[])```: prend en entrée le graphe (dictionnaire), un noeud de départ et une liste contenant un chemin, et retourne la liste de tous les chemins possibles
+* ```garder_chemins_entree_sortie(liste_chemins)```: prend en entrée une liste contenant tous les chemins et retourne une liste ne contenant que les chemins qui vont de l'entrée jusqu'à la sortie
+* ```garder_chemin_oeuvres(liste_chemins_ES, id_salle)```: prend en entrée une liste contenant tous les chemins entré-sortie du graphe et l'id d'une salle et retourne une liste ne contenant que les chemins contenant cet id
+* ```garder_plus_court_chemin(liste_chemins)```: prend en entrée une liste contenant tous les chemins que l'utilisateur peut prendre afin de voir toutes les oeuvres choisies et retourne LE chemin le plus court 
+
+
+* ```plus_court_chemin(liste_id_salles)```: fonction qui à partir d'une liste contenant les id des salles à visiter retourne le chemin le plus court pour voir toutes ces salles
+
+
+* ```from_id_to_nom(liste_id_salles)```: prend en entrée une liste d'id de salles et retourne une liste contenant les noms des salles correspondants
+* ```charger_resultat(liste_oeuvres)```: prend en argument une liste avec les oeuvres selectionnées par l'utilisateur et retourne la liste des salles à visiter
+* ```coloration(chemin, liste_oeuvres)```: prend en argument une liste contenant le chemin à visiter et la liste des oeuvres sélectionnées et retourne deux listes : une liste contenant des tuples de la forme (salle,couleur de la salle) et une autre liste  contenant également des tuples de la forme (oeuvre, couleur de l'oeuvre). Une salle a la même couleur qui les oeuvres qui sont exposées dans celle-ci
 
 #### app.py
 Récupère les requêtes HTTP
 
-* ```initialisation()``` 
+* ```initialisation()```: fonction dans init.py, se lance dès le lancement du "site" 
 *
 *
 *

@@ -1,6 +1,6 @@
 import sqlite3
 
-from init import recuperer_les_oeuvres, mon_graph, liste_des_salles, couleurs_salles
+from init import recuperer_les_oeuvres, mon_graphe, liste_des_salles, couleurs_salles
 
 
 def separation_par_types():
@@ -48,7 +48,7 @@ def avoir_nom_salles_oeuvres(liste_oeuvres):
     return liste_salles
 
 
-# eleve
+# todo pour eleve
 def from_nom_salles_to_id(liste_oeuvres):
     """
     Input: une liste où chaque élément est une oeuvre
@@ -66,7 +66,7 @@ def from_nom_salles_to_id(liste_oeuvres):
     return liste_id_salles
 
 
-# eleve
+# todo pour eleve
 def lister_tous_les_chemins(graph, depart, path=[]):
     """
     Input: un dictionnaire, un noeud de départ
@@ -74,18 +74,19 @@ def lister_tous_les_chemins(graph, depart, path=[]):
     doc a faire
     """
     path = path + [depart]  # on ajoute le noeud de depart dans la liste path
-    if not depart in graph: # si le noeud de depart n'est pas dans le graphe
-        return [path]   # alors on return la liste
+    if not depart in graph:  # si le noeud de depart n'est pas dans le graphe
+        return [path]  # alors on return la liste
     paths = [path]  # sinon, on ajoute la liste path a la liste qui contiendra tous les chemins
-    for noeud in graph[depart]: # on parcourt les successeurs du noeud depart
-        if noeud not in path:   # si le noeud n'est pas dans le chemin
-            newpaths = lister_tous_les_chemins(graph, noeud, path)  # on lance la fonction récursivement en prenant comme depart noeud
-            for newpath in newpaths:    # on parcourt la liste retournée par l'appel récursif
-                paths.append(newpath)   # on ajoute les éléments de newpaths dans la liste paths
-    return paths    # on retourne la liste paths (qui contient tous les chemins)
+    for noeud in graph[depart]:  # on parcourt les successeurs du noeud depart
+        if noeud not in path:  # si le noeud n'est pas dans le chemin
+            newpaths = lister_tous_les_chemins(graph, noeud,
+                                               path)  # on lance la fonction récursivement en prenant comme depart noeud
+            for newpath in newpaths:  # on parcourt la liste retournée par l'appel récursif
+                paths.append(newpath)  # on ajoute les éléments de newpaths dans la liste paths
+    return paths  # on retourne la liste paths (qui contient tous les chemins)
 
 
-# eleve
+# todo pour eleve
 def garder_chemins_entree_sortie(liste_chemins):
     """
     Input: une liste contenant tous les chemins possibles (partant du noeud de 0) dans le graphe
@@ -94,12 +95,12 @@ def garder_chemins_entree_sortie(liste_chemins):
     """
     chemins = []
     for chem in liste_chemins:
-        if chem[-1] == list(mon_graph.keys())[-1]:  # list(mon_graph.keys())[-1] = recup de la derniere key du dict mon_graph
+        if chem[-1] == list(mon_graphe.keys())[-1]:  # list(mon_graph.keys())[-1] = recup la derniere key du dict
             chemins.append(chem)
     return chemins
 
 
-# eleve
+# todo pour eleve
 def garder_chemin_oeuvres(liste_chemins_ES, id_salle):
     """
     Input: une liste contenant tous les chemins entrée-sortie, un id d'une salle parmi celles à visiter
@@ -112,7 +113,7 @@ def garder_chemin_oeuvres(liste_chemins_ES, id_salle):
     return chemins
 
 
-# eleve
+# todo pour eleve
 def garder_plus_court_chemin(liste_chemins):
     """
     Input: une liste qui contient tous les chemins entrée-sortie qui passent par toutes les salles à visiter
@@ -125,7 +126,7 @@ def garder_plus_court_chemin(liste_chemins):
     return min
 
 
-# eleve
+# todo pour eleve
 def plus_court_chemin(liste_id_salles):
     """
     Input: une liste avec les id des salles à voir
@@ -135,7 +136,7 @@ def plus_court_chemin(liste_id_salles):
         -> enlever les chemins qui ne passent pas dans les salles désirées
         -> trouver le plus des chemins possibles
     """
-    chemin = lister_tous_les_chemins(mon_graph, list(mon_graph.keys())[0])
+    chemin = lister_tous_les_chemins(mon_graphe, list(mon_graphe.keys())[0])
     chemin = garder_chemins_entree_sortie(chemin)
     for salle in liste_id_salles:
         chemin = garder_chemin_oeuvres(chemin, str(salle))
@@ -143,7 +144,7 @@ def plus_court_chemin(liste_id_salles):
     return chemin
 
 
-# eleve
+# todo pour eleve
 def from_id_to_nom(liste_id_salles):
     """
     Input: une liste où chaque élément est l'id d'une salle
@@ -159,7 +160,7 @@ def from_id_to_nom(liste_id_salles):
     return liste_salles
 
 
-# eleve
+# todo pour eleve
 def charger_resultat(liste_oeuvres):
     """
     Input: une liste des oeuvres à voir
@@ -174,7 +175,7 @@ def charger_resultat(liste_oeuvres):
     return liste_salles_a_voir
 
 
-# eleve
+# todo pour eleve
 def coloration(chemin, liste_oeuvres):
     """
     Input: une liste contenant le plus court chemin, une liste contenant les oeuvres selectionnées
