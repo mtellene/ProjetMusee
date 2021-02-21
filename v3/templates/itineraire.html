@@ -33,82 +33,86 @@
 
       <form action="/resultat" method="post">
         <h2> Ecrits </h2>
-  			<section class="oeuvres-container">
-          {% for ecrit in ecrits %}
-            <div class="item">
-              <div class="selection item-part-container item-without-picture">
-                <input type="checkbox" name="check" id="{{ecrit[2]}}" value="{{ecrit[2]}}">
-              </div>
-              <div class="text item-part-container item-without-picture">
-                <p> {{ecrit[2]}} </p>
-                <p> {{ecrit[1]}} </p>
-              </div>
-            </div>
-          {% endfor %}
+        <section class="oeuvres-container">
+            {% for ecrit in ecrits %}
+                <div class="item">
+                    <div class="selection item-part-container item-without-picture">
+                        <input type="checkbox" name="check" id="{{ecrit[2]}}" value="{{ecrit[2]}}">
+                    </div>
+                    <div class="text item-part-container item-without-picture">
+                        <p> {{ecrit[2]}} </p>
+                        <p> {{ecrit[1]}} </p>
+                    </div>
+                </div>
+            {% endfor %}
         </section>
 
         <h2> Peintures </h2>
-  			<section class="oeuvres-container">
-          {% for peinture in peintures %}
-            <div class="item">
-              <div class="selection item-part-container">
-                <input type="checkbox" name="check" id="{{peinture[2]}}" value="{{peinture[2]}}">
-              </div>
-              <div class="text item-part-container">
-                <p> {{peinture[2]}} </p>
-                <p> {{peinture[1]}} </p>
-              </div>
-              <div class="photo item-part-container">
-                <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{peinture[4]}}','_blank')">
-                  Aperçu
-                </button>
-              </div>
-            </div>
-          {% endfor %}
+  		<section class="oeuvres-container">
+            {% for peinture in peintures %}
+                <div class="item">
+                    <div class="selection item-part-container">
+                        <input type="checkbox" name="check" id="{{peinture[2]}}" value="{{peinture[2]}}">
+                    </div>
+                    <div class="text item-part-container">
+                        <p> {{peinture[2]}} </p>
+                        <p> {{peinture[1]}} </p>
+                    </div>
+                    <div class="photo item-part-container">
+                        <button type="button" class="btn btn-default btn-sm" onclick="window.open('{{peinture[4]}}','_blank')">
+                        Aperçu
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
         </section>
 
         <h2> Sculptures </h2>
-   			<section class="oeuvres-container">
-          {% for sculpture in sculptures %}
-            <div class="item">
-              <div class="selection item-part-container">
-                <input type="checkbox" name="check" id="{{sculpture[2]}}" value="{{sculpture[2]}}">
-              </div>
-              <div class="text item-part-container">
-                <p> {{sculpture[2]}} </p>
-                <p> {{sculpture[1]}} </p>
-              </div>
-              <div class="photo item-part-container">
-                <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{sculpture[4]}}','_blank')">
-                  <span class="glyphicon glyphicon-camera"></span> Aperçu
-                </button>
-              </div>
-            </div>
-          {% endfor %}
-   		   </section>
+        <section class="oeuvres-container">
+            {% for sculpture in sculptures %}
+                <div class="item">
+                    <div class="selection item-part-container">
+                        <input type="checkbox" name="check" id="{{sculpture[2]}}" value="{{sculpture[2]}}">
+                    </div>
+                    <div class="text item-part-container">
+                        <p> {{sculpture[2]}} </p>
+                        <p> {{sculpture[1]}} </p>
+                    </div>
+                    <div class="photo item-part-container">
+                        <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{sculpture[4]}}','_blank')">
+                            <span class="glyphicon glyphicon-camera"></span> Aperçu
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+   		</section>
 
-         <h2> Artefacts </h2>
-   			 <section class="oeuvres-container">
-          {% for artefact in artefacts %}
-            <div class="item">
-              <div class="selection item-part-container">
-                <input type="checkbox" name="check" id="{{artefact[2]}}" value="{{artefact[2]}}">
-              </div>
-              <div class="text item-part-container">
-                <p> {{artefact[2]}} </p>
-                <p> {{artefact[1]}} </p>
-              </div>
-              <div class="photo item-part-container">
-                <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{artefact[4]}}','_blank')">
-                  <span class="glyphicon glyphicon-camera"></span> Aperçu
-                </button>
-              </div>
-            </div>
-          {% endfor %}
-   	     </section>
+        <h2> Artefacts </h2>
+   		<section class="oeuvres-container">
+            {% for artefact in artefacts %}
+                <div class="item">
+                    <div class="selection item-part-container">
+                        <input type="checkbox" name="check" id="{{artefact[2]}}" value="{{artefact[2]}}">
+                    </div>
+                    <div class="text item-part-container">
+                        <p> {{artefact[2]}} </p>
+                        <p> {{artefact[1]}} </p>
+                    </div>
+                    <div class="photo item-part-container">
+                        <!-- <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{artefact[4]}}','_blank')"> -->
+                        <form action="button" method="post">
+                            <input type="hidden" name="img" value="'{{artefact[4]}}'"/>
+                            <button type="submit" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-camera"></span> Aperçu
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+   	    </section>
 
-         <button type="submit" id="valider"> Valider </button>
-       </form>
-     </main>
+        <button type="submit" id="valider"> Valider </button>
+      </form>
+    </main>
   </body>
 </html>
