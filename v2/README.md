@@ -40,7 +40,7 @@
 
 #### app.py
 Récupère les requêtes HTTP
-* ```app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'```: est utilisé pour ```redirect(url_for('...'))```
+* ```app.secret_key = ...```: est utilisé pour ```redirect(url_for('...'))```
 
 
 * ```initialisation()```: fonction dans init.py, se lance dès le lancement du site 
