@@ -1,3 +1,14 @@
+# ! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+    app.py
+    traite les requêtes HTTP
+"""
+__author__ = "Maxime Tellene"
+__copyright__ = "Univ Lyon1, 2020"
+__license__ = "Public Domain"
+__version__ = "2.0"
+
 from flask import Flask, render_template, request, flash, redirect, url_for
 
 from init import initialisation

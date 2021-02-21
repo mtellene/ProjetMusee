@@ -15,10 +15,11 @@ from init import initialisation
 from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres, coloration, afficher
 
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'    # sert pour return redirect(url_for('itineraire'))
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # sert pour return redirect(url_for('itineraire'))
 
 # se lance au début du programme
 initialisation()
+
 
 @app.route('/')
 def index():
@@ -27,12 +28,14 @@ def index():
     """
     return render_template("index.html")
 
+
 @app.route('/plan')
 def plan():
     """
     charge la page plan.html, page où il y a les plans du musée
     """
     return render_template("plan.html")
+
 
 @app.route('/itineraire')
 def itineraire():
@@ -41,7 +44,9 @@ def itineraire():
     appel de la separation_par_types() pour le visuel de la page
     """
     ecrits, peintures, sculptures, artefacts = separation_par_types()
-    return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures, artefacts=artefacts)
+    return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures,
+                           artefacts=artefacts)
+
 
 # todo
 @app.route('/resultat', methods=['POST'])
@@ -59,14 +64,17 @@ def resultat():
         liste_salles = avoir_nom_salles_oeuvres(liste_oeuvres)
         resultat = charger_resultat(liste_oeuvres)
         coloree_salles, coloree_oeuvres = coloration(resultat, liste_oeuvres)
-        return render_template("resultat.html", coloree_oeuvres=coloree_oeuvres, liste_salles=liste_salles, coloree_salles=coloree_salles)
+        return render_template("resultat.html", coloree_oeuvres=coloree_oeuvres, liste_salles=liste_salles,
+                               coloree_salles=coloree_salles)
     else:
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
         return redirect(url_for('itineraire'))
 
+
 @app.route('/button', methods=['POST'])
 def button():
-    img = request.form.get("img","")
+    img = request.form.get("img", "")
     afficher(img)
     ecrits, peintures, sculptures, artefacts = separation_par_types()
-    return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures, artefacts=artefacts)
+    return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures,
+                           artefacts=artefacts)
