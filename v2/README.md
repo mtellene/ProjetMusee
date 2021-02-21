@@ -1,4 +1,5 @@
 ## README de la version v2
+Ce projet est un calculateur d'itinéraire pour un musée. Il permet à un utilisateur de choisir les oeuvres qu'il souhaite voir et le site affiche le chemin le plus court afin de qu'il puisse voir toutes les oeuvres. 
 
 ### Structure dossiers
 * ```db``` contient la base de données, la matrice d'adjacence et le ficher oeuvre.json qui contient toutes les oeuvres (pour la création de la bd)
