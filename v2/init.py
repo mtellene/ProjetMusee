@@ -1,20 +1,28 @@
-import sqlite3, json
+# ! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+    init.py
+    initialise la base de données et le dictionnaire
+"""
+__author__ = "Maxime Tellene"
+__copyright__ = "Univ Lyon1, 2020"
+__license__ = "Public Domain"
+__version__ = "2.0"
+
+import json
+import sqlite3
 
 mon_graphe = {}
 liste_des_salles = [
     "Entrée", "Antiquites Grecques", "Antiquites Asiatiques", "Antiquites Egyptiennes", "Objets d'art",
-    "Art du Moyen-Age",
-    "Objets du Moyen-Age", "Objets de la Renaissance", "Litterature de la Renaissance", "Peintures de la Renaissance",
-    "Sculptures",
-    "Litterature du 18-19e siecle", "Objets du 18-19e siecle", "Peintures du 18-19e siecle",
-    "Litterature du 20e siecle",
-    "Peintures du 20e siecle", "Sortie"
+    "Art du Moyen-Age", "Objets du Moyen-Age", "Objets de la Renaissance", "Litterature de la Renaissance",
+    "Peintures de la Renaissance", "Sculptures", "Litterature du 18-19e siecle", "Objets du 18-19e siecle",
+    "Peintures du 18-19e siecle", "Litterature du 20e siecle", "Peintures du 20e siecle", "Sortie"
 ]
 
 couleurs_salles = [
     "#000000", "#729fcf", "#ff0000", "#8b4513", "#da70d6", "#8b0000", "#d2691e", "#ffff00", "#7fff00", "#c71585",
-    "#7fffd4",
-    "#808080", "#f08080", "#008000", "#bdb76b", "#bc8f8f", "#000000"
+    "#7fffd4", "#808080", "#f08080", "#008000", "#bdb76b", "#bc8f8f", "#000000"
 ]
 
 
