@@ -32,7 +32,7 @@ def itineraire():
     ecrits, peintures, sculptures, artefacts = separation_par_types()
     return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures, artefacts=artefacts)
 
-# eleve
+# todo pour eleve
 @app.route('/resultat', methods=['POST'])
 def resultat():
     """

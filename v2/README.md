@@ -40,12 +40,15 @@
 
 #### app.py
 Récupère les requêtes HTTP
+* ```app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'```: est utilisé pour ```redirect(url_for('...'))```
 
-* ```initialisation()```: fonction dans init.py, se lance dès le lancement du "site" 
-*
-*
-*
-*
+
+* ```initialisation()```: fonction dans init.py, se lance dès le lancement du site 
+* ```index()```: page d'acceuil du site 
+* ```plan()```: page où il y a les plans du musée
+* ```itineraire()```: page où l'utilisateur choisi les oeuvres qu'il veut voir
+* ```resultat()```: page qui affiche le résultat de la selection de l'utilisateur
+
 ### Todo
 * Régler le problème des images:
     * nombre des œuvres des arts visuels utilisées est limité à 20 œuvres par travail pédagogique :white_check_mark:
