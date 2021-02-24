@@ -160,7 +160,7 @@ def from_id_to_nom(liste_id_salles):
     """
     Input: une liste où chaque élément est l'id d'une salle
     Output: une liste où chaque élément est le nom d'une salle
-    avec les id des salle de la liste en input on recupère les noms correspondants
+    avec les id des salles de la liste en input on recupère les noms correspondants
     attention, vérifier que la salle n'est pas déjà dans la liste résultat
     """
     liste_salles = []
