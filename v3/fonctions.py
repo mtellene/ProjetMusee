@@ -10,18 +10,11 @@ __license__ = "Public Domain"
 __version__ = "3.0"
 
 import sqlite3
-import os
-
 from PIL.Image import *
 
 from init import recuperer_les_oeuvres, mon_graphe, liste_des_salles, couleurs_salles
-
-
-def afficher(url):
-    os.system('wget -O tmp.jpg {}'.format(url))
-    my_img = open("tmp.jpg")  # noir et blanc 8 bits !
-    Image.show(my_img)
-
+from Dessin import *
+import shutil
 
 def separation_par_types():
     """
@@ -69,7 +62,7 @@ def avoir_nom_salles_oeuvres(liste_oeuvres):
 
 
 # todo pour eleve
-def from_nom_salles_to_id(liste_oeuvres):
+def from_liste_oeuvres_to_liste_id_salles(liste_oeuvres):
     """
     Input: une liste où chaque élément est une oeuvre
     Output: une liste contenant les id des salles correspondantes aux oeuvres
@@ -181,6 +174,22 @@ def from_id_to_nom(liste_id_salles):
 
 
 # todo pour eleve
+def from_nom_to_id(liste_nom_salles):
+    """
+    Input: une liste où chaque élément est le nom d'une salle
+    Output: une liste où chaque élément est l'id d'une salle
+    avec les noms des salles de la liste en input on recupère les id correspondants
+    attention, vérifier que la salle n'est pas déjà dans la liste résultat
+    """
+    liste_id_salles = []
+    for nom_salle in liste_nom_salles:
+        id = liste_des_salles.index(nom_salle)
+        if id not in liste_id_salles:
+            liste_id_salles.append(id)
+    return liste_id_salles
+
+
+# todo pour eleve
 def charger_resultat(liste_oeuvres):
     """
     Input: une liste des oeuvres à voir
@@ -189,7 +198,7 @@ def charger_resultat(liste_oeuvres):
         -> récupérer le plus court chemin
         -> convertir la liste d'id en liste de nom de salle
     """
-    liste_id_salles = from_nom_salles_to_id(liste_oeuvres)
+    liste_id_salles = from_liste_oeuvres_to_liste_id_salles(liste_oeuvres)
     id_plus_court_chemin = plus_court_chemin(liste_id_salles)
     liste_salles_a_voir = from_id_to_nom(id_plus_court_chemin)
     return liste_salles_a_voir
@@ -223,3 +232,100 @@ def coloration(chemin, liste_oeuvres):
         couleur = couleurs_salles[liste_des_salles.index(nom_salle)]
         colore_oeuvre.append(tuple([oeuvre, couleur]))
     return colore_salle, colore_oeuvre
+
+
+def remove_images():
+    if os.path.exists("static/temp"):
+        shutil.rmtree("static/temp")
+    os.popen("mkdir static/temp")
+
+
+def dessiner(coloree_salles):
+    remove_images()
+    liste_salles = []
+    for (salle, couleur) in coloree_salles:
+        liste_salles.append(salle)
+    liste_id_salles = from_nom_to_id(liste_salles)
+
+    image0 = Dessin("static/etage0_res.png")
+    image1 = Dessin("static/etage1_res.png")
+    image_1 = Dessin("static/etage-1_res.png")
+
+    is1 = False
+    image0.draw_entree()
+    if 1 in liste_id_salles:
+        image0.relier_entree_1()
+        image0.traverser_1()
+        is1 = True
+    if 2 in liste_id_salles or 3 in liste_id_salles or 4 in liste_id_salles:
+        if not is1:
+            image0.relier_entree_1()
+            image0.traverser_1()
+            is1 = True
+        image0.relier_1_2(image_1)
+        image_1.traverser_2()
+        if 3 in liste_id_salles:
+            image_1.relier_et_traverser_3()
+        else:
+            image_1.raccourci_ss()
+        image_1.relier_4()
+        image_1.traverser_4()
+        image_1.sortir_ss()
+        image0.relier_ss_etage0()
+    else:
+        image0.pas_passer_ss()
+
+    if 5 in liste_id_salles or 6 in liste_id_salles:
+        if not is1:
+            image0.relier_entree_5()
+        else:
+            image0.relier_1_5()
+        image0.traverser_5()
+        image0.traverser_6()
+        image0.relier_5_6()
+    else:
+        image0.raccourci_etage_0_1()
+
+    if 7 in liste_id_salles or 8 in liste_id_salles or 9 in liste_id_salles or 10 in liste_id_salles or 11 in liste_id_salles or 12 in liste_id_salles:
+        image0.sortie_depuis_etage_1()
+        image0.relier_etage_0_7(image1)
+        if 8 not in liste_id_salles and 9 not in liste_id_salles and 10 not in liste_id_salles and 11 not in liste_id_salles and 12 not in liste_id_salles:
+            image1.raccourci_etage_1_1()
+            image1.sortie_etage_1()
+        else:
+            image1.traverser_7()
+            image1.relier_7_8()
+            image1.traverser_8()
+            if 9 in liste_id_salles:
+                image1.relier_8_9()
+                image1.traverser_9()
+                if 10 in liste_id_salles:
+                    image1.relier_9_10()
+                else:
+                    image1.raccourci_etage_1_3()
+                    image1.relier_11_12()
+            if 10 in liste_id_salles:
+                if 9 not in liste_id_salles:
+                    image1.raccourci_etage_1_2()
+                    image1.relier_raccourci_etage1_2_10()
+                else:
+                    image1.relier_9_10()
+                image1.traverser_10()
+                image1.relier_10_11()
+                image1.traverser_11()
+                image1.relier_11_12()
+            else:
+                image1.relier_8_11()
+                image1.traverser_11()
+                image1.relier_11_12()
+            image1.traverser_12()
+            image1.sortie_etage_1()
+    else:
+        image0.raccourci_etage0_2()
+        image0.sortie_depuis_raccourci_etage0()
+
+    image0.save_draw()
+    image1.save_draw()
+    image_1.save_draw()
+
+    return image0, image1, image_1

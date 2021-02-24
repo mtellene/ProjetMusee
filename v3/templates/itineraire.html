@@ -99,13 +99,9 @@
                         <p> {{artefact[1]}} </p>
                     </div>
                     <div class="photo item-part-container">
-                        <!-- <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{artefact[4]}}','_blank')"> -->
-                        <form action="button" method="post">
-                            <input type="hidden" name="img" value="'{{artefact[4]}}'"/>
-                            <button type="submit" class="btn btn-default btn-sm">
+                        <button type="button" class="btn btn-default btn-sm" onclick=" window.open('{{artefact[4]}}','_blank')">
                             <span class="glyphicon glyphicon-camera"></span> Aperçu
-                            </button>
-                        </form>
+                        </button>
                     </div>
                 </div>
             {% endfor %}

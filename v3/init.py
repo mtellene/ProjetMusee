@@ -29,9 +29,9 @@ couleurs_salles = [
 ]
 
 
-def remove_file():
-    if path.exists("tmp.jpg"):
-        os.system('rm tmp.jpg')
+# def remove_file():
+#     if path.exists("tmp.jpg"):
+#         os.system('rm tmp.jpg')
 
 
 def init_db():
@@ -135,6 +135,6 @@ def creer_dict():
 
 
 def initialisation():
-    #remove_file()
-    #creation_db()
+    # remove_file()
+    # creation_db()
     creer_dict()

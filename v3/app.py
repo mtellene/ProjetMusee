@@ -12,7 +12,8 @@ __version__ = "3.0"
 from flask import Flask, render_template, request, flash, redirect, url_for
 
 from init import initialisation
-from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres, coloration, afficher
+from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres, coloration, dessiner#, afficher
+from Dessin import *
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # sert pour return redirect(url_for('itineraire'))
@@ -64,8 +65,9 @@ def resultat():
         liste_salles = avoir_nom_salles_oeuvres(liste_oeuvres)
         resultat = charger_resultat(liste_oeuvres)
         coloree_salles, coloree_oeuvres = coloration(resultat, liste_oeuvres)
+        image0, image1, image_1 = dessiner(coloree_salles)
         return render_template("resultat.html", coloree_oeuvres=coloree_oeuvres, liste_salles=liste_salles,
-                               coloree_salles=coloree_salles)
+                               coloree_salles=coloree_salles, image0=image0, image1=image1, image_1=image_1)
     else:
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
         return redirect(url_for('itineraire'))
@@ -74,7 +76,7 @@ def resultat():
 @app.route('/button', methods=['POST'])
 def button():
     img = request.form.get("img", "")
-    afficher(img)
+    #afficher(img)
     ecrits, peintures, sculptures, artefacts = separation_par_types()
     return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures,
                            artefacts=artefacts)
