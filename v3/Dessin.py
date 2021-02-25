@@ -1,3 +1,14 @@
+# ! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+    Dessin.py
+    classe qui permet le dessin du chemin sur les images
+"""
+__author__ = "Maxime Tellene"
+__copyright__ = "Univ Lyon1, 2020"
+__license__ = "Public Domain"
+__version__ = "3.0"
+
 from PIL import Image, ImageDraw
 from datetime import datetime
 
@@ -140,4 +151,3 @@ class Dessin:
 
     def sortie_depuis_raccourci_etage0(self):
         self.dessin.line([(170, 245), (325, 245), (325, 200), (297, 183), (215, 183)], fill=self.color_line)
-

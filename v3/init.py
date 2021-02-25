@@ -10,9 +10,7 @@ __license__ = "Public Domain"
 __version__ = "3.0"
 
 import json
-import os
 import sqlite3
-from os import path
 
 mon_graphe = {}
 liste_des_salles = [
@@ -27,11 +25,6 @@ couleurs_salles = [
     "#ffa500",
     "#808080", "#f08080", "#008000", "#d2691e", "#9acd32", "#000000"
 ]
-
-
-# def remove_file():
-#     if path.exists("tmp.jpg"):
-#         os.system('rm tmp.jpg')
 
 
 def init_db():
