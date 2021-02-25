@@ -16,6 +16,7 @@ from init import recuperer_les_oeuvres, mon_graphe, liste_des_salles, couleurs_s
 from Dessin import *
 import shutil
 
+
 def separation_par_types():
     """
     Input: /
@@ -252,16 +253,20 @@ def dessiner(coloree_salles):
     image_1 = Dessin("static/etage-1_res.png")
 
     is1 = False
+    is9 = False
+    is10 = False
+    is11 = False
     image0.draw_entree()
     if 1 in liste_id_salles:
         image0.relier_entree_1()
         image0.traverser_1()
         is1 = True
-    if 2 in liste_id_salles or 3 in liste_id_salles or 4 in liste_id_salles:
-        if not is1:
-            image0.relier_entree_1()
-            image0.traverser_1()
-            is1 = True
+
+    # si on doit aller au sous sol
+    if 2 not in liste_id_salles and 3 not in liste_id_salles and 4 not in liste_id_salles:
+        if is1:
+            image0.pas_passer_ss()
+    else:
         image0.relier_1_2(image_1)
         image_1.traverser_2()
         if 3 in liste_id_salles:
@@ -272,23 +277,22 @@ def dessiner(coloree_salles):
         image_1.traverser_4()
         image_1.sortir_ss()
         image0.relier_ss_etage0()
-    else:
-        image0.pas_passer_ss()
 
     if 5 in liste_id_salles or 6 in liste_id_salles:
-        if not is1:
-            image0.relier_entree_5()
-        else:
-            image0.relier_1_5()
         image0.traverser_5()
-        image0.traverser_6()
         image0.relier_5_6()
+        image0.traverser_6()
+        if is1:
+            image0.relier_1_5()
+        else:
+            image0.relier_entree_5()
     else:
         image0.raccourci_etage_0_1()
 
+    # si on doit aller à l'étage
     if 7 in liste_id_salles or 8 in liste_id_salles or 9 in liste_id_salles or 10 in liste_id_salles or 11 in liste_id_salles or 12 in liste_id_salles:
-        image0.sortie_depuis_etage_1()
         image0.relier_etage_0_7(image1)
+        # si seulement 7
         if 8 not in liste_id_salles and 9 not in liste_id_salles and 10 not in liste_id_salles and 11 not in liste_id_salles and 12 not in liste_id_salles:
             image1.raccourci_etage_1_1()
             image1.sortie_etage_1()
@@ -299,29 +303,28 @@ def dessiner(coloree_salles):
             if 9 in liste_id_salles:
                 image1.relier_8_9()
                 image1.traverser_9()
-                if 10 in liste_id_salles:
+                is9 = True
+            if 10 in liste_id_salles:
+                image1.traverser_10()
+                if is9:
                     image1.relier_9_10()
                 else:
-                    image1.raccourci_etage_1_3()
-                    image1.relier_11_12()
-            if 10 in liste_id_salles:
-                if 9 not in liste_id_salles:
                     image1.raccourci_etage_1_2()
                     image1.relier_raccourci_etage1_2_10()
-                else:
-                    image1.relier_9_10()
-                image1.traverser_10()
-                image1.relier_10_11()
+                is10 = True
+            if 11 in liste_id_salles:
                 image1.traverser_11()
-                image1.relier_11_12()
-            else:
-                image1.relier_8_11()
-                image1.traverser_11()
-                image1.relier_11_12()
+                if is10:
+                    image1.relier_10_11()
+            if 12 in liste_id_salles:
+                if not is11 and not is10:
+                    image1.raccourci_etage_1_3()
+            image1.relier_11_12()
             image1.traverser_12()
-            image1.sortie_etage_1()
+        image1.sortie_etage_1()
+        image0.sortie_depuis_etage_1()
     else:
-        image0.raccourci_etage0_2()
+        image0.raccourci_etage_0_2()
         image0.sortie_depuis_raccourci_etage0()
 
     image0.save_draw()

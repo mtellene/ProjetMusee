@@ -135,7 +135,7 @@ class Dessin:
     def sortie_depuis_etage_1(self):
         self.dessin.line([(53, 245), (325, 245), (325, 200), (297, 183), (215, 183)], fill=self.color_line)
 
-    def raccourci_etage0_2(self):
+    def raccourci_etage_0_2(self):
         self.dessin.line([(166, 66), (134, 107), (134, 200), (170, 245)], fill=self.color_line)
 
     def sortie_depuis_raccourci_etage0(self):
