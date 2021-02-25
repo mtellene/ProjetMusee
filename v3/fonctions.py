@@ -316,6 +316,9 @@ def dessiner(coloree_salles):
                 image1.traverser_11()
                 if is10:
                     image1.relier_10_11()
+                else:
+                    image1.relier_8_11()
+                is11 = True
             if 12 in liste_id_salles:
                 if not is11 and not is10:
                     image1.raccourci_etage_1_3()
