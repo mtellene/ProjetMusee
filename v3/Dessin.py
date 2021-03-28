@@ -11,6 +11,7 @@ __version__ = "3.0"
 
 from PIL import Image, ImageDraw
 from datetime import datetime
+from init import couleurs_salles
 
 
 class Dessin:
@@ -34,120 +35,148 @@ class Dessin:
         self.image.save("" + self.nom_image, "PNG")
 
     def draw_entree(self):
-        self.dessin.line([(215, 124), (315, 124)], fill=self.color_line)
-
-    def traverser_1(self):
-        self.dessin.line([(345, 197), (510, 197), (510, 105), (482, 105)], fill=self.color_line)
+        self.dessin.line([(238, 133), (352, 133)], fill=self.color_line)
 
     def relier_entree_1(self):
-        self.dessin.line([(315, 124), (345, 197)], fill=self.color_line)
+        self.dessin.line([(352, 133), (406, 220)], fill=self.color_line)
 
-    def traverser_2(self):
-        self.dessin.line([(260, 226), (295, 226), (295, 260), (392, 260)], fill=self.color_line)
+    def traverser_1(self):
+        self.dessin.rectangle([(419, 232), (578, 208)], fill=couleurs_salles[1])
+        self.dessin.rectangle([(578, 208), (540, 130)], fill=couleurs_salles[1])
+        self.dessin.line([(406, 220), (565, 220), (565, 120), (537, 120)], fill=self.color_line)
 
     def relier_1_2(self, image_1):
-        self.dessin.line([(482, 105), (482, 57)], fill=self.color_line)
-        image_1.dessin.line([(200, 270), (200, 226), (260, 226)], fill=self.color_line)
+        self.dessin.line([(537, 120), (537, 64)], fill=self.color_line)
+        image_1.dessin.line([(209, 302), (209, 250), (260, 250)], fill=self.color_line)
+
+    def traverser_2(self):
+        self.dessin.rectangle([(290, 238), (330, 310)], fill=couleurs_salles[2])
+        self.dessin.rectangle([(330, 310), (392, 274)], fill=couleurs_salles[2])
+        self.dessin.line([(260, 250), (310, 250), (310, 295), (392, 295)], fill=self.color_line)
 
     def relier_et_traverser_3(self):
-        self.dessin.line([(392, 260), (530, 260), (530, 82), (387, 82)], fill=self.color_line)
+        self.dessin.rectangle([(484, 274), (590, 309)], fill=couleurs_salles[3])
+        self.dessin.rectangle([(590, 309), (560, 73)], fill=couleurs_salles[3])
+        self.dessin.rectangle([(560, 73), (488, 113)], fill=couleurs_salles[3])
+
+        self.dessin.line([(392, 295), (575, 295), (575, 82), (387, 82)], fill=self.color_line)
 
     def raccourci_ss(self):
-        self.dessin.line([(392, 260), (424, 221), (424, 130), (387, 82)], fill=self.color_line)
+        self.dessin.line([(392, 295), (410, 295), (460, 243), (460, 140), (400, 82)], fill=self.color_line)
 
     def traverser_4(self):
-        self.dessin.line([(285, 82), (285, 130), (108, 130), (108, 151)], fill=self.color_line)
+        self.dessin.rectangle([(325, 75), (283, 154)], fill=couleurs_salles[4])
+        self.dessin.rectangle([(283, 154), (85, 135)], fill=couleurs_salles[4])
+
+        self.dessin.line([(380, 82), (310, 82), (310, 140), (108, 140), (108, 151)], fill=self.color_line)
 
     def relier_4(self):
-        self.dessin.line([(387, 82), (285, 82)], fill=self.color_line)
+        self.dessin.line([(400, 82), (310, 82)], fill=self.color_line)
 
     def sortir_ss(self):
-        self.dessin.line([(108, 151), (108, 224), (127, 224), (127, 272)], fill=self.color_line)
+        self.dessin.line([(108, 151), (108, 250), (127, 250), (127, 300)], fill=self.color_line)
 
     def pas_passer_ss(self):
-        self.dessin.line([(482, 105), (363, 105)], fill=self.color_line)
+        self.dessin.line([(537, 120), (402, 120)], fill=self.color_line)
 
     def relier_ss_etage0(self):
-        self.dessin.line([(363, 105), (410, 105), (410, 57)], fill=self.color_line)
+        self.dessin.line([(455, 64), (455, 120), (402, 120)], fill=self.color_line)
 
     def raccourci_etage_0_1(self):
-        self.dessin.line([(363, 105), (363, 10), (166, 10), (166, 66)], fill=self.color_line)
-
-    def traverser_5(self):
-        self.dessin.line([(324, 105), (324, 66), (275, 66)], fill=self.color_line)
-
-    def relier_entree_5(self):
-        self.dessin.line([(315, 124), (324, 105)], fill=self.color_line)
+        self.dessin.line([(402, 120), (402, 12), (183, 12), (183, 70)], fill=self.color_line)
 
     def relier_1_5(self):
-        self.dessin.line([(363, 105), (324, 105)], fill=self.color_line)
+        self.dessin.line([(402, 120), (355, 120)], fill=self.color_line)
 
-    def traverser_6(self):
-        self.dessin.line([(262, 66), (166, 66)], fill=self.color_line)
+    def relier_entree_5(self):
+        self.dessin.line([(352, 133), (355, 120)], fill=self.color_line)
+
+    def traverser_5(self):
+        self.dessin.rectangle([(376, 103), (331, 54)], fill=couleurs_salles[5])
+        self.dessin.rectangle([(331, 54), (300, 91)], fill=couleurs_salles[5])
+        self.dessin.line([(355, 120), (355, 70), (300, 70)], fill=self.color_line)
 
     def relier_5_6(self):
-        self.dessin.line([(275, 66), (166, 66)], fill=self.color_line)
+        self.dessin.line([(300, 70), (285, 70)], fill=self.color_line)
 
-    def traverser_7(self):
-        self.dessin.line([(130, 55), (200, 55)], fill=self.color_line)
-
-    def raccourci_etage_1_1(self):
-        self.dessin.line([(130, 55), (165, 55), (132, 100), (132, 235)], fill=self.color_line)
+    def traverser_6(self):
+        self.dessin.rectangle([(285, 53), (195, 90)], fill=couleurs_salles[6])
+        self.dessin.line([(285, 70), (183, 70)], fill=self.color_line)
 
     def relier_etage_0_7(self, image1):
-        self.dessin.line([(166, 66), (66, 66)], fill=self.color_line)
-        image1.dessin.line([(67, 55), (130, 55)], fill=self.color_line)
+        self.dessin.line([(183, 70), (72, 70)], fill=self.color_line)
+        image1.dessin.line([(76, 36), (150, 36)], fill=self.color_line)
 
-    def traverser_8(self):
-        self.dessin.line([(225, 55), (315, 55)], fill=self.color_line)
+    def traverser_7(self):
+        self.dessin.rectangle([(145, 19), (212, 56)], fill=couleurs_salles[7])
+        self.dessin.line([(140, 36), (200, 36)], fill=self.color_line)
+
+    def raccourci_etage_1_1(self):
+        self.dessin.rectangle([(145, 19), (212, 56)], fill=couleurs_salles[7])
+        self.dessin.line([(145, 36), (186, 36), (150, 85), (150, 236)], fill=self.color_line)
 
     def relier_7_8(self):
-        self.dessin.line([(200, 55), (225, 55)], fill=self.color_line)
+        self.dessin.line([(200, 36), (225, 36)], fill=self.color_line)
 
-    def traverser_9(self):
-        self.dessin.line([(351, 95), (505, 95), (505, 185), (478, 185)], fill=self.color_line)
+    def traverser_8(self):
+        self.dessin.rectangle([(240, 56), (335, 20)], fill=couleurs_salles[8])
+        self.dessin.line([(225, 36), (360, 36)], fill=self.color_line)
 
     def relier_8_9(self):
-        self.dessin.line([(315, 55), (315, 95), (351, 95)], fill=self.color_line)
+        self.dessin.line([(360, 36), (360, 82)], fill=self.color_line)
+
+    def traverser_9(self):
+        self.dessin.rectangle([(404, 74), (583, 91)], fill=couleurs_salles[9])
+        self.dessin.rectangle([(583, 91), (546, 198)], fill=couleurs_salles[9])
+        self.dessin.line([(360, 82), (563, 82), (563, 185), (535, 185)], fill=self.color_line)
 
     def raccourci_etage_1_2(self):
-        self.dessin.line([(315, 55), (315, 95), (335, 110), (465, 185)], fill=self.color_line)
+        self.dessin.line([(360, 36), (360, 90), (535, 185)], fill=self.color_line)
 
     def raccourci_etage_1_3(self):
-        self.dessin.line([(478, 185), (478, 327), (250, 327), (250, 235)], fill=self.color_line)
-
-    def traverser_10(self):
-        self.dessin.line([(456, 185), (350, 185), (337, 175), (337, 132)], fill=self.color_line)
+        self.dessin.line([(535, 185), (535, 342), (280, 342), (280, 237)], fill=self.color_line)
 
     def relier_raccourci_etage1_2_10(self):
-        self.dessin.line([(456, 185), (465, 185)], fill=self.color_line)
+        self.dessin.line([(535, 185), (465, 185)], fill=self.color_line)
 
     def relier_9_10(self):
-        self.dessin.line([(456, 185), (478, 185)], fill=self.color_line)
+        self.dessin.line([(465, 185), (535, 185)], fill=self.color_line)
 
-    def traverser_11(self):
-        self.dessin.line([(320, 200), (320, 235), (250, 235)], fill=self.color_line)
+    def traverser_10(self):
+        self.dessin.rectangle([(480, 175), (391, 195)], fill=couleurs_salles[10])
+        self.dessin.polygon([(391, 195), (365, 170), (387, 170), (403, 175)], fill=couleurs_salles[10])
+        self.dessin.rectangle([(365, 170), (387, 132)], fill=couleurs_salles[10])
+        self.dessin.line([(465, 185), (390, 185), (378, 171), (378, 125)], fill=self.color_line)
 
     def relier_10_11(self):
-        self.dessin.line([(337, 132), (315, 132), (315, 175), (320, 200)], fill=self.color_line)
+        self.dessin.line([(378, 125), (351, 125), (351, 200)], fill=self.color_line)
 
     def relier_8_11(self):
-        self.dessin.line([(315, 55), (315, 132), (315, 175), (320, 200)], fill=self.color_line)
+        self.dessin.line([(360, 36), (348, 111), (351, 200)], fill=self.color_line)
 
-    def traverser_12(self):
-        self.dessin.line([(235, 235), (132, 235)], fill=self.color_line)
+    def traverser_11(self):
+        self.dessin.rectangle([(300, 257), (385, 216)], fill=couleurs_salles[11])
+        self.dessin.line([(351, 200), (351, 237), (280, 237)], fill=self.color_line)
 
     def relier_11_12(self):
-        self.dessin.line([(235, 235), (250, 235)], fill=self.color_line)
+        self.dessin.line([(280, 237), (270, 237)], fill=self.color_line)
+
+    def traverser_12(self):
+        self.dessin.rectangle([(260, 219), (177, 255)], fill=couleurs_salles[12])
+        self.dessin.line([(270, 237), (150, 237)], fill=self.color_line)
 
     def sortie_etage_1(self):
-        self.dessin.line([(132, 235), (54, 235)], fill=self.color_line)
+        self.dessin.line([(150, 237), (62, 237)], fill=self.color_line)
 
     def sortie_depuis_etage_1(self):
-        self.dessin.line([(53, 245), (325, 245), (325, 200), (297, 183), (215, 183)], fill=self.color_line)
+        self.dessin.rectangle([(140, 250), (237, 289)], fill=couleurs_salles[13])
+        self.dessin.line([(55, 271), (185, 271)], fill=self.color_line)
 
     def raccourci_etage_0_2(self):
-        self.dessin.line([(166, 66), (134, 107), (134, 200), (170, 245)], fill=self.color_line)
+        self.dessin.rectangle([(140, 250), (237, 289)], fill=couleurs_salles[13])
+        self.dessin.line([(183, 70), (144, 119), (144, 218), (185, 271)], fill=self.color_line)
 
-    def sortie_depuis_raccourci_etage0(self):
-        self.dessin.line([(170, 245), (325, 245), (325, 200), (297, 183), (215, 183)], fill=self.color_line)
+    def sortie(self):
+        self.dessin.rectangle([(250, 250), (318, 289)], fill=couleurs_salles[14])
+        self.dessin.rectangle([(333, 289), (381, 239)], fill=couleurs_salles[15])
+        self.dessin.line([(185, 271), (352, 271), (352, 222), (328, 202), (238, 202)], fill=self.color_line)

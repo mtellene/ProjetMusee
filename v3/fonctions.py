@@ -328,7 +328,7 @@ def dessiner(coloree_salles):
         image0.sortie_depuis_etage_1()
     else:
         image0.raccourci_etage_0_2()
-        image0.sortie_depuis_raccourci_etage0()
+    image0.sortie()
 
     image0.save_draw()
     image1.save_draw()
