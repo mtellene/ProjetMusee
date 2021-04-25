@@ -141,6 +141,12 @@
   width: 100%;
   margin-top: 2%;
 }
+/* visionneur d'oeuvres */
+/* utilise dans itineraire.html */
+#oeuvre_visionner{
+  position: fixed;
+  top: 0%;
+}
 /* mise en forme de la div qui contient le plus court chemin */
 /* utilise dans resultat.html */
 #result {
