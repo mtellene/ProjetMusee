@@ -1,0 +1,10 @@
+Tout d'abord, ce logiciel est en accord avec l'exception pédagogique qui permet la reproduction numérique d'images protégées donnée à titre temporaire pour toute oeuvre diffusée en classe sous certaines contraintes :
+    - maximum 20 images incorporées dans chaque travail pédagogique : dans ce projet, il y en a 19
+    - maximum 400 × 400 pixels : dans ce projet, les images seront maximum de taille 400 x ? (où ? > 400, voir doc/readme pour plus d'info)
+
+Ce(tte) oeuvre est mise à disposition selon les termes de la Licence Creative Commons Attribution - Pas d’Utilisation Commerciale 4.0 International.
+
+Dans HTML :
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+    <img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
+</a>
