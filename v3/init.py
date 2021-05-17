@@ -128,6 +128,5 @@ def creer_dict():
 
 
 def initialisation():
-    # remove_file()
     # creation_db()
     creer_dict()
