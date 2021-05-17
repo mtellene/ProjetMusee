@@ -3,7 +3,7 @@ let is_img = false;
 
 function resize(img, bigger){
     let ratio = 0;
-    if(bigger == img.height){
+    if(bigger === img.height){
         ratio = (400 * 100) / img.height;
         img.height = 400;
         img.width = (img.width * ratio) / 100; 
@@ -15,7 +15,7 @@ function resize(img, bigger){
 }
 
 function display_img(url_img){
-    if(is_img == true){
+    if(is_img === true){
         stop_display();
     }
     let img = new Image();
