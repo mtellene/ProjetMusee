@@ -16,10 +16,12 @@ N'hésitez également pas à aller voir doc/Packaging.rst pour voir les différe
 
 ### Comment lancer le programme ?
 
-1. Ouvrir un terminal et se mettre dans la racine du dossier
+1. Commencer par faire ```git clone https://github.com/mtellene/ProjetMusee.git```
 
-2. Lancer la command ```export FLASK_APP=app.py```
+2. Ouvrir un terminal et se mettre dans la racine de la version la plus récente du projet ```cd v*/```
 
-3. Puis lancer ```flask run```
+3. Lancer la command ```export FLASK_APP=app.py```
 
-4. Enfin, ouvrir un navigateur et se rendre sur l'adresse ```http://127.0.0.1:5000/```
+4. Puis lancer ```flask run```
+
+5. Enfin, ouvrir un navigateur et se rendre sur l'adresse ```http://127.0.0.1:5000/```
