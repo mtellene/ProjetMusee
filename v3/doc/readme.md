@@ -61,7 +61,7 @@ Classe Dessin, le constructeur crée une image sur lequel on peut dessiner. On a
 
 ### static
 
-* ```script.js```: script qui sert à redimensionner les images. Afin de respecter l'exception pédagogique, il faut que les images respectent les dimensions de 400x400. Ce script redimensionne les images pour conserver le rapport de proportionnalité et ne pas avoir des images déformées
+* ```redimension.js```: script qui sert à redimensionner les images. Afin de respecter l'exception pédagogique, il faut que les images respectent les dimensions de 400x400. Ce script redimensionne les images pour conserver le rapport de proportionnalité et ne pas avoir des images déformées
 
 ### Utiles 
 
