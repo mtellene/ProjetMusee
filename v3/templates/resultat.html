@@ -23,6 +23,12 @@
 
             <section class="flex-container">
                 <div id="container-liste-oeuvre" class="flex-result">
+                    <div id="is_fauteuil"></div>
+                        <p id="texte">Option fauteuil non sélectionnée</p>
+                        <label class="switch">
+                            <input id="choix" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
                     <h5>Votre selection:</h5>
                     <ul class="liste">
                         {% for i in range(coloree_oeuvres| length) %}
@@ -51,5 +57,6 @@
 
             </section>
         </main>
+        <script src="static/is_fauteuil.js"></script>
     </body>
 </html>
