@@ -13,7 +13,7 @@ import sqlite3
 from PIL.Image import *
 
 from init import recuperer_les_oeuvres, mon_graphe, liste_des_salles, couleurs_salles
-from Dessin import *
+from Dessin_normal import *
 import shutil
 
 
@@ -248,9 +248,9 @@ def dessiner(coloree_salles):
         liste_salles.append(salle)
     liste_id_salles = from_nom_to_id(liste_salles)
 
-    image0 = Dessin("static/etage0_res.png")
-    image1 = Dessin("static/etage1_res.png")
-    image_1 = Dessin("static/etage-1_res.png")
+    image0 = DessinN("static/etage0_res.png")
+    image1 = DessinN("static/etage1_res.png")
+    image_1 = DessinN("static/etage-1_res.png")
 
     is1 = False
     is9 = False

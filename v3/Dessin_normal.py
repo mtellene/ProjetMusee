@@ -1,7 +1,7 @@
 # ! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-    Dessin.py
+    Dessin_normal.py
     classe qui permet le dessin du chemin sur les images
 """
 __author__ = "Maxime Tellene"
@@ -14,7 +14,7 @@ from datetime import datetime
 from init import couleurs_salles
 
 
-class Dessin:
+class DessinN:
     color_line = (0, 0, 0)
 
     def __init__(self, image_url):
