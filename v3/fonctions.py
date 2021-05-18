@@ -14,6 +14,7 @@ from PIL.Image import *
 
 from init import recuperer_les_oeuvres, mon_graphe, liste_des_salles, couleurs_salles
 from Dessin_normal import *
+from Dessin_fauteuil import *
 import shutil
 
 
@@ -236,13 +237,15 @@ def coloration(chemin, liste_oeuvres):
 
 
 def remove_images():
-    if os.path.exists("static/temp"):
-        shutil.rmtree("static/temp")
-    os.popen("mkdir static/temp")
+    if os.path.exists("static/temp_n"):
+        shutil.rmtree("static/temp_n")
+    os.popen("mkdir static/temp_n")
+    if os.path.exists("static/temp_f"):
+        shutil.rmtree("static/temp_f")
+    os.popen("mkdir static/temp_f")
 
 
-def dessiner(coloree_salles):
-    remove_images()
+def dessiner_n(coloree_salles):
     liste_salles = []
     for (salle, couleur) in coloree_salles:
         liste_salles.append(salle)
@@ -335,3 +338,105 @@ def dessiner(coloree_salles):
     image_1.save_draw()
 
     return image0, image1, image_1
+
+
+def dessiner_f(coloree_salles):
+    liste_salles = []
+    for (salle, couleur) in coloree_salles:
+        liste_salles.append(salle)
+    liste_id_salles = from_nom_to_id(liste_salles)
+
+    image0 = DessinF("static/etage0_res.png")
+    image1 = DessinF("static/etage1_res.png")
+    image_1 = DessinF("static/etage-1_res.png")
+
+    is1 = False
+    is9 = False
+    is10 = False
+    is11 = False
+    image0.draw_entree()
+    if 1 in liste_id_salles:
+        image0.relier_entree_1()
+        image0.traverser_1()
+        is1 = True
+
+    # si on doit aller au sous sol
+    if 2 not in liste_id_salles and 3 not in liste_id_salles and 4 not in liste_id_salles:
+        if is1:
+            image0.pas_passer_ss()
+    else:
+        image0.relier_1_2(image_1)
+        image_1.traverser_2()
+        if 3 in liste_id_salles:
+            image_1.relier_et_traverser_3()
+        else:
+            image_1.raccourci_ss()
+        image_1.relier_4()
+        image_1.traverser_4()
+        image_1.sortir_ss()
+        image0.relier_ss_etage0()
+
+    if 5 in liste_id_salles or 6 in liste_id_salles:
+        image0.traverser_5()
+        image0.relier_5_6()
+        image0.traverser_6()
+        if is1:
+            image0.relier_1_5()
+        else:
+            image0.relier_entree_5()
+    else:
+        image0.raccourci_etage_0_1()
+
+    # si on doit aller à l'étage
+    if 7 in liste_id_salles or 8 in liste_id_salles or 9 in liste_id_salles or 10 in liste_id_salles or 11 in liste_id_salles or 12 in liste_id_salles:
+        image0.relier_etage_0_7(image1)
+        # si seulement 7
+        if 8 not in liste_id_salles and 9 not in liste_id_salles and 10 not in liste_id_salles and 11 not in liste_id_salles and 12 not in liste_id_salles:
+            image1.raccourci_etage_1_1()
+            image1.sortie_etage_1()
+        else:
+            image1.traverser_7()
+            image1.relier_7_8()
+            image1.traverser_8()
+            if 9 in liste_id_salles:
+                image1.relier_8_9()
+                image1.traverser_9()
+                is9 = True
+            if 10 in liste_id_salles:
+                image1.traverser_10()
+                if is9:
+                    image1.relier_9_10()
+                else:
+                    image1.raccourci_etage_1_2()
+                    image1.relier_raccourci_etage1_2_10()
+                is10 = True
+            if 11 in liste_id_salles:
+                image1.traverser_11()
+                if is10:
+                    image1.relier_10_11()
+                else:
+                    image1.relier_8_11()
+                is11 = True
+            if 12 in liste_id_salles:
+                if not is11 and not is10:
+                    image1.raccourci_etage_1_3()
+            image1.relier_11_12()
+            image1.traverser_12()
+        image1.sortie_etage_1()
+        image0.sortie_depuis_etage_1()
+    else:
+        image0.raccourci_etage_0_2()
+    image0.sortie()
+
+    image0.save_draw()
+    image1.save_draw()
+    image_1.save_draw()
+
+    return image0, image1, image_1
+
+
+def dessiner_plan(coloree_salles):
+    remove_images()
+    img0_n, img1_n, img_1_n = dessiner_n(coloree_salles)
+    img0_f, img1_f, img_1_f = dessiner_f(coloree_salles)
+    return img0_n, img1_n, img_1_n, img0_f, img1_f, img_1_f
