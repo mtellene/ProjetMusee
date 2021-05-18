@@ -61,10 +61,16 @@ Classe Dessin, le constructeur crée une image sur lequel on peut dessiner. On a
 
 ### static
 
-Dans le static, il y a le fichier ```script.js``` qui permet de redimensionner les images. Afin de respecter l'exception pédagogique, il faut que les images respectent les dimensions de 400x400. Ce script redimensionne les images pour conserver le rapport de proportionnalité.
+* ```script.js```: script qui sert à redimensionner les images. Afin de respecter l'exception pédagogique, il faut que les images respectent les dimensions de 400x400. Ce script redimensionne les images pour conserver le rapport de proportionnalité et ne pas avoir des images déformées
 
 ### Utiles 
 
 - site pour les droits d'auteur/exceptions pédagogiques:
 https://www.reseau-canope.fr/savoirscdi/societe-de-linformation/cadre-reglementaire/le-coin-du-juriste/le-point-sur-lexception-pedagogique-au-29-septembre-2016.html
+  
+### TODO 
+
+* faire le dessin pour fauteuil 
+* rajouter une checkbox fauteuil 
+* changer les images (script js ?) si la checkbox est check
   
