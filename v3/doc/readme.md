@@ -18,7 +18,7 @@ Les oeuvres sont stockés dans une base de données (```database.db```). Cette b
 
 
 * ```init_db()```: supprime l'ancienne base de données et en crée une vide
-* ```recuperer_les_oeuvres()```: parse le fichier ```oevres.json``` afin de récupérer une liste avec toutes les oeuvres sous forme de tuple : (type, artiste, titre, salle, img)
+* ```recuperer_les_oeuvres()```: parse le fichier ```oevres.json``` afin de récupérer un dictionnaire avec toutes les oeuvres
 * ```remplir_table_oeuvre()```: appelle la fonction précédente, récupère le résultat et remplit la base de données
 * ```creation_db()```: appelle ```init_db()``` et ```remplir_table_oeuvre()``` pour initialiser une base de données vide et la remplir
 * ```creer_dict()```: remplit un dictionnaire représentant le graphe du musée en lisant la matrice d'adjacence (<em>TODO</em>)
