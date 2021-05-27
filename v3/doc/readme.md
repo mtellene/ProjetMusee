@@ -55,9 +55,10 @@ Récupère les requêtes HTTP
 * ```itineraire()```: page où l'utilisateur choisi les oeuvres qu'il veut voir
 * ```resultat()```: page qui affiche le résultat de la selection de l'utilisateur
 
-#### Dessin.py
+#### Dessin_b.py et Dessin_h.py
 
-Classe Dessin, le constructeur crée une image sur lequel on peut dessiner. On ajoute également au nom du fichier la date à laquelle le dessin a été édité afin d'avoir un nom unique. Les différentes méthodes sont des petits bouts de dessins pour créer le chemin à afficher dans ```resultat.html```
+Classes DessinB et DessinH, le constructeur crée une image sur lequel on peut dessiner. On ajoute également au nom du fichier la date à laquelle le dessin a été édité afin d'avoir un nom unique. Les différentes méthodes sont des petits bouts de dessins pour créer le chemin à afficher dans ```resultat.html```
+L'une permet le dessin pour le chemin base et l'autre permet le dessin pour le chemin handicap.
 
 ### static
 
