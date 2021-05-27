@@ -12,5 +12,3 @@ Vous trouverez ici la liste des librairies nécessaires pour faire fonctionner c
 - sqlite3
 
 - shutil
-
-- json
