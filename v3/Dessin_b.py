@@ -1,7 +1,7 @@
 # ! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-    Dessin_normal.py
+    Dessin_b.py
     classe qui permet le dessin du chemin sur les images
 """
 __author__ = "Maxime Tellene"
@@ -14,14 +14,14 @@ from datetime import datetime
 from init import couleurs_salles
 
 
-class DessinF:
+class DessinB:
     color_line = (0, 0, 0)
 
     def __init__(self, image_url):
         temp = image_url.split('.')
         temp2 = temp[0] + "_drawn_" + str(datetime.now()) + "." + temp[1]
         temp = temp2.split('/')
-        self.nom_image = temp[0] + "/temp_f/" + temp[1]
+        self.nom_image = temp[0] + "/temp_n/" + temp[1]
         self.image = Image.open(image_url)
         self.dessin = ImageDraw.Draw(self.image, mode="RGBA")
 
@@ -46,8 +46,8 @@ class DessinF:
         self.dessin.line([(406, 220), (565, 220), (565, 120), (537, 120)], fill=self.color_line)
 
     def relier_1_2(self, image_1):
-        self.dessin.line([(537, 120), (507, 120), (507, 97)], fill=self.color_line)
-        image_1.dessin.line([(175, 267), (175, 250), (209, 250), (260, 250)], fill=self.color_line)
+        self.dessin.line([(537, 120), (537, 64)], fill=self.color_line)
+        image_1.dessin.line([(209, 302), (209, 250), (260, 250)], fill=self.color_line)
 
     def traverser_2(self):
         self.dessin.rectangle([(290, 238), (330, 310)], fill=couleurs_salles[2])
@@ -74,13 +74,13 @@ class DessinF:
         self.dessin.line([(400, 82), (310, 82)], fill=self.color_line)
 
     def sortir_ss(self):
-        self.dessin.line([(108, 151), (108, 250), (127, 250), (155, 250), (155, 267)], fill=self.color_line)
+        self.dessin.line([(108, 151), (108, 250), (127, 250), (127, 300)], fill=self.color_line)
 
     def pas_passer_ss(self):
         self.dessin.line([(537, 120), (402, 120)], fill=self.color_line)
 
     def relier_ss_etage0(self):
-        self.dessin.line([(487, 97), (487   , 120), (455, 120), (402, 120)], fill=self.color_line)
+        self.dessin.line([(455, 64), (455, 120), (402, 120)], fill=self.color_line)
 
     def raccourci_etage_0_1(self):
         self.dessin.line([(402, 120), (402, 12), (183, 12), (183, 70)], fill=self.color_line)
@@ -104,8 +104,8 @@ class DessinF:
         self.dessin.line([(285, 70), (183, 70)], fill=self.color_line)
 
     def relier_etage_0_7(self, image1):
-        self.dessin.line([(183, 70), (137, 70), (137, 45)], fill=self.color_line)
-        image1.dessin.line([(113, 68), (113, 36), (150, 36)], fill=self.color_line)
+        self.dessin.line([(183, 70), (72, 70)], fill=self.color_line)
+        image1.dessin.line([(76, 36), (150, 36)], fill=self.color_line)
 
     def traverser_7(self):
         self.dessin.rectangle([(145, 19), (212, 56)], fill=couleurs_salles[7])
@@ -166,11 +166,11 @@ class DessinF:
         self.dessin.line([(270, 237), (150, 237)], fill=self.color_line)
 
     def sortie_etage_1(self):
-        self.dessin.line([(150, 237), (113, 237), (113, 264)], fill=self.color_line)
+        self.dessin.line([(150, 237), (62, 237)], fill=self.color_line)
 
     def sortie_depuis_etage_1(self):
         self.dessin.rectangle([(140, 250), (237, 289)], fill=couleurs_salles[13])
-        self.dessin.line([(120, 300), (120, 271), (185, 271)], fill=self.color_line)
+        self.dessin.line([(55, 271), (185, 271)], fill=self.color_line)
 
     def raccourci_etage_0_2(self):
         self.dessin.rectangle([(140, 250), (237, 289)], fill=couleurs_salles[13])
