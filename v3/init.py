@@ -9,7 +9,6 @@ __copyright__ = "Univ Lyon1, 2020"
 __license__ = "Public Domain"
 __version__ = "3.0"
 
-import json
 import sqlite3
 
 mon_graphe = {}
@@ -49,21 +48,13 @@ def init_db():
 def recuperer_les_oeuvres():
     """
     Input: /
-    Output: liste de toutes les oeuvres sous formes de tuple
-    tuple = (type de l'oeuvre, artiste associé, titre de l'oeuvre, salle d'exposition, representation)
+    Output: un dictionnaire avec toutes les oeuvres
     """
-    liste_oeuvres = []
     filename = 'db/oeuvres.json'
-    with open(filename, 'r') as f:
-        data = f.read()
-        dico = json.loads(data)
-        for i in dico.values():
-            for j in i:
-                type, artiste, titre, salle, img = j.values()
-                tuple = (type, artiste, titre, salle, img)
-                liste_oeuvres.append(tuple)
-    f.close()
-    return liste_oeuvres
+    with open(filename) as f:
+        dico = eval(f.read().replace('\n', ''))
+    values = list(dico.values())[0]
+    return values
 
 
 def remplir_table_oeuvre():
@@ -71,15 +62,17 @@ def remplir_table_oeuvre():
     Input: /
     Output: /
     fonction qui permet de remplir la table oeuvres de la base de donnée
-    cette fonction appel la fonction recuperer_les_oeuvres()
-    si la fonction init_db() n'est pas appelé, inutile d'appeler cette fonction
     """
     liste_oeuvres = recuperer_les_oeuvres()
 
     conn = sqlite3.connect('db/database.db')
     cur = conn.cursor()
     for i in range(len(liste_oeuvres)):
-        type, artiste, titre, salle, img = liste_oeuvres[i]
+        type = liste_oeuvres[i]['Type']
+        artiste = liste_oeuvres[i]['Artiste']
+        titre = liste_oeuvres[i]['Titre']
+        salle = liste_oeuvres[i]['Salle']
+        img = liste_oeuvres[i]['Representation']
         values = (i, titre, artiste, type, salle, img)
         cur.execute("INSERT INTO oeuvres(id_oeuvre, nom, artiste, type, salle, img) VALUES (?, ?, ?, ?, ?, ?)", values)
         conn.commit()
@@ -128,5 +121,5 @@ def creer_dict():
 
 
 def initialisation():
-    # creation_db()
+    creation_db()
     creer_dict()

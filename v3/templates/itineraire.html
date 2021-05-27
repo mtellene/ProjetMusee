@@ -40,12 +40,12 @@
                         {% for ecrit in ecrits %}
                             <div class="item">
                                 <div class="selection item-part-container item-without-picture">
-                                    <input type="checkbox" name="check" id="{{ecrit[2]}}" 
-                                    value="{{ecrit[2]}}">
+                                    <input type="checkbox" name="check" id="{{ecrit['Titre']}}"
+                                    value="{{ecrit['Titre']}}">
                                 </div>
                                 <div class="text item-part-container item-without-picture">
-                                    <p> {{ecrit[2]}} </p>
-                                    <p> {{ecrit[1]}} </p>
+                                    <p> {{ecrit['Titre']}} </p>
+                                    <p> {{ecrit['Artiste']}} </p>
                                 </div>
                             </div>
                         {% endfor %}
@@ -56,16 +56,16 @@
                         {% for peinture in peintures %}
                             <div class="item">
                                 <div class="selection item-part-container">
-                                    <input type="checkbox" name="check" id="{{peinture[2]}}" 
-                                    value="{{peinture[2]}}">
+                                    <input type="checkbox" name="check" id="{{peinture['Titre']}}"
+                                    value="{{peinture['Titre']}}">
                                 </div>
                                 <div class="text item-part-container">
-                                    <p> {{peinture[2]}} </p>
-                                    <p> {{peinture[1]}} </p>
+                                    <p> {{peinture['Titre']}} </p>
+                                    <p> {{peinture['Artiste']}} </p>
                                 </div>
                                 <div class="photo item-part-container">
                                     <button type="button" class="btn btn-default btn-sm" 
-                                    onclick="display_img('{{peinture[4]}}')"> Aperçu </button>
+                                    onclick="display_img('{{peinture['Representation']}}')"> Aperçu </button>
                                 </div>
                             </div>
                         {% endfor %}
@@ -76,16 +76,16 @@
                         {% for sculpture in sculptures %}
                             <div class="item">
                                 <div class="selection item-part-container">
-                                    <input type="checkbox" name="check" id="{{sculpture[2]}}" 
-                                    value="{{sculpture[2]}}">
+                                    <input type="checkbox" name="check" id="{{sculpture['Titre']}}"
+                                    value="{{sculpture['Titre']}}">
                                 </div>
                                 <div class="text item-part-container">
-                                    <p> {{sculpture[2]}} </p>
-                                    <p> {{sculpture[1]}} </p>
+                                    <p> {{sculpture['Titre']}} </p>
+                                    <p> {{sculpture['Artiste']}} </p>
                                 </div>
                                 <div class="photo item-part-container">
                                     <button type="button" class="btn btn-default btn-sm" 
-                                    onclick="display_img('{{sculpture[4]}}')">
+                                    onclick="display_img('{{sculpture['Representation']}}')">
                                         <span class="glyphicon glyphicon-camera"></span> Aperçu
                                     </button>
                                 </div>
@@ -98,16 +98,16 @@
                         {% for artefact in artefacts %}
                             <div class="item">
                                 <div class="selection item-part-container">
-                                    <input type="checkbox" name="check" id="{{artefact[2]}}" 
-                                    value="{{artefact[2]}}">
+                                    <input type="checkbox" name="check" id="{{artefact['Titre']}}"
+                                    value="{{artefact['Titre']}}">
                                 </div>
                                 <div class="text item-part-container">
-                                    <p> {{artefact[2]}} </p>
-                                    <p> {{artefact[1]}} </p>
+                                    <p> {{artefact['Titre']}} </p>
+                                    <p> {{artefact['Artiste']}} </p>
                                 </div>
                                 <div class="photo item-part-container">
                                     <button type="button" class="btn btn-default btn-sm" 
-                                    onclick="display_img('{{artefact[4]}}')">
+                                    onclick="display_img('{{artefact['Representation']}}')">
                                         <span class="glyphicon glyphicon-camera"></span> Aperçu
                                     </button>
                                 </div>

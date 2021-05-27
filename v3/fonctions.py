@@ -31,13 +31,13 @@ def separation_par_types():
     type_sculpture = []
     type_artefact = []
     for oeuvre in liste_oeuvres:
-        if oeuvre[0] == "Ecrits":
+        if oeuvre['Type'] == "Ecrits":
             type_ecrit.append(oeuvre)
-        elif oeuvre[0] == "Peinture":
+        elif oeuvre['Type'] == "Peinture":
             type_peinture.append(oeuvre)
-        elif oeuvre[0] == "Sculpture":
+        elif oeuvre['Type'] == "Sculpture":
             type_sculpture.append(oeuvre)
-        elif oeuvre[0] == "Artefact":
+        elif oeuvre['Type'] == "Artefact":
             type_artefact.append(oeuvre)
     return type_ecrit, type_peinture, type_sculpture, type_artefact
 
