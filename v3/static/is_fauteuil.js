@@ -13,15 +13,13 @@ let url_img1_f = document.currentScript.getAttribute('six');
 
 
 function change_texte(){
-    console.log("clicked");
     if(choice.checked){
-        p.innerHTML = "Option fauteuil sélectionnée"
+        p.style.color = "black";
         img_1.setAttribute("src", url_img_1_f);
         img0.setAttribute("src", url_img0_f);
         img1.setAttribute("src", url_img1_f);
-
     }else{
-        p.innerHTML = "Option fauteuil non sélectionnée"
+        p.style.color = "white";
         img_1.setAttribute("src", url_img_1_n);
         img0.setAttribute("src", url_img0_n);
         img1.setAttribute("src", url_img1_n);
