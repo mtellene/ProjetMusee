@@ -82,23 +82,22 @@ def from_liste_oeuvres_to_liste_id_salles(liste_oeuvres):
 
 
 # todo pour eleve
-def lister_tous_les_chemins(graph, depart, path=[]):
+def lister_tous_les_chemins(graph, depart, chemin=[]):
     """
     Input: un dictionnaire, un noeud de départ
     Output: une liste avec tous les chemins possibles partant du noeud de départ
-
+    fonction qui retourne tous les chemins possibles sous forme de liste de listes
     """
-    path = path + [depart]  # on ajoute le noeud de depart dans la liste path
-    if not depart in graph:  # si le noeud de depart n'est pas dans le graphe
-        return [path]  # alors on return la liste
-    paths = [path]  # sinon, on ajoute la liste path a la liste qui contiendra tous les chemins
-    for noeud in graph[depart]:  # on parcourt les successeurs du noeud depart
-        if noeud not in path:  # si le noeud n'est pas dans le chemin
-            newpaths = lister_tous_les_chemins(graph, noeud,
-                                               path)  # on lance la fonction récursivement en prenant comme depart noeud
-            for newpath in newpaths:  # on parcourt la liste retournée par l'appel récursif
-                paths.append(newpath)  # on ajoute les éléments de newpaths dans la liste paths
-    return paths  # on retourne la liste paths (qui contient tous les chemins)
+    chemin = chemin + [depart]
+    if not depart in graph:
+        return [chemin]
+    liste_chemins = [chemin]
+    for noeud in graph[depart]:
+        if noeud not in chemin:
+            nouveau_chemins = lister_tous_les_chemins(graph, noeud, chemin)
+            for n_chemin in nouveau_chemins:
+                liste_chemins.append(n_chemin)
+    return liste_chemins
 
 
 # todo pour eleve
