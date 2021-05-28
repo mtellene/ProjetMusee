@@ -198,6 +198,7 @@ def charger_resultat(liste_oeuvres):
         -> récupérer les id des salles
         -> récupérer le plus court chemin
         -> convertir la liste d'id en liste de nom de salle
+    récupère la liste des salles à visitées en fonction des oeuvres choisies
     """
     liste_id_salles = from_liste_oeuvres_to_liste_id_salles(liste_oeuvres)
     id_plus_court_chemin = plus_court_chemin(liste_id_salles)
@@ -205,7 +206,6 @@ def charger_resultat(liste_oeuvres):
     return liste_salles_a_voir
 
 
-# todo pour eleve
 def coloration(chemin, liste_oeuvres):
     """
     Input: une liste contenant le plus court chemin, une liste contenant les oeuvres selectionnées
@@ -236,6 +236,12 @@ def coloration(chemin, liste_oeuvres):
 
 
 def remove_images():
+    """
+    Input : /
+    Output : /
+    Supprime les répertoires contenant les plans dessinés, puis recrée les dossier vierge afin de mettre les nouveaux
+    plans
+    """
     if os.path.exists("static/temp_n"):
         shutil.rmtree("static/temp_n")
     os.popen("mkdir static/temp_n")
@@ -245,6 +251,11 @@ def remove_images():
 
 
 def dessiner_n(coloree_salles):
+    """
+    Input : une liste où les éléments sont les salles par lesquels il faut passer
+    Output les plans avec le chemin dessiné
+    Dessine sur les plans du musée afin que l'utilisateur puisse voir le chemin à prendre
+    """
     liste_salles = []
     for (salle, couleur) in coloree_salles:
         liste_salles.append(salle)
@@ -340,6 +351,12 @@ def dessiner_n(coloree_salles):
 
 
 def dessiner_f(coloree_salles):
+    """
+    Input : une liste où les éléments sont les salles par lesquels il faut passer
+    Output les plans avec le chemin dessiné
+    Dessine sur les plans du musée afin que l'utilisateur puisse voir le chemin à prendre
+    Chemin pour les handicapés
+    """
     liste_salles = []
     for (salle, couleur) in coloree_salles:
         liste_salles.append(salle)
@@ -435,6 +452,11 @@ def dessiner_f(coloree_salles):
 
 
 def dessiner_plan(coloree_salles):
+    """
+    Input : la liste des salles par lesquels il faut passer
+    Ouptput : les plans dessinés
+    Supprime les plans obsolètes puis recrée les nouveaux
+    """
     remove_images()
     img0_n, img1_n, img_1_n = dessiner_n(coloree_salles)
     img0_f, img1_f, img_1_f = dessiner_f(coloree_salles)
