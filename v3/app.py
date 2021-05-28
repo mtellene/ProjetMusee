@@ -65,7 +65,6 @@ def resultat():
         resultat = charger_resultat(liste_oeuvres)
         coloree_salles, coloree_oeuvres = coloration(resultat, liste_oeuvres)
         image0_n, image1_n, image_1_n, image0_f, image1_f, image_1_f = dessiner_plan(coloree_salles)
-        print(image0_n, image0_f)
         return render_template("resultat.html", coloree_oeuvres=coloree_oeuvres, liste_salles=liste_salles,
                                coloree_salles=coloree_salles, image0_n=image0_n, image1_n=image1_n, image_1_n=image_1_n,
                                image0_f=image0_f, image1_f=image1_f, image_1_f=image_1_f)
