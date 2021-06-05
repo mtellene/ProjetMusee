@@ -32,10 +32,9 @@ couleurs_salles = [
 
 def init_db():
     """
-    Input: /
-    Output: /
-    fonction qui supprime l'ancienne base de donnée et en crée une vide
+    supprime l'ancienne base de donnée et en crée une vide
     l'appel de cette fonction peut être optionnel
+    :return:
     """
     conn = sqlite3.connect('db/database.db')
     cur = conn.cursor()
@@ -51,8 +50,8 @@ def init_db():
 
 def recuperer_les_oeuvres():
     """
-    Input: /
-    Output: un dictionnaire avec toutes les oeuvres
+    recupère les oeuvres
+    :return: un dictionnaire avec toutes les valeurs
     """
     filename = 'db/oeuvres.json'
     with open(filename) as f:
@@ -63,9 +62,8 @@ def recuperer_les_oeuvres():
 
 def remplir_table_oeuvre():
     """
-    Input: /
-    Output: /
-    fonction qui permet de remplir la table oeuvres de la base de donnée
+    remplit la table oeuvres de la base de données
+    :return:
     """
     liste_oeuvres = recuperer_les_oeuvres()
 
@@ -87,9 +85,8 @@ def remplir_table_oeuvre():
 
 def creation_db():
     """
-    Input : /
-    Output : /
     initialise une base de données vide et la remplit
+    :return:
     """
     init_db()
     remplir_table_oeuvre()
@@ -98,8 +95,6 @@ def creation_db():
 # todo pour eleve
 def creer_dict():
     """
-    Input: /
-    Output: /
     fonction qui représente le graphe sous forme de dictionnaire de la forme [cle] : [valeurs]
     où cle est le sommet et valeurs correspond au(x) noeud(s) successeur(s)
     déroulement:
@@ -107,6 +102,7 @@ def creer_dict():
         -> définir un compteur de ligne et un compteur de colonne
         -> quand on a un '1' ajouter le compteur de colonne dans une liste (attention vous avez des chiffres)
         -> à la fin d'un ligne ajouter dans le dictionnaire [compteur ligne] : [liste]
+    :return:
     """
     cptL = 0
     f = open('db/matrice.txt', 'r')
@@ -125,6 +121,12 @@ def creer_dict():
 
 
 def redimensionnement(filename, output_file):
+    """
+    fonction de redimensionnement d'image
+    :param filename: fichier image à redimensionner
+    :param output_file: fichier image redimensionné
+    :return:
+    """
     image = Image.open(filename)
     height, width = image.size
     bigger = max(height, width)
@@ -145,6 +147,10 @@ def redimensionnement(filename, output_file):
 
 
 def recuperer_representations():
+    """
+    télécharge les représentations des images et les redimensionne dans un autre fichier
+    :return:
+    """
     liste_oeuvres = recuperer_les_oeuvres()
     if os.path.exists("static/representations"):
         shutil.rmtree("static/representations")
@@ -168,6 +174,12 @@ def recuperer_representations():
 
 
 def initialisation():
+    """
+    - initialise la base de données à partie d'oeuvres.json
+    - crée le dictionnaire modélisant le graphe
+    - télécharge les représentations des oeuvres en local et les redimensionne
+    :return:
+    """
     print("wait a moment...")
     creation_db()
     creer_dict()

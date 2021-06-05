@@ -20,10 +20,8 @@ import shutil
 
 def separation_par_types():
     """
-    Input: /
-    Output: 4 listes, une de chaque type d'oeuvre (écrits, peintures, sculptures ou artefacts)
-    les éléments de chaque listes sont des tuples de la forme
-    tuple = (type de l'oeuvre, artiste associé, titre de l'oeuvre, salle d'exposition, representation oeuvre)
+    sépare les oeuvres en fonction de leur type
+    :return: 4 listes (une de chaque type d'oeuvre)
     """
     liste_oeuvres = recuperer_les_oeuvres()
     type_ecrit = []
@@ -44,10 +42,9 @@ def separation_par_types():
 
 def avoir_nom_salles_oeuvres(liste_oeuvres):
     """
-    Input: une liste où chaque élément est une oeuvre
-    Output: une liste contenant les noms des salles correspondantes aux oeuvres
-    on itére sur les éléments de liste_oeuvres et on effectue une requête SQL pour récupérer le nom de sa salle d'exposition
-    si la salle récupérée n'est pas dans la liste résultat alors on ajoute la salle dans la liste
+    récupére le nom des salles d'exposition des oeuvres contenues dans liste_oeuvres (via une requête SQL)
+    :param liste_oeuvres: liste de noms d'oeuvres
+    :return: liste contenant les salles associées aux salles
     """
     liste_salles = []
     conn = sqlite3.connect('db/database.db')
@@ -66,11 +63,9 @@ def avoir_nom_salles_oeuvres(liste_oeuvres):
 # todo pour eleve
 def from_liste_oeuvres_to_liste_id_salles(liste_oeuvres):
     """
-    Input: une liste où chaque élément est une oeuvre
-    Output: une liste contenant les id des salles correspondantes aux oeuvres
-    on récupère le nom des salles de chaque oeuvre avec la fonction avoir_nom_salles_oeuvres() dans la liste_salles
-    itére sur les éléments de liste_salles et on récupère l'indice de l'élément dans liste_des_salles
-    si cet indice n'est pas dans la liste résultat alors on ajoute l'indice dans la liste
+    récupère le nom des salles de chaque oeuvre avec la fonction avoir_nom_salles_oeuvres() dans liste_salles
+    :param liste_oeuvres: liste de noms d'oeuvres
+    :return: liste d'id de salles correspondantes aux oeuvres
     """
     liste_id_salles = []
     liste_salles = avoir_nom_salles_oeuvres(liste_oeuvres)
@@ -84,9 +79,11 @@ def from_liste_oeuvres_to_liste_id_salles(liste_oeuvres):
 # todo pour eleve
 def lister_tous_les_chemins(graph, depart, chemin=[]):
     """
-    Input: un dictionnaire, un noeud de départ
-    Output: une liste avec tous les chemins possibles partant du noeud de départ
-    fonction qui retourne tous les chemins possibles sous forme de liste de listes
+    retourne tous les chemins possibles
+    :param graph: graphe modélisant le musée
+    :param depart: salle de départ d'un chemin
+    :param chemin: chemin actuel
+    :return: une liste de chemins (liste de listes)
     """
     chemin = chemin + [depart]
     if not depart in graph:
@@ -103,9 +100,9 @@ def lister_tous_les_chemins(graph, depart, chemin=[]):
 # todo pour eleve
 def garder_chemins_entree_sortie(liste_chemins):
     """
-    Input: une liste contenant tous les chemins possibles (partant du noeud de 0) dans le graphe
-    Output: une liste contenant UNIQUEMENT les chemins entrée-sortie
-    astuce: sortie = dernière cle dans le dictionnaire mon graphe
+    garde les chemins entrée-sortie
+    :param liste_chemins: liste de tous les chemins possibles dans le graphe
+    :return: liste de tous les chemins entrée-sortie
     """
     chemins = []
     for chem in liste_chemins:
@@ -117,8 +114,10 @@ def garder_chemins_entree_sortie(liste_chemins):
 # todo pour eleve
 def garder_chemin_oeuvres(liste_chemins_ES, id_salle):
     """
-    Input: une liste contenant tous les chemins entrée-sortie, un id d'une salle parmi celles à visiter
-    Output: une liste contenant tous les chemins qui passent par la salle à visiter
+    garde les chemins qui passent par toutes les oeuvres
+    :param liste_chemins_ES: liste de tous les chemins entrée-sortie
+    :param id_salle: liste de tous les chemins entrée-sortie qui passent par toutes les oeuvres
+    :return:
     """
     chemins = []
     for i in range(len(liste_chemins_ES)):
@@ -130,8 +129,9 @@ def garder_chemin_oeuvres(liste_chemins_ES, id_salle):
 # todo pour eleve
 def garder_plus_court_chemin(liste_chemins):
     """
-    Input: une liste qui contient tous les chemins entrée-sortie qui passent par toutes les salles à visiter
-    Output: le plus court chemin parmi tous les chemins dans la liste
+    garde le plus court chemin
+    :param liste_chemins: liste de tous les chemins entrée-sortie qui passent par toutes les oeuvres
+    :return: le plus court chemin
     """
     min = liste_chemins[0]
     for i in range(len(liste_chemins)):
@@ -143,12 +143,12 @@ def garder_plus_court_chemin(liste_chemins):
 # todo pour eleve
 def plus_court_chemin(liste_id_salles):
     """
-    Input: une liste avec les id des salles à voir
-    Output: le plus court chemin pour passer dans toutes les salles
-        -> lister tous les chemins
-        -> lister les chemins entrée-sortie
-        -> enlever les chemins qui ne passent pas dans les salles désirées
-        -> trouver le plus des chemins possibles
+    - liste tous les chemins possibles
+    - liste les chemins entrée-sortie
+    - enleve les chemins qui ne passent pas dans les salles désirées
+    - garde le plus court chemin
+    :param liste_id_salles: liste d'id des salles à voir
+    :return: le plus court chemin pour passer dans toutes les salles
     """
     chemin = lister_tous_les_chemins(mon_graphe, list(mon_graphe.keys())[0])
     chemin = garder_chemins_entree_sortie(chemin)
@@ -161,10 +161,9 @@ def plus_court_chemin(liste_id_salles):
 # todo pour eleve
 def from_id_to_nom(liste_id_salles):
     """
-    Input: une liste où chaque élément est l'id d'une salle
-    Output: une liste où chaque élément est le nom d'une salle
-    avec les id des salle de la liste en input on recupère les noms correspondants
-    attention, vérifier que la salle n'est pas déjà dans la liste résultat
+    recupère à partir d'une liste d'ids de salles, la liste des noms correspondants
+    :param liste_id_salles: liste d'ids de salles
+    :return: liste de noms de salles
     """
     liste_salles = []
     for id_salle in liste_id_salles:
@@ -177,10 +176,9 @@ def from_id_to_nom(liste_id_salles):
 # todo pour eleve
 def from_nom_to_id(liste_nom_salles):
     """
-    Input: une liste où chaque élément est le nom d'une salle
-    Output: une liste où chaque élément est l'id d'une salle
-    avec les noms des salles de la liste en input on recupère les id correspondants
-    attention, vérifier que la salle n'est pas déjà dans la liste résultat
+    recupère à partir d'une liste de noms de salles, la liste d'ids correspondants
+    :param liste_nom_salles: liste de noms de salle
+    :return: liste d'id de salle
     """
     liste_id_salles = []
     for nom_salle in liste_nom_salles:
@@ -193,12 +191,11 @@ def from_nom_to_id(liste_nom_salles):
 # todo pour eleve
 def charger_resultat(liste_oeuvres):
     """
-    Input: une liste des oeuvres à voir
-    Output: une liste où chaque élément est une salle où il faut passer
-        -> récupérer les id des salles
-        -> récupérer le plus court chemin
-        -> convertir la liste d'id en liste de nom de salle
-    récupère la liste des salles à visitées en fonction des oeuvres choisies
+    - récupére les ids des salles
+    - récupére le plus court chemin
+    - convertit la liste d'id en liste de nom de salle
+    :param liste_oeuvres: liste des oeuvres à voir
+    :return: liste de noms de salle où il faut passer
     """
     liste_id_salles = from_liste_oeuvres_to_liste_id_salles(liste_oeuvres)
     id_plus_court_chemin = plus_court_chemin(liste_id_salles)
@@ -208,19 +205,18 @@ def charger_resultat(liste_oeuvres):
 
 def coloration(chemin, liste_oeuvres):
     """
-    Input: une liste contenant le plus court chemin, une liste contenant les oeuvres selectionnées
-    Output: deux listes où chaque élément est un tuple
-    une première liste où les tuples seront de la forme (salle, couleur associée)
-    une seconde liste où les tuples seront de la forme (oeuvre, couleur de la salle)
     Première liste:
-        -> itérer sur les éléments de la liste
-        -> récupérer l'index de l'élément dans liste_des_salles
-        -> crée le tuple et l'ajouter à la liste résultat
+        - itére sur les éléments de la liste
+        - récupére l'index de l'élément dans liste_des_salles
+        - crée le tuple et l'ajouter à la liste résultat
     Seconde liste:
-        -> itérer sur les éléments de la liste
-        -> récupérer la salle de l'élément
-        -> récupérer la couleur de la salle
-        -> créer le tuple et l'ajouter à la liste résultat
+        - itére sur les éléments de la liste
+        - récupére la salle de l'élément
+        - récupére la couleur de la salle
+        - crée le tuple et l'ajouter à la liste résultat
+    :param chemin: liste avec le plus court chemin
+    :param liste_oeuvres: liste avec les oeuvres selectionnées
+    :return: deux listes où chaque élément est un tuple (1ere: (salle, couleur associée), 2e: (oeuvre, couleur de la salle))
     """
     colore_salle = []
     colore_oeuvre = []
@@ -237,10 +233,9 @@ def coloration(chemin, liste_oeuvres):
 
 def remove_images():
     """
-    Input : /
-    Output : /
-    Supprime les répertoires contenant les plans dessinés, puis recrée les dossier vierge afin de mettre les nouveaux
-    plans
+    - supprime les répertoires contenant les plans dessinés
+    - recrée les dossiers vierges pour mettre les nouveaux plans
+    :return:
     """
     if os.path.exists("static/temp_n"):
         shutil.rmtree("static/temp_n")
@@ -252,9 +247,9 @@ def remove_images():
 
 def dessiner_n(coloree_salles):
     """
-    Input : une liste où les éléments sont les salles par lesquels il faut passer
-    Output les plans avec le chemin dessiné
-    Dessine sur les plans du musée afin que l'utilisateur puisse voir le chemin à prendre
+    dessine sur les plans du musée pour que l'utilisateur puisse voir le chemin à prendre
+    :param coloree_salles: liste avec les salles par lesquels il faut passer
+    :return: plans avec le chemin dessiné
     """
     liste_salles = []
     for (salle, couleur) in coloree_salles:
@@ -352,10 +347,10 @@ def dessiner_n(coloree_salles):
 
 def dessiner_f(coloree_salles):
     """
-    Input : une liste où les éléments sont les salles par lesquels il faut passer
-    Output les plans avec le chemin dessiné
-    Dessine sur les plans du musée afin que l'utilisateur puisse voir le chemin à prendre
-    Chemin pour les handicapés
+    dessine sur les plans du musée pour que l'utilisateur puisse voir le chemin à prendre
+    personne à mobilité réduite
+    :param coloree_salles: liste avec les salles par lesquels il faut passer
+    :return: plans avec le chemin dessiné
     """
     liste_salles = []
     for (salle, couleur) in coloree_salles:
@@ -453,9 +448,9 @@ def dessiner_f(coloree_salles):
 
 def dessiner_plan(coloree_salles):
     """
-    Input : la liste des salles par lesquels il faut passer
-    Ouptput : les plans dessinés
-    Supprime les plans obsolètes puis recrée les nouveaux
+    supprime les plans obsolètes puis recrée les nouveaux
+    :param coloree_salles: liste des salles par lesquels il faut passer
+    :return: plans dessinés
     """
     remove_images()
     img0_n, img1_n, img_1_n = dessiner_n(coloree_salles)

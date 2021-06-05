@@ -9,7 +9,7 @@ __copyright__ = "Univ Lyon1, 2020"
 __license__ = "Public Domain"
 __version__ = "3.0"
 
-from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
+from flask import Flask, render_template, request, flash, redirect, url_for
 
 from init import initialisation
 from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres, coloration, dessiner_plan
@@ -24,15 +24,18 @@ initialisation()
 @app.route('/')
 def index():
     """
-    charge la page index.html, accueil du site
+    charge la page index.html (accueil du site)
+    :return: index.html
     """
+
     return render_template("index.html")
 
 
 @app.route('/plan')
 def plan():
     """
-    charge la page plan.html, page où il y a les plans du musée
+    redirige vers plan.html (page des plans du musée)
+    :return: plan.html
     """
     return render_template("plan.html")
 
@@ -40,8 +43,8 @@ def plan():
 @app.route('/itineraire')
 def itineraire():
     """
-    charge la page itineraire.html, page où on doit faire notre sélection d'oeuvres
-    appel de la separation_par_types() pour le visuel de la page
+    redirige vers itineraire.html (page de choix des oeuvres)
+    :return: itineraire.html
     """
     ecrits, peintures, sculptures, artefacts = separation_par_types()
     return render_template("itineraire.html", peintures=peintures, ecrits=ecrits, sculptures=sculptures,
@@ -52,12 +55,14 @@ def itineraire():
 @app.route('/resultat', methods=['POST', 'GET'])
 def resultat():
     """
-    charge la page resultat.html, page où il est affiché le plus court chemin pour voir toutes les oeuvres choisies
+    si au moins une oeuvre a était selectionnée : charge la page resultat.html (page avec le chemin à suivre)
+    sinon : redirige vers itinéraire.html (page de choix)
         -> récupérer les oeuvres selectionnées (check) (pensez à vérifier que des oeuvres ont été selectionné)
         -> récupérer les noms des salles des oeuvres sélectionnées
         -> appel fonction du plus court chemin
         -> coloration des oeuvres et des salles (pour le visuel)
         -> gérer le cas si aucune oeuvre sélectionnée
+    :return: resultat.html ou itinéraire.html
     """
     liste_oeuvres = request.form.getlist('check')
     if len(liste_oeuvres) > 0:
