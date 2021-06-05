@@ -11,11 +11,11 @@ __version__ = "3.0"
 
 import sqlite3
 from PIL.Image import *
+import shutil
 
 from init import recuperer_les_oeuvres, mon_graphe, liste_des_salles, couleurs_salles
 from Dessin_b import *
 from Dessin_h import *
-import shutil
 
 
 def separation_par_types():
