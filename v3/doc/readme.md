@@ -7,7 +7,10 @@ Ce logiciel est un logiciel a des fins pédagogiques. Une partie sera donc à fa
 ### Le projet 
 Les oeuvres sont stockés dans une base de données (```database.db```). Cette base de données est rempli à partir d'un fichier json.
 * ```db``` contient la base de données, la matrice d'adjacence et le ficher oeuvres.json qui contient toutes les oeuvres.
-* ```static``` contient les fichiers ```*.png```, ```*.js``` et ```*.css```. Il contient également un dossier ```temp/``` qui contient les plans avec le chemin (voir section ```fonctions.py```).
+* ```static``` contient les fichiers ```*.png```, ```*.js``` et ```*.css```. 
+  Il contient : 
+    - deux dossiers ```temp_n/``` et ```temp_f/``` qui contiennent les plans avec le chemin (voir section ```fonctions.py```).
+    - deux dossiers ```representations_temp/``` et ```representations/``` qui contiennent les réprésentations des oeuvres (voir section ```init.py```).
 * ```templates``` contient les fichiers ```*.html``` qui vont permettre à l'utilisateur d'utiliser le site.
 
 ### Structure code
@@ -22,7 +25,9 @@ Les oeuvres sont stockés dans une base de données (```database.db```). Cette b
 * ```remplir_table_oeuvre()```: appelle la fonction précédente, récupère le résultat et remplit la base de données
 * ```creation_db()```: appelle ```init_db()``` et ```remplir_table_oeuvre()``` pour initialiser une base de données vide et la remplir
 * ```creer_dict()```: remplit un dictionnaire représentant le graphe du musée en lisant la matrice d'adjacence (<em>TODO</em>)
-* ```initialisation()```: fonction qui appelle ```creation_db()``` (cet appel peut être optionnel) et appelle ```creer_dict()``` pour remplir le dictionnaire ```mon_graphe```
+* ```redimensionnement(filename, output_file)``` : redimensionne l'image <em>filename</em> et sauvegarde l'image en tant que <em>output_file</em>.
+* ```recuperer_representations()``` : télécharge toutes les représentations des oeuvres pour les redimensionner.  
+* ```initialisation()```: fonction qui appelle ```creation_db()``` (cet appel peut être optionnel) et appelle ```creer_dict()``` pour remplir le dictionnaire ```mon_graphe``` enfin appelle ```recuperer_representations()``` pour télécharger les représentations des oeuvres puis les redimensionne pour les afficher.
 
 #### fonctions.py
 * ```separation_par_types()```: créer 4 listes (une pour chaque type d'oeuvres), pour l'affichage dans ```itineraire.html```
@@ -62,18 +67,5 @@ L'une permet le dessin pour le chemin base et l'autre permet le dessin pour le c
 
 ### static
 
-* ```redimension.js```: script qui sert à redimensionner les images. Afin de respecter l'exception pédagogique, il faut que les images respectent les dimensions de 400x400. Ce script redimensionne les images pour conserver le rapport de proportionnalité et ne pas avoir des images déformées
-* ```is_fautueil.js```: script à changer les images en fonction de la valeur du slider. 
-
-
-### Utiles 
-
-- site pour les droits d'auteur/exceptions pédagogiques:
-https://www.reseau-canope.fr/savoirscdi/societe-de-linformation/cadre-reglementaire/le-coin-du-juriste/le-point-sur-lexception-pedagogique-au-29-septembre-2016.html
-  
-### TODO 
-
-* faire le dessin pour fauteuil 
-* rajouter une checkbox fauteuil 
-* changer les images (script js ?) si la checkbox est check
-  
+* ```affichage_representation.js```: script qui donne un aperçu des oeuvres
+* ```is_fautueil.js```: script qui change les images en fonction de la valeur du slider. 
