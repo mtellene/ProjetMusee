@@ -16,7 +16,7 @@
         <nav class="menu">
             <ul id="list_menu">
                 <li><a href="/">Accueil</a></li>
-                <li><a href="itineraire">Itinéraire</a></li>
+                    <li><a href="itineraire">Itinéraire</a></li>
                 <li><a href="plan">Plan</a></li>
             </ul>
         </nav>
@@ -64,8 +64,9 @@
                                     <p> {{peinture['Artiste']}} </p>
                                 </div>
                                 <div class="photo item-part-container">
-                                    <button type="button" class="btn btn-default btn-sm" 
-                                    onclick="display_img('{{peinture['Representation']}}')"> Aperçu </button>
+                                    <button type="button" class="btn btn-default btn-sm"
+                                    onclick="display_img('static/representations/{{ peinture['Titre'] +
+                                            peinture['Representation'][-4:]}}')"> Aperçu </button>
                                 </div>
                             </div>
                         {% endfor %}
@@ -84,8 +85,9 @@
                                     <p> {{sculpture['Artiste']}} </p>
                                 </div>
                                 <div class="photo item-part-container">
-                                    <button type="button" class="btn btn-default btn-sm" 
-                                    onclick="display_img('{{sculpture['Representation']}}')">
+                                    <button type="button" class="btn btn-default btn-sm"
+                                    onclick="display_img('static/representations/{{ sculpture['Titre'] +
+                                            sculpture['Representation'][-4:]}}')">
                                         <span class="glyphicon glyphicon-camera"></span> Aperçu
                                     </button>
                                 </div>
@@ -107,7 +109,8 @@
                                 </div>
                                 <div class="photo item-part-container">
                                     <button type="button" class="btn btn-default btn-sm" 
-                                    onclick="display_img('{{artefact['Representation']}}')">
+                                    onclick="display_img('static/representations/{{ artefact['Titre'] +
+                                            artefact['Representation'][-4:]}}')">
                                         <span class="glyphicon glyphicon-camera"></span> Aperçu
                                     </button>
                                 </div>

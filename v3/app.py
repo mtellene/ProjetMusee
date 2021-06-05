@@ -9,7 +9,7 @@ __copyright__ = "Univ Lyon1, 2020"
 __license__ = "Public Domain"
 __version__ = "3.0"
 
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
 
 from init import initialisation
 from fonctions import separation_par_types, charger_resultat, avoir_nom_salles_oeuvres, coloration, dessiner_plan
@@ -49,7 +49,7 @@ def itineraire():
 
 
 # todo
-@app.route('/resultat', methods=['POST'])
+@app.route('/resultat', methods=['POST', 'GET'])
 def resultat():
     """
     charge la page resultat.html, page où il est affiché le plus court chemin pour voir toutes les oeuvres choisies
@@ -66,8 +66,9 @@ def resultat():
         coloree_salles, coloree_oeuvres = coloration(resultat, liste_oeuvres)
         image0_n, image1_n, image_1_n, image0_f, image1_f, image_1_f = dessiner_plan(coloree_salles)
         return render_template("resultat.html", coloree_oeuvres=coloree_oeuvres, liste_salles=liste_salles,
-                               coloree_salles=coloree_salles, image0_n=image0_n, image1_n=image1_n, image_1_n=image_1_n,
-                               image0_f=image0_f, image1_f=image1_f, image_1_f=image_1_f)
+                                coloree_salles=coloree_salles, image0_n=image0_n, image1_n=image1_n, image_1_n=image_1_n,
+                                image0_f=image0_f, image1_f=image1_f, image_1_f=image_1_f)
     else:
         flash("Erreur ! Vous n'avez saisi aucunes oeuvres !")
         return redirect(url_for('itineraire'))
+

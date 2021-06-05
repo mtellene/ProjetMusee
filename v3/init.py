@@ -9,7 +9,11 @@ __copyright__ = "Univ Lyon1, 2020"
 __license__ = "Public Domain"
 __version__ = "3.0"
 
+import shutil
 import sqlite3
+from PIL import Image
+import requests
+import os
 
 mon_graphe = {}
 liste_des_salles = [
@@ -120,6 +124,52 @@ def creer_dict():
         ligne = f.readline()
 
 
+def redimensionnement(filename, output_file):
+    image = Image.open(filename)
+    height, width = image.size
+    bigger = max(height, width)
+
+    new_width = 0
+    new_height = 0
+    if bigger == width:
+        new_width = 400
+        ratio = (new_width * 100) / width
+        new_height = (height * ratio) / 100
+    else:
+        new_height = 400
+        ratio = (new_height * 100) / height
+        new_width = (width * ratio) / 100
+
+    image = image.resize((int(new_height), int(new_width)))
+    image.save(output_file)
+
+
+def recuperer_representations():
+    liste_oeuvres = recuperer_les_oeuvres()
+    if os.path.exists("static/representations"):
+        shutil.rmtree("static/representations")
+    os.popen("mkdir static/representations")
+    if os.path.exists("static/representations_temp"):
+        shutil.rmtree("static/representations_temp")
+    os.popen("mkdir static/representations_temp")
+    for oeuvre in liste_oeuvres:
+        if oeuvre['Representation'] != "":
+            url = oeuvre['Representation']
+            extension = url[-3:]
+            filename = "static/representations_temp/" + oeuvre['Titre'] + "." + extension
+            output_file = "static/representations/" + oeuvre['Titre'] + "." + extension
+            response = requests.get(url)
+
+            file = open(filename, "wb")
+            file.write(response.content)
+            file.close()
+            redimensionnement(filename, output_file)
+            print("done")
+
+
 def initialisation():
+    print("wait a moment...")
     creation_db()
     creer_dict()
+    recuperer_representations()
+    print("you can go !")
