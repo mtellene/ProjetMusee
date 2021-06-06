@@ -26,8 +26,8 @@ Les oeuvres sont stockés dans une base de données (```database.db```). Cette b
 * ```creation_db()```: appelle ```init_db()``` et ```remplir_table_oeuvre()``` pour initialiser une base de données vide et la remplir
 * ```creer_dict()```: remplit un dictionnaire représentant le graphe du musée en lisant la matrice d'adjacence (<em>TODO</em>)
 * ```redimensionnement(filename, output_file)``` : redimensionne l'image <em>filename</em> et sauvegarde l'image en tant que <em>output_file</em>.
-* ```recuperer_representations()``` : télécharge toutes les représentations des oeuvres pour les redimensionner.  
-* ```initialisation()```: fonction qui appelle ```creation_db()``` (cet appel peut être optionnel) et appelle ```creer_dict()``` pour remplir le dictionnaire ```mon_graphe``` enfin appelle ```recuperer_representations()``` pour télécharger les représentations des oeuvres puis les redimensionne pour les afficher.
+* ```recuperer_representations()``` : télécharge toutes les représentations des oeuvres pour les redimensionner. 
+* ```initialisation()```: fonction qui appelle ```creation_db()``` (cet appel peut être optionnel) et appelle ```creer_dict()``` pour remplir le dictionnaire ```mon_graphe``` enfin appelle ```recuperer_representations()``` pour télécharger les représentations des oeuvres puis les redimensionne pour les afficher. <em>Si les fonctions ```creation_db()``` et ```recuperer_representations()``` ont été appelées au moins une fois, inutile de les appeler à nouveau.</em>
 
 #### fonctions.py
 * ```separation_par_types()```: créer 4 listes (une pour chaque type d'oeuvres), pour l'affichage dans ```itineraire.html```
