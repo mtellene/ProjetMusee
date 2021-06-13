@@ -7,7 +7,7 @@
 __author__ = "Maxime Tellene"
 __copyright__ = "Univ Lyon1, 2020"
 __license__ = "Public Domain"
-__version__ = "3.0"
+__version__ = "4.0"
 
 from flask import Flask, render_template, request, flash, redirect, url_for
 

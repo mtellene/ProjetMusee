@@ -7,13 +7,13 @@
 __author__ = "Maxime Tellene"
 __copyright__ = "Univ Lyon1, 2020"
 __license__ = "Public Domain"
-__version__ = "3.0"
+__version__ = "4.0"
 
-import shutil
+import lib.shutil as shutil
 import sqlite3
-from PIL import Image
-import requests
-import os
+import lib.PIL.Image as Image
+import lib.requests as requests
+import lib.os as os
 
 mon_graphe = {}
 liste_des_salles = [
@@ -131,8 +131,6 @@ def redimensionnement(filename, output_file):
     height, width = image.size
     bigger = max(height, width)
 
-    new_width = 0
-    new_height = 0
     if bigger == width:
         new_width = 400
         ratio = (new_width * 100) / width

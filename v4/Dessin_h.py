@@ -7,10 +7,11 @@
 __author__ = "Maxime Tellene"
 __copyright__ = "Univ Lyon1, 2020"
 __license__ = "Public Domain"
-__version__ = "3.0"
+__version__ = "4.0"
 
-from PIL import Image, ImageDraw
-from datetime import datetime
+import PIL.ImageDraw as ImageDraw
+import PIL.Image as Image
+import lib.datetime as datetime
 from init import couleurs_salles
 
 
@@ -19,7 +20,7 @@ class DessinH:
 
     def __init__(self, image_url):
         temp = image_url.split('.')
-        temp2 = temp[0] + "_drawn_" + str(datetime.now()) + "." + temp[1]
+        temp2 = temp[0] + "_drawn_" + str(datetime.datetime.now()) + "." + temp[1]
         temp = temp2.split('/')
         self.nom_image = temp[0] + "/temp_f/" + temp[1]
         self.image = Image.open(image_url)

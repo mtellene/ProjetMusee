@@ -7,11 +7,12 @@
 __author__ = "Maxime Tellene"
 __copyright__ = "Univ Lyon1, 2020"
 __license__ = "Public Domain"
-__version__ = "3.0"
+__version__ = "4.0"
 
 import sqlite3
-from PIL.Image import *
-import shutil
+import lib.os as os
+import lib.shutil as shutil
+
 
 from init import recuperer_les_oeuvres, mon_graphe, liste_des_salles, couleurs_salles
 from Dessin_b import *
@@ -173,7 +174,6 @@ def from_id_to_nom(liste_id_salles):
     return liste_salles
 
 
-# todo pour eleve
 def from_nom_to_id(liste_nom_salles):
     """
     recupère à partir d'une liste de noms de salles, la liste d'ids correspondants
