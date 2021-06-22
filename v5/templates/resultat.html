@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="static/style.css" media="all" type="text/css"/>
+        <title>Le petit musée</title>
+    </head>
+    <body class="body">
+
+        <header class="header">
+            <h1>Le petit musée</h1>
+        </header>
+
+        <main id="main">
+
+            <nav class="menu">
+                <ul id="list_menu">
+                    <li><a href="/">Accueil</a></li>
+    			    <li><a href="itineraire">Itinéraire</a></li>
+                    <li><a href="plan">Plan</a></li>
+		    	</ul>
+            </nav>
+
+            <section class="flex-container">
+                <div id="container-liste-oeuvre" class="flex-result">
+                    <div id="is_fauteuil"></div>
+                        <p id="texte" style="color: white;">Personne à mobilité réduite</p>
+                        <label class="switch">
+                            <input id="choix" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    <h5>Votre selection:</h5>
+                    <ul class="liste">
+                        {% for i in range(coloree_oeuvres| length) %}
+                            <li style="color: {{coloree_oeuvres[i][1]}};">{{coloree_oeuvres[i][0]}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div id="result" class="flex-result">
+                    <ul class="liste">
+                        {% for i in range(coloree_salles| length) %}
+                            {% if coloree_salles[i][0] in liste_salles %}
+                                <li class="salle_interessante" style="color: {{coloree_salles[i][1]}};">{{coloree_salles[i][0]}}</li>
+                            {% else %}
+                                <li>{{coloree_salles[i][0]}}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="flex-result">
+                    <img class="miniature" id="img_1" src="{{image_1_n}}"/>
+                    <img class="miniature" id="img0" src="{{image0_n}}"/>
+                    <img class="miniature" id="img1" src="{{image1_n}}"/>
+                </div>
+
+            </section>
+        </main>
+        <script src="static/is_fauteuil.js" one="{{image_1_n}}" two="{{image0_n}}" three="{{image1_n}}"
+            four="{{image_1_f}}" five="{{image0_f}}" six="{{image1_f}}"></script>
+    </body>
+</html>
