@@ -76,29 +76,33 @@ def from_liste_oeuvres_to_liste_id_salles(liste_oeuvres):
             liste_id_salles.append(id)
     return liste_id_salles
 
-#
+
 def pcc_contrainte(graphe, debut, fin, a_visiter):
-    print(a_visiter)
+    """
+    itère sur les éléments à visiter et lance Dijsktra
+    :param graphe: graphe du musée
+    :param debut: sommet de départ (entree)
+    :param fin: sommet de départ (sortie)
+    :param a_visiter: liste des sommets à visiter
+    :return: le plus court chemin contraint
+    """
     chemin = []
-    # deb = debut
-    # for i in range(len(a_visiter)):
-    #     print(f"On considère le graphe : {deb} - {a_visiter[i]}")
-    #     ss_graphe = {key: value for key, value in graphe.items() if int(deb) <= int(key) <= int(a_visiter[i])}
-    #     chemin += dijkstra(ss_graphe, deb, a_visiter[i])
-    #     deb = a_visiter[i]
-    # print(f"On considère le graphe : {deb} - {fin}")
-    # ss_graphe = {key: value for key, value in graphe.items() if int(key) >= int(deb)}
-    # chemin += dijkstra(ss_graphe, a_visiter[-1], fin)
-    # return chemin
     a_visiter = [int(debut)] + a_visiter + [int(fin)]
     for i in range(len(a_visiter)-1):
         print(f"on visite {a_visiter[i]} {a_visiter[i+1]}")
         chemin += dijkstra(graphe, a_visiter[i], a_visiter[i+1])[1:]
     chemin = [int(debut)] + chemin
-    print(chemin)
     return chemin
 
+
 def dijkstra(graphe, debut, fin):
+    """
+    itère sur les éléments à visiter et lance Dijsktra
+    :param graphe: graphe du musée
+    :param debut: sommet de départ
+    :param fin: sommet de départ
+    :return: le plus court chemin pour aller de debut - fin
+    """
     distances = [float('inf') for _ in range(len(graphe))]
     distances[debut] = 0
     pred = [-1 for _ in range(len(graphe))]
