@@ -35,10 +35,8 @@ Les oeuvres sont stockés dans une base de données (```database.db```). Cette b
 * ```from_nom_salles_to_id(liste_oeuvres)```: prend en entrée une liste d'oeuvres et retourne une liste avec les id des salles correspondantes, cette fonction appelle ```avoir_nom_salles_oeuvres(liste_oeuvres)``` pour récupérer les salles de chaque oeuvres (<em>TODO</em>)  
 
 
-* ```lister_tous_les_chemins(graph, depart, path=[])```: prend en entrée le graphe (dictionnaire), un noeud de départ et une liste contenant un chemin, et retourne la liste de tous les chemins possibles (<em>TODO</em>)
-* ```garder_chemins_entree_sortie(liste_chemins)```: prend en entrée la liste contenant tous les chemins et retourne la liste ne contenant que les chemins qui vont de l'entrée jusqu'à la sortie (<em>TODO</em>)
-* ```garder_chemin_oeuvres(liste_chemins_ES, id_salle)```: prend en entrée la liste contenant tous les chemins entré-sortie du graphe et l'id d'une salle et retourne une liste ne contenant que les chemins contenant cet id (<em>TODO</em>)
-* ```garder_plus_court_chemin(liste_chemins)```: prend en entrée une liste contenant tous les chemins que l'utilisateur peut prendre afin de voir toutes les oeuvres choisies et retourne LE chemin le plus court en terme de nombre de salle traversée (<em>TODO</em>)
+* ```pcc_contrainte(graphe, debut, fin, a_visiter):```: prend en entrée le graphe (dictionnaire), un noeud de départ, un noeud d'arrivée et une liste contenant les sommets à visiter. Lance Dijkstra et retourne le plus court chemin contraint
+* ```dijkstra(graphe, debut, fin)```: prend en entrée le graphe (dictionnaire), un noeud de départ, un noeud d'arrivée et retourne le plus court chemin entree - sortie
 * ```plus_court_chemin(liste_id_salles)```: fonction qui à partir d'une liste contenant les id des salles à visiter retourne le chemin le plus court pour voir toutes ces salles (<em>TODO</em>)
 
 
